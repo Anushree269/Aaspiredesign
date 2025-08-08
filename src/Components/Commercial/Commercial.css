@@ -1,0 +1,130 @@
+.commercial-projects-section {
+  background-size: cover;
+  background-position: center;
+  padding: 80px 20px;
+  color: #fff;
+  transition: opacity 1s ease-in-out;
+  opacity: 0;
+}
+
+.commercial-projects-section.in-view {
+  opacity: 1;
+}
+
+.commercial-heading {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #020967;
+}
+
+.commercial-row {
+  margin-bottom: 40px;
+}
+
+.row-title {
+  font-size: 1.5rem;
+  text-align: center;
+  color: #0b0122;
+}
+
+/* Updated to show 2 on mobile, 4 on larger screens */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Default for mobile */
+  gap: 10px;
+  justify-items: center;
+  padding-top: 80px;
+  padding-bottom: 80px;
+  background-color: rgba(61, 42, 18, 0.634);
+}
+
+@media (min-width: 768px) {
+  .project-grid {
+    grid-template-columns: repeat(4, 1fr); /* 4 images per row */
+  }
+}
+
+.project-box {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(4px);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+  padding: 10px;
+}
+
+.project-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.2);
+}
+
+.project-box img {
+  width: 100%; /* Adjusted for grid */
+  height: auto;
+  border-radius: 8px;
+  max-height: 120px;
+  object-fit: cover;
+}
+
+.image-title {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+/* Fade-up animation */
+.fade-up {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 1s forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Modal styles */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 80%;
+  max-height: 80%;
+}
+
+.modal-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.close-btn {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: #fff;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  line-height: 36px;
+}

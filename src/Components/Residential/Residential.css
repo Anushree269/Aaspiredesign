@@ -1,0 +1,87 @@
+.residential-tabs-section {
+  background-size: cover;
+  background-position: center;
+  padding: 40px 20px;
+  color: #020d4a;
+  text-align: center;
+}
+
+.tabs-container {
+  background-color: rgba(173, 89, 6, 0.253);
+  border-radius: 12px;
+  padding: 30px;
+}
+
+.tab-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.tab-buttons button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #eebc6ccc;
+  color: rgb(58, 31, 2);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.tab-buttons button.active {
+  background-color: #ffffff88;
+  font-weight: bold;
+}
+
+.tab-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 15px;
+}
+
+.image-box img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  cursor: pointer;
+  object-fit: cover;
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(251, 251, 251, 0.769);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.lightbox-inner {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.lightbox-inner img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.lightbox-inner button {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background-color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}

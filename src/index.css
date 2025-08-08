@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Root Theme Variables */
+:root {
+  font-family: 'Poppins', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color: #031430;
+  background-color: #963434;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Links */
+a {
+  font-weight: 500;
+  color: #0066cc;
+  text-decoration: none;
+}
+a:hover {
+  color: #004b99;
+}
+
+/* Body */
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #f6e9da;
+  color: #031430;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: 600;
+}
+
+/* Buttons */
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #d4af37;
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+button:hover {
+  background-color: #c49e2f;
+}
+button:focus,
+button:focus-visible {
+  outline: 3px dashed #c49e2f;
+}
+
+/* Remove Dark Mode Fallback */
+@media (prefers-color-scheme: light) {
+  :root {
+    background-color: #f9f9f9;
+    color: #031430;
+  }
+
+  button {
+    background-color: #d4af37;
+  }
+
+  a:hover {
+    color: #004b99;
+  }
+}

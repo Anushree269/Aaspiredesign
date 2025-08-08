@@ -1,0 +1,109 @@
+.achievement-section {
+  position: relative;
+  padding: 10rem 2rem;
+  overflow: hidden;
+}
+
+.achievement-bg {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 150%;
+  background-size: cover;
+  background-position: center;
+  z-index: 0;
+}
+
+.achievement-heading,
+.achievement-marquee-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.achievement-heading {
+  text-align: center;
+  font-size: 2.5rem;
+  font-family: 'Cormorant Garamond', serif;
+  color: #01275f;
+  margin-bottom: 2.5rem;
+  font-weight: bold;
+  animation: slideInDown 1s ease forwards;
+  opacity: 0;
+}
+
+.in-view .achievement-heading {
+  opacity: 1;
+}
+
+/* === Marquee Container === */
+.achievement-marquee-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+.achievement-marquee {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  animation: scrollLeft 20s linear infinite;
+}
+
+/* === Card === */
+.achievement-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 2rem;
+  height: 30%;
+  min-width: 280px;
+  backdrop-filter: blur(10px);
+  text-align: center;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.achievement-card:hover {
+  transform: translateY(-6px);
+}
+
+.achievement-card p {
+  font-size: 1.1rem;
+  color: #222;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* === Slide Animation === */
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* === Header Animation === */
+@keyframes slideInDown {
+  from {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .achievement-heading {
+    font-size: 2rem;
+  }
+
+  .achievement-card p {
+    font-size: 1rem;
+  }
+
+  .achievement-section {
+    padding: 3rem 1.2rem;
+  }
+}

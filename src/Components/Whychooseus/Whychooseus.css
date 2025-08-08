@@ -1,0 +1,61 @@
+.why-section {
+  padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+  transition: background-image 1s ease-in-out;
+}
+
+.why-heading {
+  text-align: center;
+  color: #032f75;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.why-heading.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.why-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.why-card {
+  background: rgba(0, 0, 0, 0.4);
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  width: 250px;
+  opacity: 0;
+  color: #ffffff; /* ✅ Change this to your desired text color */
+  transform: translateY(30px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.why-card.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.icon-circle {
+  font-size: 2rem;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 1rem;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
