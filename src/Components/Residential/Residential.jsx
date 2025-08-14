@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './Residential.css';
+import { Helmet } from 'react-helmet-async';
+
 import bgImage from '../../assets/gray-chair-living-room-with-copy-space.jpg';
 
 // Import all residential images
@@ -41,7 +43,7 @@ import ResImg35 from '../../assets/RESIDENTIALPROJECTS/NARESHJAIN/MODIFIED FINAL
 import ResImg36 from '../../assets/RESIDENTIALPROJECTS/NARESHJAIN/TERRACE VIEW 1 WITHOUT LOGO.jpg';
 import ResImg37 from '../../assets/RESIDENTIALPROJECTS/NARESHJAIN/TERRACE VIEW 2 WITH LOGO.jpg';
 import ResImg38 from '../../assets/RESIDENTIALPROJECTS/NARESHJAIN/FINAL BEDROOM 2 VIEW 1 OF LONAVALA BUNGALOW WITH LOGO.jpg';
-import ResImg39 from '../../assets/RESIDENTIALPROJECTS/NARESHJAIN/FINAL BEDROOM 2 VIEW 1 OF LONAVALA BUNGALOW WITH LOGO.jpg';``
+import ResImg39 from '../../assets/RESIDENTIALPROJECTS/NARESHJAIN/FINAL BEDROOM 2 VIEW 1 OF LONAVALA BUNGALOW WITH LOGO.jpg';
 import ResImg40 from '../../assets/RESIDENTIALPROJECTS/RAKESHJAIN/Final kids bedroom view 3 with logo.jpg';
 import ResImg41 from '../../assets/RESIDENTIALPROJECTS/RAKESHJAIN/Final kids bedroom view 4 with logo.jpg';
 import ResImg42 from '../../assets/RESIDENTIALPROJECTS/RAKESHJAIN/FINAL TERRACE VIEW 1 OF BEDROOM 1 WITH LOGO.jpg';
@@ -83,55 +85,198 @@ import ResImg77 from '../../assets/RESIDENTIALPROJECTS/VIJAYMACCHA/view 2jpg.jpg
 import ResImg78 from '../../assets/RESIDENTIALPROJECTS/VIJAYMACCHA/view 3jpg.jpg';
 import ResImg79 from '../../assets/RESIDENTIALPROJECTS/VIJAYMACCHA/view 4jpg.jpg';
 
+// Create an array of objects with image data
 const allImages = [
-  ResImg1, ResImg2, ResImg3, ResImg4, ResImg5, ResImg6, ResImg7, ResImg8, ResImg9, ResImg10,
-  ResImg11, ResImg12, ResImg13, ResImg14, ResImg15, ResImg16, ResImg17, ResImg18, ResImg19, ResImg20,
-  ResImg21, ResImg22, ResImg23, ResImg24, ResImg25, ResImg26, ResImg27, ResImg28, ResImg29, ResImg30,
-  ResImg31, ResImg32, ResImg33, ResImg34, ResImg35, ResImg36, ResImg37, ResImg38, ResImg39, ResImg40,
-  ResImg41, ResImg42, ResImg43, ResImg44, ResImg45, ResImg46, ResImg47, ResImg48, ResImg49, ResImg50,
-  ResImg51, ResImg52, ResImg53, ResImg54, ResImg55, ResImg56, ResImg57, ResImg58, ResImg59, ResImg60,
-  ResImg61, ResImg62, ResImg63, ResImg64, ResImg65, ResImg66, ResImg67, ResImg68, ResImg69, ResImg70,
-  ResImg71, ResImg72, ResImg73, ResImg74, ResImg75, ResImg76, ResImg77, ResImg78, ResImg79, 
+  { src: ResImg1, title: "Final Views 6" },
+  { src: ResImg2, title: "Final Views 7" },
+  { src: ResImg3, title: "Final Views 8" },
+  { src: ResImg4, title: "Final Views 10" },
+  { src: ResImg5, title: "Final Views 11" },
+  { src: ResImg6, title: "Final Views 12" },
+  { src: ResImg7, title: "First Floor View 1" },
+  { src: ResImg8, title: "First Floor View 2" },
+  { src: ResImg9, title: "First Floor View 3" },
+  { src: ResImg10, title: "Guest Bedroom View 1" },
+  { src: ResImg11, title: "Guest Bedroom View 2" },
+  { src: ResImg12, title: "Guest Bedroom View 3" },
+  { src: ResImg13, title: "Kids Bedroom 4" },
+  { src: ResImg14, title: "Kids Bedroom 5" },
+  { src: ResImg15, title: "Master Bedroom View 8" },
+  { src: ResImg16, title: "Final Views 6" },
+  { src: ResImg17, title: "Living Room View 1" },
+  { src: ResImg18, title: "Living Room View 2" },
+  { src: ResImg19, title: "Kitchen View 1" },
+  { src: ResImg20, title: "Kitchen View 2" },
+  { src: ResImg21, title: "Master Bedroom View 3" },
+  { src: ResImg22, title: "Master Bedroom View 4" },
+  { src: ResImg23, title: "Master Bedroom View 4" },
+  { src: ResImg24, title: "Bungalow Bedroom View 1" },
+  { src: ResImg25, title: "Bungalow Bedroom View 2" },
+  { src: ResImg26, title: "Bungalow Bedroom 1 View 1" },
+  { src: ResImg27, title: "Bedroom 4 View 1" },
+  { src: ResImg28, title: "Bungalow Living Room" },
+  { src: ResImg29, title: "Bungalow Bedroom 1 View 2" },
+  { src: ResImg30, title: "Bedroom 4 View 2" },
+  { src: ResImg31, title: "Bedroom 4 View 3" },
+  { src: ResImg32, title: "Master Bedroom View 3" },
+  { src: ResImg33, title: "Modified Bedroom 4 View 1" },
+  { src: ResImg34, title: "Modified Bedroom 4 View 2" },
+  { src: ResImg35, title: "Modified Final View 3" },
+  { src: ResImg36, title: "Terrace View 1" },
+  { src: ResImg37, title: "Terrace View 2" },
+  { src: ResImg38, title: "Bungalow Bedroom View 1" },
+  { src: ResImg39, title: "Bungalow Bedroom View 1" },
+  { src: ResImg40, title: "Kids Bedroom View 3" },
+  { src: ResImg41, title: "Kids Bedroom View 4" },
+  { src: ResImg42, title: "Terrace View 1" },
+  { src: ResImg43, title: "Kids Bedroom Terrace" },
+  { src: ResImg44, title: "Kitchen View 1" },
+  { src: ResImg45, title: "Master Bedroom View 1" },
+  { src: ResImg46, title: "Master Bedroom View 1" },
+  { src: ResImg47, title: "Master Toilet View 1" },
+  { src: ResImg48, title: "Kids Bedroom Terrace View 2" },
+  { src: ResImg49, title: "Kitchen View 2" },
+  { src: ResImg50, title: "Master Toilet View 2" },
+  { src: ResImg51, title: "Kitchen View 3" },
+  { src: ResImg52, title: "Master Bedroom View 3" },
+  { src: ResImg53, title: "Kitchen View 4" },
+  { src: ResImg54, title: "Living Room View 5" },
+  { src: ResImg55, title: "Living Room View 6" },
+  { src: ResImg56, title: "Living Room View 7" },
+  { src: ResImg57, title: "Living Room View 8" },
+  { src: ResImg58, title: "Living Room View 9" },
+  { src: ResImg59, title: "Modified Bedroom 1" },
+  { src: ResImg60, title: "Modified Kids Bedroom" },
+  { src: ResImg61, title: "Modified Terrace" },
+  { src: ResImg62, title: "Modified Kids Bedroom 2" },
+  { src: ResImg63, title: "Modified Terrace 2" },
+  { src: ResImg64, title: "Modified Bedroom 1 View 3" },
+  { src: ResImg65, title: "Kitchen View 1" },
+  { src: ResImg66, title: "Kitchen View 3" },
+  { src: ResImg67, title: "Master Bedroom View 1" },
+  { src: ResImg68, title: "Master Bedroom View 2" },
+  { src: ResImg69, title: "Master Bedroom View 3" },
+  { src: ResImg70, title: "View 1" },
+  { src: ResImg71, title: "View 2" },
+  { src: ResImg72, title: "View 3" },
+  { src: ResImg73, title: "View 4" },
+  { src: ResImg74, title: "Kids Bedroom View 1" },
+  { src: ResImg75, title: "Kids Bedroom View 3" },
+  { src: ResImg76, title: "View 1" },
+  { src: ResImg77, title: "View 2" },
+  { src: ResImg78, title: "View 3" },
+  { src: ResImg79, title: "View 4" }
 ];
 
 // Split image groups by requirement
 const imageGroups = [
-  allImages.slice(0, 16),    // Tab 1
-  allImages.slice(17, 23),   // Tab 2 (7)
-  allImages.slice(24, 37),   // Tab 3 (19)
-  allImages.slice(45, 64),   // Tab 4 (27)
-  allImages.slice(65, 73),   // Tab 5 (10)
-  allImages.slice(74,79),
+  allImages.slice(0, 16),    // Tab 1 - Atul Shah
+  allImages.slice(16, 23),   // Tab 2 - Bhavesh Sharma
+  allImages.slice(23, 39),   // Tab 3 - Naresh Jain
+  allImages.slice(39, 64),   // Tab 4 - Rakesh Jain
+  allImages.slice(64, 73),   // Tab 5 - Swapnil Patil
+  allImages.slice(73, 79)    // Tab 6 - Vijay Maccha
 ];
 
 const Residential = () => {
   const [activeTab, setActiveTab] = useState(0);
-  const [lightboxImage, setLightboxImage] = useState(null);
+  const [currentImageIndex, setCurrentImageIndex] = useState(null);
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
+  const lightboxRef = useRef(null);
 
   const handleImageError = (e) => {
     e.target.src = 'https://via.placeholder.com/300x200?text=Image+Not+Found';
-    e.target.onerror = null; // Prevent infinite loop if placeholder also fails
+    e.target.onerror = null;
   };
 
-  const closeLightbox = (e) => {
-    if (e.target === e.currentTarget || e.target.className.includes('close-btn')) {
-      setLightboxImage(null);
+  const openLightbox = (imgIndex) => {
+    setCurrentImageIndex(imgIndex);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeLightbox = () => {
+    setCurrentImageIndex(null);
+    document.body.style.overflow = 'auto';
+  };
+
+  const goToPrev = () => {
+    setCurrentImageIndex(prev => 
+      prev === 0 ? imageGroups[activeTab].length - 1 : prev - 1
+    );
+  };
+
+  const goToNext = () => {
+    setCurrentImageIndex(prev => 
+      prev === imageGroups[activeTab].length - 1 ? 0 : prev + 1
+    );
+  };
+
+  const handleKeyDown = (e) => {
+    if (currentImageIndex !== null) {
+      if (e.key === 'ArrowLeft') {
+        goToPrev();
+      } else if (e.key === 'ArrowRight') {
+        goToNext();
+      } else if (e.key === 'Escape') {
+        closeLightbox();
+      }
     }
   };
+
+  const handleTouchStart = (e) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) {
+      goToNext();
+    } else if (isRightSwipe) {
+      goToPrev();
+    }
+    
+    setTouchStart(null);
+    setTouchEnd(null);
+  };
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown);
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+    };
+  }, [currentImageIndex, activeTab]);
 
   return (
     <section 
       className="residential-tabs-section" 
       style={{ backgroundImage: `url(${bgImage})` }}
     >
+      <Helmet>
+        <title>Residential Projects | Aaspire Design</title>
+        <meta name="description" content="Explore our residential interior design projects including apartments, bungalows, and villas." />
+      </Helmet>
+
       <div className="tabs-container">
-        <h2>Residential Projects</h2>
+        <h2 className="section-title">Residential Projects</h2>
         <div className="tab-buttons">
-          {['Atul Shah', 'Bhavesh Sharma', 'Naresh Jain', 'Rakesh Jain', 'Swapnil Patil','Vijay Maccha'].map((label, i) => (
+          {['Atul Shah', 'Bhavesh Sharma', 'Naresh Jain', 'Rakesh Jain', 'Swapnil Patil', 'Vijay Maccha'].map((label, i) => (
             <button
               key={i}
               className={activeTab === i ? 'active' : ''}
-              onClick={() => setActiveTab(i)}
+              onClick={() => {
+                setActiveTab(i);
+                setCurrentImageIndex(null);
+              }}
             >
               {label}
             </button>
@@ -139,30 +284,71 @@ const Residential = () => {
         </div>
 
         <div className="tab-content">
-          {imageGroups[activeTab].map((img, index) => (
+          {imageGroups[activeTab].map((imgData, index) => (
             <div 
               className="image-box" 
               key={`${activeTab}-${index}`} 
-              onClick={() => setLightboxImage(img)}
+              onClick={() => openLightbox(index)}
             >
               <img 
-                src={img} 
-                alt={`Project ${index + 1}`} 
+                src={imgData.src} 
+                alt={imgData.title} 
                 onError={handleImageError}
                 loading="lazy"
               />
+              <div className="image-info">
+                <h3 className="image-title">{imgData.title}</h3>
+              </div>
             </div>
           ))}
         </div>
 
-        {lightboxImage && (
-          <div className="lightbox" onClick={closeLightbox}>
-            <div className="lightbox-content">
-              <img 
-                src={lightboxImage} 
-                alt="Full View" 
-                onError={handleImageError}
-              />
+        {currentImageIndex !== null && (
+          <div 
+            className="lightbox" 
+            onClick={closeLightbox}
+            ref={lightboxRef}
+          >
+            <div 
+              className="lightbox-content"
+              onClick={(e) => e.stopPropagation()}
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+            >
+              <button 
+                className="nav-btn prev-btn" 
+                onClick={(e) => {
+                  e.stopPropagation();
+                  goToPrev();
+                }}
+                aria-label="Previous image"
+              >
+                ‹
+              </button>
+              
+              <div className="lightbox-image-container">
+                <img 
+                  src={imageGroups[activeTab][currentImageIndex].src} 
+                  alt={imageGroups[activeTab][currentImageIndex].title}
+                  onError={handleImageError}
+                />
+                <div className="lightbox-info">
+                  <h3>{imageGroups[activeTab][currentImageIndex].title}</h3>
+                </div>
+              </div>
+              
+              <button 
+                className="nav-btn next-btn" 
+                onClick={(e) => {
+                  e.stopPropagation();
+                  goToNext();
+                }}
+                aria-label="Next image"
+              >
+                ›
+              </button>
+              
               <button 
                 className="close-btn"
                 onClick={closeLightbox}
@@ -170,6 +356,10 @@ const Residential = () => {
               >
                 &times;
               </button>
+              
+              <div className="image-counter">
+                {currentImageIndex + 1} / {imageGroups[activeTab].length}
+              </div>
             </div>
           </div>
         )}

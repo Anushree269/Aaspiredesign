@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+
 .footer-container {
   margin-left: -20px;
   margin-right: -20px;
@@ -5,7 +7,8 @@
   background-color: #1c2d57;
   color: #fff;
   padding: 40px 20px 20px;
-  font-family: 'Segoe UI', sans-serif;
+   font-family: 'Lora', serif;
+
 }
 
 .footer-content {

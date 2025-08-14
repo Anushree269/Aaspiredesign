@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+
+
 .contact-container {
-  font-family: 'Cormorant Garamond', serif;
+    font-family: 'Lora', serif;
+
   display: flex;
   flex-direction: column;
   padding: 2rem 1rem;

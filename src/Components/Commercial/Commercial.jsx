@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Commercial.css';
+import { Helmet } from 'react-helmet-async';
 import BgImage from '../../assets/gray-chair-living-room-with-copy-space.jpg';
 
-// Import 8 different images
+// Import images with detailed descriptions
 import Img1 from '../../assets/COMMERCIAL PROJECTS/SALOON PROJECT/final view of salon 1 with logo.jpg';
 import Img2 from '../../assets/COMMERCIAL PROJECTS/SALOON PROJECT/final view of salon 2 with logo.jpg';
 import Img3 from '../../assets/COMMERCIAL PROJECTS/SALOON PROJECT/final view of salon 3 with logo.jpg';
@@ -13,25 +14,59 @@ import Img7 from '../../assets/COMMERCIAL PROJECTS/SALOON PROJECT/final view of 
 import Img8 from '../../assets/COMMERCIAL PROJECTS/SALOON PROJECT/rerender view 1.jpg';
 
 const imageData = [
-  { src: Img1, title: 'Design 1', alt: 'Commercial Design 1' },
-  { src: Img2, title: 'Design 2', alt: 'Commercial Design 2' },
-  { src: Img3, title: 'Design 3', alt: 'Commercial Design 3' },
-  { src: Img4, title: 'Design 4', alt: 'Commercial Design 4' },
-  { src: Img5, title: 'Design 5', alt: 'Commercial Design 5' },
-  { src: Img6, title: 'Design 6', alt: 'Commercial Design 6' },
-  { src: Img7, title: 'Design 7', alt: 'Commercial Design 7' },
-  { src: Img8, title: 'Design 8', alt: 'Commercial Design 8' },
+  { 
+    src: Img1, 
+    title: 'final view of salon 1 ', 
+    alt: 'Salon reception area with elegant decor',
+  },
+  { 
+    src: Img2, 
+    title: 'final view of salon 2 ', 
+    alt: 'Professional hair styling station',
+  },
+  { 
+    src: Img3, 
+    title: 'final view of salon 3 ', 
+    alt: 'Comfortable waiting area',
+  },
+  { 
+    src: Img4, 
+    title: 'final view of salon 4 ', 
+    alt: 'Hair washing station',
+  },
+  { 
+    src: Img5, 
+    title: 'final view of salon 5 ', 
+    alt: 'Salon treatment room',
+  },
+  { 
+    src: Img6, 
+    title: 'final view of salon 6 ', 
+    alt: 'Product display area',
+  },
+  { 
+    src: Img7, 
+    title: 'final view of salon 7 ', 
+    alt: 'Nail care area',
+  },
+  { 
+    src: Img8, 
+    title: 'rerender view 1', 
+    alt: 'Complete salon layout',
+  },
 ];
 
 const Commercial = () => {
-  const [selectedImg, setSelectedImg] = useState(null);
+  const [currentIndex, setCurrentIndex] = useState(null);
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
   const sectionRef = useRef(null);
   const [inView, setInView] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
+      (entries) => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setInView(true);
           }
@@ -41,10 +76,61 @@ const Commercial = () => {
     );
 
     if (sectionRef.current) observer.observe(sectionRef.current);
+
     return () => {
       if (sectionRef.current) observer.unobserve(sectionRef.current);
     };
   }, []);
+
+  const handleKeyDown = (e) => {
+    if (currentIndex !== null) {
+      if (e.key === 'ArrowLeft') goToPrev();
+      else if (e.key === 'ArrowRight') goToNext();
+      else if (e.key === 'Escape') closeImage();
+    }
+  };
+
+  const handleTouchStart = (e) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    if (distance > 50) goToNext(); // Left swipe
+    else if (distance < -50) goToPrev(); // Right swipe
+    
+    setTouchStart(null);
+    setTouchEnd(null);
+  };
+
+  const openImage = (index) => {
+    setCurrentIndex(index);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeImage = () => {
+    setCurrentIndex(null);
+    document.body.style.overflow = 'auto';
+  };
+
+  const goToPrev = () => {
+    setCurrentIndex(prev => (prev === 0 ? imageData.length - 1 : prev - 1));
+  };
+
+  const goToNext = () => {
+    setCurrentIndex(prev => (prev === imageData.length - 1 ? 0 : prev + 1));
+  };
+
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [currentIndex]);
 
   return (
     <section
@@ -52,6 +138,11 @@ const Commercial = () => {
       className={`commercial-projects-section ${inView ? 'in-view' : ''}`}
       style={{ backgroundImage: `url(${BgImage})` }}
     >
+      <Helmet>
+        <title>Commercial Projects | Aaspire Design</title>
+        <meta name="description" content="Explore our commercial interior design projects including salons, offices, and retail spaces with detailed descriptions of each design element." />
+      </Helmet>
+
       <h2 className="commercial-heading">Commercial Projects</h2>
 
       <div className="commercial-row">
@@ -60,21 +151,80 @@ const Commercial = () => {
             <div
               className="project-box fade-up"
               key={index}
-              onClick={() => setSelectedImg(img.src)}
+              onClick={() => openImage(index)}
             >
-              <img src={img.src} alt={img.alt} />
-              <p className="image-title">{img.title}</p>
+              <div className="image-container">
+                <img 
+                  src={img.src} 
+                  alt={img.alt} 
+                  loading="lazy"
+                />
+              </div>
+              <div className="image-info">
+                <h3 className="image-title">{img.title}</h3>
+                <p className="image-description">{img.description}</p>
+              </div>
             </div>
           ))}
         </div>
       </div>
 
-      {/* Modal View */}
-      {selectedImg && (
-        <div className="modal-overlay" onClick={() => setSelectedImg(null)}>
-          <div className="modal-content">
-            <img src={selectedImg} alt="Enlarged View" />
-            <button className="close-btn" onClick={() => setSelectedImg(null)}>×</button>
+      {currentIndex !== null && (
+        <div className="modal-overlay" onClick={closeImage}>
+          <div 
+            className="modal-content"
+            onClick={(e) => e.stopPropagation()}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
+            <button 
+              className="nav-btn prev-btn"
+              onClick={(e) => {
+                e.stopPropagation();
+                goToPrev();
+              }}
+              aria-label="Previous image"
+            >
+              ‹
+            </button>
+            
+            <div className="lightbox-content">
+              <img 
+                src={imageData[currentIndex].src} 
+                alt={imageData[currentIndex].alt}
+              />
+              <div className="lightbox-info">
+                <h3>{imageData[currentIndex].title}</h3>
+                <p>{imageData[currentIndex].description}</p>
+              </div>
+            </div>
+            
+            <button 
+              className="nav-btn next-btn"
+              onClick={(e) => {
+                e.stopPropagation();
+                goToNext();
+              }}
+              aria-label="Next image"
+            >
+              ›
+            </button>
+            
+            <button 
+              className="close-btn"
+              onClick={(e) => {
+                e.stopPropagation();
+                closeImage();
+              }}
+              aria-label="Close lightbox"
+            >
+              ×
+            </button>
+            
+            <div className="image-counter">
+              {currentIndex + 1} / {imageData.length}
+            </div>
           </div>
         </div>
       )}

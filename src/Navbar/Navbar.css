@@ -1,5 +1,7 @@
 /* === Navbar Styles === */
 /* === Navbar Styles === */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -11,8 +13,9 @@
   position: sticky;
   top: 0;
   z-index: 1000;
-  font-family: 'Cormorant Garamond';
   height: 60px; /* Fixed height for compact navbar */
+   font-family: 'Lora', serif;
+
 }
 
 /* === Logo Styles - Increased Width === */
@@ -50,7 +53,7 @@
 }
 
 .nav-links li a:hover {
-  background-color: #ea8736;
+  background-color: #fffefd;
   color: #031430;
   transform: translateY(-1px); /* Subtle lift effect */
   box-shadow: 0 2px 8px rgba(67, 27, 1, 0.8); /* Refined shadow */
@@ -113,6 +116,8 @@
   z-index: 999;
   overflow: hidden;
   white-space: nowrap;
+     font-family: 'Lora', serif;
+
 }
 
 .notification-text {

@@ -1,21 +1,51 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Cormorant+Garamond:wght@600&display=swap');
+/* --------------------------------------------------
+   1. Fonts & Base Styles
+-------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
 
 .home {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Lora', serif;
   width: 100%;
   overflow-x: hidden;
 }
 
-/* === Hero Section === */
+/* --------------------------------------------------
+   2. Animations
+-------------------------------------------------- */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+  from { transform: scale(0.85); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0%); opacity: 1; }
+}
+
+/* --------------------------------------------------
+   3. Hero Section
+-------------------------------------------------- */
 .hero-section {
   position: relative;
   width: 100%;
   height: 100vh;
   min-height: 600px;
   overflow: hidden;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
 }
 
 .background-image {
@@ -26,15 +56,25 @@
   width: 100%;
   background-size: cover;
   background-position: center -180px;
-  filter: brightness(-1.5);
+  filter: brightness(0.5);
   z-index: 1;
+}
+
+.hero-content-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  height: 100%;
+  padding: 0 5%;
+  align-items: center;
 }
 
 .hero-decor {
   position: relative;
-  z-index: 2;
-  margin-left: -16%;
-  margin-top: -3%;
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 .rectangle-banner {
@@ -44,187 +84,249 @@
 }
 
 .hero-logo {
-  width: 800px;
-  height: 770px;
-  max-width: 90%;
-  margin-left: 270px;
-  align-items: center;
-  margin-top: -75px;
+  width: 490px;
+  height: auto;
   object-fit: contain;
+  margin-top: -40px;
+  margin-left: 160px;
   animation: fadeInDown 1s ease-out forwards;
 }
 
-/* === Inquiry Form (Static Top Right) === */
+.hero-tagline {
+  text-align: left;
+  margin-top: -10px;
+  margin-left: 20px;
+}
+
+.hero-tagline h1 {
+  margin-left: 40px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: rgb(143, 235, 89);
+  margin-bottom: 0.8rem;
+  max-width: 750px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease 0.6s;
+}
+
+.hero-tagline p {
+  margin-left: 40px;
+  font-size: 1.2rem;
+  max-width: 750px;
+  color: white;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease 0.9s;
+}
+
+.hero-tagline h1.active,
+.hero-tagline p.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --------------------------------------------------
+   4. Inquiry Form
+-------------------------------------------------- */
 .inquiry-form {
   position: absolute;
-  top: 20%;
+  top: 15%;
   right: 5%;
-  width: 500px;
-  max-width: 90%;
-  background: #ffffff92;
-  padding: 1.5rem;
+  width: 450px;
+  max-width: 95%;
+  background: #ffffff;
+  padding: 1.2rem 2rem;
   border-radius: 12px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
   z-index: 3;
-  animation: slideInRight 1s ease forwards;
+  opacity: 0;
+  transform: translateX(80px);
+  transition: all 0.8s ease 1.2s;
+  font-family: 'Lora', serif;
+}
+
+.inquiry-form.active {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .inquiry-form h3 {
   text-align: center;
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
-  color: #000813;
+  font-size: 1.25rem;
+  margin-bottom: 0.6rem;
+  color: #022257;
+  font-weight: 600;
 }
 
 .inquiry-form input,
-.inquiry-form textarea {
-  width: 95%;
-  padding: 0.6rem;
-  margin-bottom: 0.8rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
+.inquiry-form textarea,
+.inquiry-form select {
+  width: 100%;
+  padding: 0.5rem 0.8rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  transition: all 0.3s ease;
+  margin-bottom: 0.6rem;
 }
 
-select {
-  width: 95%;
-  padding: 0.6rem;
-  margin-bottom: 0.8rem;
-  border: 1px solid #ccc;
-  color: #616366;
-  border-radius: 8px;
-  font-size: 1rem;
+.inquiry-form textarea {
+  min-height: 60px;
+  resize: vertical;
 }
 
 .inquiry-form button {
+  width: 100%;
   background-color: #022257;
   color: #fff;
   border: none;
-  padding: 0.6rem 1.2rem;
+  padding: 0.5rem;
   border-radius: 6px;
   cursor: pointer;
-  font-weight: bold;
-  transition: background 0.3s ease;
+  font-weight: 600;
+  font-size: 0.92rem;
+  transition: all 0.3s ease;
+  height: 45px;
 }
 
 .inquiry-form button:hover {
   background-color: #031a3d;
+  transform: translateY(-2px);
 }
 
-/* === Counter Section === */
-.counter-section {
-  background-color: #bc5207;
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  padding: 1rem 1rem;
+.form-success {
+  color: #2d8a39;
+  font-size: 0.8rem;
+  margin-top: 0.35rem;
   text-align: center;
-  z-index: 2;
-  position: relative;
-  min-height: 100px;
 }
 
-.counter-box {
-  width: 200px;
-  margin: 10px 20px;
-  color: #edeff2;
+.form-error {
+  color: #e53e3e;
+  font-size: 0.8rem;
+  margin-top: 0.35rem;
+  text-align: center;
 }
 
-.counter-icon {
-  font-size: 2.5rem;
-  margin-bottom: 0.4rem;
-  color: #fafafa;
-}
-
-.counter-box h2 {
-  font-size: 2.8rem;
-  margin: 0.1rem 0;
-  font-weight: bold;
-}
-
-.counter-box p {
-  font-size: 1rem;
-  font-weight: 600;
-}
-
-/* === Popup Modal Form === */
+/* --------------------------------------------------
+   5. Popup Modal Form
+-------------------------------------------------- */
 .popup-overlay {
   position: fixed;
-  top: 0;
+  top: 0; /* Full-screen coverage */
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.55);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 999;
-  animation: fadeInUp 0.8s ease forwards;
+  background: rgba(0, 0, 0, 0.6); /* Dim background */
+  animation: fadeIn 0.3s ease-out forwards;
 }
 
 .popup-form.reduced {
   background: #fff;
-  padding: 1.5rem 1.5rem 1.2rem;
-  border-radius: 14px;
-  width: 90%;
-  max-width: 400px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  padding: 1.2rem 1.5rem;
+  border-radius: 12px;
+  width: 30%;
+  max-width: 420px; /* Prevents too-wide forms on large screens */
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
   position: relative;
-  animation: scaleIn 0.5s ease forwards;
+  animation: scaleIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1) forwards;
   text-align: center;
 }
 
-.close-btn {
+/* Close button moved to left */
+.popup-form.reduced .close-btn {
   position: absolute;
-  top: 10px;
-  right: 12px;
-  font-size: 1.6rem;
-  font-weight: 600;
-  background: none;
+  top: 8px;
+  right: 150px;
+  align-items: end;
+  font-size: 1.4rem;
+  font-weight: bold;
   border: none;
+  background: transparent;
   color: #022257;
   cursor: pointer;
-  transition: color 0.3s ease;
+  transition: transform 0.2s ease, color 0.2s ease;
 }
 
-.close-btn:hover {
+.popup-form.reduced .close-btn:hover {
   color: #d90429;
-}
-
-.popup-form.reduced h3 {
-  font-size: 1.6rem;
-  color: #022257;
-  margin-bottom: 1rem;
 }
 
 .popup-form.reduced input,
 .popup-form.reduced textarea,
 .popup-form.reduced select {
+  margin-top: 1px;
   width: 100%;
-  padding: 0.6rem;
-  margin-bottom: 0.8rem;
-  border: 1px solid #ccc;
+  padding: 0.35rem;
+  border: 1px solid #e0e0e0;
   border-radius: 8px;
-  font-size: 1rem;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
 }
 
 .popup-form.reduced button {
   width: 100%;
-  background-color: #022257;
   color: #fff;
   border: none;
-  padding: 0.6rem;
-  border-radius: 6px;
+  padding: 0.7rem;
+  border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
-  transition: background 0.3s ease;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+/* --------------------------------------------------
+   6. Counter Section
+-------------------------------------------------- */
+.counter-section {
+  background-color: #bc5207;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 2.5rem 1rem;
+  text-align: center;
 }
 
-.popup-form.reduced button:hover {
-  background-color: #011a3d;
+.counter-box {
+  width: 200px;
+  margin: 15px 20px;
+  color: #ffffff;
+  padding: 1.5rem 1rem;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
 }
 
-/* === About Section === */
+.counter-box:hover {
+  transform: translateY(-5px);
+}
+
+.counter-icon {
+  font-size: 2.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.counter-box h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+
+.counter-box p {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* --------------------------------------------------
+   7. About Section
+-------------------------------------------------- */
 .about-section {
   position: relative;
   background-size: cover;
@@ -233,7 +335,15 @@ select {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+}
+
+.about-background-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .about-container {
@@ -242,7 +352,6 @@ select {
   max-width: 1300px;
   width: 100%;
   z-index: 2;
-  position: relative;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
@@ -251,24 +360,19 @@ select {
 .about-left {
   flex: 1 1 45%;
   min-width: 300px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .about-image-slide {
   width: 100%;
-  height: auto;
   max-height: 500px;
   object-fit: cover;
   border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .about-right {
   flex: 1 1 50%;
   min-width: 300px;
-  background-color: #ccccccc9;
+  background-color: rgba(204, 204, 204, 0.8);
   padding: 2rem;
   border-radius: 12px;
 }
@@ -277,213 +381,53 @@ select {
   font-size: 2rem;
   font-weight: bold;
   margin-bottom: 1rem;
-  color: #032f75;
 }
 
 .about-text {
   font-size: 1.1rem;
   line-height: 1.8;
-  color: #444;
 }
 
-.know-more-btn {
-  display: inline-block;
-  margin-top: 1.5rem;
-  padding: 0.75rem 1.5rem;
-  background-color: #8b4c34;
-  color: #fff;
-  font-weight: 600;
-  text-decoration: none;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-
-.know-more-btn:hover {
-  background-color: #4a3d88;
-}
-
-/* === Animations === */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInDown {
-  from {
-    opacity: 0;
-    transform: translateY(-30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes slideInRight {
-  from {
-    transform: translateX(100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0%);
-    opacity: 1;
-  }
-}
-
-@keyframes scaleIn {
-  from {
-    transform: scale(0.85);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-
-/* === Responsive Breakpoints === */
+/* --------------------------------------------------
+   8. Responsive Breakpoints
+-------------------------------------------------- */
 @media (max-width: 1200px) {
-  .hero-logo {
-    width: 700px;
-    height: 600px;
-    margin-left: 150px;
+  .popup-form.reduced {
+    width: 40%;
   }
 }
 
 @media (max-width: 992px) {
-  .hero-section {
+  .hero-content-container {
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: auto;
-    padding-top: 100px;
-    padding-bottom: 50px;
+    padding: 80px 20px;
   }
-
-  .hero-decor {
-    margin-left: 0;
-    margin-top: 0;
-    text-align: center;
-  }
-
-  .hero-logo {
-    width: 100%;
-    height: auto;
-    max-width: 600px;
-    margin-left: 0;
-    margin-bottom: 2rem;
-  }
-
-  .inquiry-form {
-    position: relative;
-    top: auto;
-    right: auto;
-    margin: 2rem auto;
-    width: 80%;
-  }
-
-  .about-container {
-    flex-direction: column;
-    gap: 2rem;
-    padding: 2rem 1rem;
-  }
-
-  .about-left, .about-right {
-    flex: 1 1 100%;
-    text-align: center;
-  }
-
-  .about-heading1 {
-    font-size: 1.8rem;
-  }
-
-  .about-text {
-    font-size: 1rem;
-  }
-
-  .counter-box {
-    width: 45%;
-    margin: 10px 0;
+  .hero-logo { margin: 0 auto; width: 280px; }
+  .hero-tagline { text-align: center; margin-left: 0; }
+  .inquiry-form { position: relative; margin: 2rem auto; width: 80%; }
+  .about-container { flex-direction: column; gap: 2rem; }
+  .popup-form.reduced {
+    width: 60%;
   }
 }
 
 @media (max-width: 768px) {
-  .hero-logo {
-    max-width: 400px;
-  }
-
-  .inquiry-form {
-    width: 90%;
-    padding: 1rem;
-  }
-
-  .counter-box {
-    width: 100%;
-    margin-bottom: 1.5rem;
-  }
-
-  .counter-box h2 {
-    font-size: 2.2rem;
-  }
-
-  .about-section {
-    padding: 4rem 1rem;
-  }
-
-  .about-right {
-    padding: 1.5rem;
+  .counter-box { width: 45%; }
+  .inquiry-form { width: 95%; }
+  .popup-form.reduced {
+    width: 80%;
   }
 }
 
 @media (max-width: 576px) {
-  .hero-logo {
-    max-width: 300px;
-  }
-
-  .inquiry-form {
+  .hero-tagline h1 { font-size: 1.5rem; margin-left: 0; }
+  .hero-tagline p { font-size: 1rem; margin-left: 0; }
+  .counter-box { width: 100%; }
+  .popup-form.reduced {
     width: 95%;
-  }
-
-  .inquiry-form h3 {
-    font-size: 1.2rem;
-  }
-
-  .counter-section {
-    flex-direction: column;
-    padding: 2rem 1rem;
-  }
-
-  .counter-box {
-    width: 100%;
-    margin-bottom: 1.5rem;
-  }
-
-  .about-heading1 {
-    font-size: 1.5rem;
-  }
-
-  .know-more-btn {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.9rem;
   }
 }
 
 @media (max-width: 400px) {
-  .hero-logo {
-    max-width: 250px;
-  }
-
-  .about-left, .about-right {
-    min-width: 100%;
-  }
-
-  .about-text {
-    font-size: 0.95rem;
-  }
+  .hero-logo { width: 200px; }
 }

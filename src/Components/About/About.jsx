@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async';
 import './About.css';
 
 // Image slider
@@ -27,7 +27,6 @@ const About = () => {
     const interval = setInterval(() => {
       setCurrentImage((prev) => (prev + 1) % imageSlides.length);
     }, 5000);
-
     return () => clearInterval(interval);
   }, []);
 
@@ -93,46 +92,40 @@ const About = () => {
               <img src={Founder1} alt="Dhwani Sanghavi" />
             </div>
             <div className="founder-info">
-             <h3>Dhwani Sanghavi</h3>
-            <h4>
-  Aaspire Design – Best Interior in Baner, Pune<br />
-  Creative Director – Dhwani Sanghavi, INSD Baner Pune<br />
-  Interior Designer | Specialist in French Concept Designs
-</h4>
-
-              <p>With a decade of hands-on experience in the interior design industry, I have led and executed a wide range of residential and commercial projects that prioritize both aesthetic appeal and practical functionality. As the Principal Designer at *Aaspire Design*, I head a multidisciplinary team, managing end-to-end design processes—from concept development to final execution—while ensuring each space tells its own unique story.
-
-My professional journey includes designing luxury homes, retail spaces, offices, and lifestyle interiors, with a signature flair for *French-inspired concepts*. I bring deep attention to detail, client-centered collaboration, and a strong foundation in project management to every design I undertake.
-
-In parallel, I serve as the *Creative Director at INSD Baner Pune*, where I mentor the next generation of interior designers, bridging the gap between industry practice and academic learning.</p>
+              <h3>Dhwani Sanghavi</h3>
+              <h4>
+                Aaspire Design – Best Interior in Baner, Pune<br />
+                Creative Director – Dhwani Sanghavi, INSD Baner Pune<br />
+                Interior Designer | Specialist in French Concept Designs
+              </h4>
+              <p>
+                With a decade of hands-on experience in the interior design industry, I have led and executed a wide range of residential and commercial projects that prioritize both aesthetic appeal and practical functionality. As the Principal Designer at <em>Aaspire Design</em>, I head a multidisciplinary team, managing end-to-end design processes—from concept development to final execution—while ensuring each space tells its own unique story.
+                My professional journey includes designing luxury homes, retail spaces, offices, and lifestyle interiors, with a signature flair for <em>French-inspired concepts</em>. I bring deep attention to detail, client-centered collaboration, and a strong foundation in project management to every design I undertake.
+                In parallel, I serve as the <em>Creative Director at INSD Baner Pune</em>, where I mentor the next generation of interior designers, bridging the gap between industry practice and academic learning.
+              </p>
             </div>
           </div>
 
           {/* Founder 2 - Image Right */}
-         <div className="founder-profile reverse">
-  <div className="founder-img">
-    <img src={Founder2} alt="Parag Shelar" />
-  </div>
-  <div className="founder-info">
-    <h3>Parag Shelar</h3>
-    <h4>
-      <br />
-      Principal Interior Designer – Aaspire Design
-<br />
-      Managing Director – INSD Baner Pune
-<br />
-    </h4>
-    <p>
-      Parag Shelar is a seasoned interior designer with over 10 years of experience in designing and delivering thoughtfully curated residential and commercial spaces. As the Principal Designer at Aaspire Design, he has led numerous projects from concept to completion, bringing spaces to life through a perfect blend of aesthetic vision, functional planning, and technical precision.
-      With a deep-rooted understanding of materiality, site coordination, and execution processes, Parag is known for his ability to make designs not only look beautiful but also work efficiently in real-world contexts. His design approach is grounded in practicality, ensuring every detail—from finishes to furnishings—aligns with the client’s lifestyle and the site’s potential.
-      Parag’s passion for the field extends beyond practice into education. As the Managing Director at INSD Baner Pune, he is committed to shaping the future of design by imparting real-time industry knowledge to students. He mentors budding designers with a focus on on-site exposure, material understanding, and practical problem-solving—bridging the gap between academic learning and professional execution.
-      Driven by innovation, discipline, and a hands-on approach, Parag Shelar continues to influence the design community by crafting spaces that are not only visually striking but also deeply meaningful and buildable.
-    </p>
-  </div>
-</div>
-
+          <div className="founder-profile reverse">
+            <div className="founder-img">
+              <img src={Founder2} alt="Parag Shelar" />
+            </div>
+            <div className="founder-info">
+              <h3>Parag Shelar</h3>
+              <h4>
+                Principal Interior Designer – Aaspire Design<br />
+                Managing Director – INSD Baner Pune
+              </h4>
+              <p>
+                Parag Shelar is a seasoned interior designer with over 10 years of experience in designing and delivering thoughtfully curated residential and commercial spaces. As the Principal Designer at Aaspire Design, he has led numerous projects from concept to completion, bringing spaces to life through a perfect blend of aesthetic vision, functional planning, and technical precision.
+                With a deep-rooted understanding of materiality, site coordination, and execution processes, Parag is known for his ability to make designs not only look beautiful but also work efficiently in real-world contexts. His design approach is grounded in practicality, ensuring every detail—from finishes to furnishings—aligns with the client’s lifestyle and the site’s potential.
+                Parag’s passion for the field extends beyond practice into education. As the Managing Director at INSD Baner Pune, he is committed to shaping the future of design by imparting real-time industry knowledge to students. He mentors budding designers with a focus on on-site exposure, material understanding, and practical problem-solving—bridging the gap between academic learning and professional execution.
+                Driven by innovation, discipline, and a hands-on approach, Parag Shelar continues to influence the design community by crafting spaces that are not only visually striking but also deeply meaningful and buildable.
+              </p>
+            </div>
           </div>
-      
+        </div>
       </section>
 
       {/* === Company Foundation Section === */}
@@ -148,8 +141,8 @@ In parallel, I serve as the *Creative Director at INSD Baner Pune*, where I ment
             trusted by over 1000 clients across Maharashtra.
             <br /><br />
             At Aaspire Design, we take pride in transforming both small and large spaces with equal passion and dedication. Our design philosophy is deeply rooted in creativity and functionality, spanning various fields like interior design, fashion design, and graphic design — ensuring a holistic and versatile approach to every project.
-             <br /><br />
-             Under the leadership of Dhwani Sanghavi, Director of Aaspire Design and a prominent mentor at INSD Baner, Pune, the firm has flourished into a hub of innovative thinking and client-focused execution.
+            <br /><br />
+            Under the leadership of Dhwani Sanghavi, Director of Aaspire Design and a prominent mentor at INSD Baner, Pune, the firm has flourished into a hub of innovative thinking and client-focused execution.
           </p>
         </div>
       </section>

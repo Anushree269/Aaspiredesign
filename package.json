@@ -1,19 +1,22 @@
 {
-  "name": "interior-design",
+  "name": "aspire-design",
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://anushree269.github.io/Aspire-design",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
-    "interior-design": "file:",
+    "@emailjs/browser": "^4.4.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-helmet": "^6.1.0",
+    "react-helmet-async": "^2.0.5",
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.5.3"
   },
@@ -25,6 +28,7 @@
     "eslint": "^9.22.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.19",
+    "gh-pages": "^6.3.0",
     "globals": "^16.0.0",
     "vite": "^6.3.1"
   }

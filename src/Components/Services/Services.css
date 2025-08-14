@@ -1,4 +1,6 @@
 /* Services Section */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+
 .services-section {
   padding: 4rem 2rem;
   margin-left: -30px;
@@ -6,7 +8,8 @@
   background-color: #f6e9da;
   text-align: center;
   overflow: hidden;
-  font-family: 'Cormorant Garamond';
+    font-family: 'Lora', serif;
+
   position: relative;
   z-index: 1;
 }

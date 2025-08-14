@@ -12,17 +12,17 @@ const cardData = [
   {
     icon: <FaCouch />,
     title: 'CUSTOMISED',
-    description: 'We offer customized interiors with stunning designs, super quality & finis',
+    description: 'We offer customized interiors with stunning designs, super quality & finish.',
   },
   {
     icon: <FaLightbulb />,
     title: 'THEME & CONCEPTS',
-    description: 'We Work with you , understands your taste and preferences & than design the space accordingly',
+    description: 'We work with you, understand your taste and preferences, and then design the space accordingly.',
   },
   {
     icon: <FaUsers />,
-    title: 'COMMITTING',
-    description: 'We create Interior that is customdesigned to make sure everything fits perfectly & truly special to your spac',
+    title: 'COMMITMENT',
+    description: 'We create interiors that are custom-designed to make sure everything fits perfectly & feels truly special to your space.',
   },
 ];
 
@@ -32,7 +32,7 @@ const WhyChooseUs = () => {
   const sectionRef = useRef(null);
   const [currentBgIndex, setCurrentBgIndex] = useState(0);
 
-  // ✅ Scroll animation
+  // ✅ Scroll animation for elements
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -43,10 +43,10 @@ const WhyChooseUs = () => {
       { threshold: 0.3 }
     );
 
-    const elements = sectionRef.current.querySelectorAll('.why-heading, .why-card');
-    elements.forEach((el) => observer.observe(el));
+    const elements = sectionRef.current?.querySelectorAll('.why-heading, .why-card');
+    elements?.forEach((el) => observer.observe(el));
 
-    return () => elements.forEach((el) => observer.unobserve(el));
+    return () => elements?.forEach((el) => observer.unobserve(el));
   }, []);
 
   // ✅ Background image slideshow
@@ -70,14 +70,13 @@ const WhyChooseUs = () => {
         backgroundRepeat: 'no-repeat',
       }}
     >
-      <h2 className="why-heading" data-index="-1">Top Reasons to Choose Aaspire Designs</h2>
+      <h2 className="why-heading">Top Reasons to Choose Aaspire Designs</h2>
 
       <div className="why-cards">
         {cardData.map((item, index) => (
           <div
             key={index}
             className={`why-card ${index === 1 ? 'center-card' : ''}`}
-            data-index={index}
             style={{ animationDelay: `${index * 0.3}s` }}
           >
             <div className="icon-circle">{item.icon}</div>

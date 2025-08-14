@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './Achievements.css';
+import { Helmet } from 'react-helmet-async';
 import AchieveBg from '../../assets/2H0A3037.jpg'; // Background image
 
 const achievements = [
@@ -16,8 +17,8 @@ const Achievements = () => {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
+      (entries) => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setIsVisible(true);
           }
@@ -26,8 +27,16 @@ const Achievements = () => {
       { threshold: 0.3 }
     );
 
-    if (sectionRef.current) observer.observe(sectionRef.current);
-    return () => sectionRef.current && observer.unobserve(sectionRef.current);
+    const currentSection = sectionRef.current;
+    if (currentSection) {
+      observer.observe(currentSection);
+    }
+
+    return () => {
+      if (currentSection) {
+        observer.unobserve(currentSection);
+      }
+    };
   }, []);
 
   return (
@@ -35,12 +44,17 @@ const Achievements = () => {
       ref={sectionRef}
       className={`achievement-section ${isVisible ? 'in-view' : ''}`}
     >
+      {/* Background */}
       <div
         className="achievement-bg"
-        style={{ backgroundImage: `url(${AchieveBg})` }}
-      ></div>
+        style={{
+          backgroundImage: `url(${AchieveBg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      />
 
-
+      {/* Marquee */}
       <div className="achievement-marquee-wrapper">
         <div className="achievement-marquee">
           {[...achievements, ...achievements].map((item, index) => (

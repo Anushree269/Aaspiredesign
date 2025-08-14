@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef, Suspense, lazy } from 'react';
-import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet-async'; // ✅ Updated import
 import './Projects.css';
 
 import ProjectBg1 from '../../assets/minimalist-interior-design3.jpg';
@@ -73,7 +73,7 @@ const Projects = () => {
       >
         <div className="projects-overlay">
           <div className="projects-left">
-            <h2 className="projects-heading">Our Projects</h2>
+            <h1 className="projects-heading">Our Projects</h1>
 
             <div className="projects-tabs">
               <button
@@ -91,13 +91,12 @@ const Projects = () => {
             </div>
 
             <p className="project-description">
-  {selectedTab === 'commercial'
-    ? `Commercial interior design involves creating functional and visually appealing spaces for business purposes such as offices, restaurants, or retail stores. The focus is on branding, efficiency, and customer experience. 
-       Commercial interior design focuses on functional and brand-driven spaces like offices, restaurants, and stores, while residential interior design creates comfortable and personalized homes. At Aaspire Design, we blend interior, fashion, and graphic design to deliver creative solutions. Led by Dhwani Sanghavi, Director and mentor at INSD Baner, Pune, we craft spaces that are both stylish and purposeful.`
-    : `Residential interior design focuses on creating comfortable, personal, and stylish living spaces such as homes or apartments. It emphasizes functionality, comfort, and individual preferences.
-       Commercial interior design focuses on functional and brand-driven spaces like offices, restaurants, and stores, while residential interior design creates comfortable and personalized homes. At Aaspire Design, we blend interior, fashion, and graphic design to deliver creative solutions. Led by Dhwani Sanghavi, Director and mentor at INSD Baner, Pune, we craft spaces that are both stylish and purposeful.`}
-</p>
-
+              {selectedTab === 'commercial'
+                ? `Commercial interior design involves creating functional and visually appealing spaces for business purposes such as offices, restaurants, or retail stores. The focus is on branding, efficiency, and customer experience. 
+                   Commercial interior design focuses on functional and brand-driven spaces like offices, restaurants, and stores, while residential interior design creates comfortable and personalized homes. At Aaspire Design, we blend interior, fashion, and graphic design to deliver creative solutions. Led by Dhwani Sanghavi, Director and mentor at INSD Baner, Pune, we craft spaces that are both stylish and purposeful.`
+                : `Residential interior design focuses on creating comfortable, personal, and stylish living spaces such as homes or apartments. It emphasizes functionality, comfort, and individual preferences.
+                   Commercial interior design focuses on functional and brand-driven spaces like offices, restaurants, and stores, while residential interior design creates comfortable and personalized homes. At Aaspire Design, we blend interior design to deliver creative solutions. Led by Dhwani Sanghavi, Director and mentor at INSD Baner, Pune, we craft spaces that are both stylish and purposeful.`}
+            </p>
           </div>
 
           <div className="projects-grid">
@@ -107,7 +106,10 @@ const Projects = () => {
                 key={index}
                 onClick={() => setLightboxImg(img)}
               >
-                <img src={img} alt={`${selectedTab === 'commercial' ? 'Commercial' : 'Residential'} Project ${index + 1}`} />
+                <img
+                  src={img}
+                  alt={`${selectedTab === 'commercial' ? 'Commercial' : 'Residential'} Project ${index + 1}`}
+                />
               </div>
             ))}
           </div>

@@ -1,7 +1,12 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+
 .achievement-section {
   position: relative;
   padding: 10rem 2rem;
   overflow: hidden;
+    font-family: 'Lora', serif;
+
 }
 
 .achievement-bg {

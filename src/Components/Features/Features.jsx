@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './Features.css';
 import { FaEye, FaBuilding, FaTools, FaUserCheck } from "react-icons/fa";
+import { Helmet } from 'react-helmet-async';
 
 // Import images for background slideshow
 import bg1 from '../../assets/view-room-interior-with-furniture-copy-space2.jpg';

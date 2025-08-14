@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+
 .why-section {
   padding: 4rem 2rem;
   position: relative;
   overflow: hidden;
   transition: background-image 1s ease-in-out;
+    font-family: 'Lora', serif;
+
 }
 
 .why-heading {
@@ -46,7 +50,7 @@
 
 .icon-circle {
   font-size: 2rem;
-  color: #fff;
+  color: #056303;
   background: rgba(255, 255, 255, 0.2);
   padding: 1rem;
   border-radius: 50%;

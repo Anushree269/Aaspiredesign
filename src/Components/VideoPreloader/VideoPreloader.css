@@ -1,58 +1,77 @@
-.logo-loader {
+.preloader-container {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background: #000;
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 9999;
-}
-
-.logo-video {
-  max-width: 100%;
-  max-height: 100%;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-.logo-video.visible {
+  overflow: hidden;
   opacity: 1;
+  transition: none;
 }
 
-.loading-spinner {
-  position: absolute;
+/* Fullscreen video */
+.preloader-container.fullscreen .preloader-video {
+  width: 110%;
+  height: 99vh;
+  object-fit: cover;
+  transform-origin: center center;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
-.spinner {
-  width: 50px;
-  height: 50px;
-  border: 5px solid rgba(255, 255, 255, 0.3);
-  border-radius: 50%;
-  border-top-color: #fff;
-  animation: spin 1s ease-in-out infinite;
+/* Zooming out state */
+.preloader-container.zooming-out {
+  animation: slideLeftUpFadeScale 1s forwards ease-in-out;
+  width: 100px;
+  height: 90px;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+  overflow: hidden;
+  display: block;
+  padding-left: 0;
 }
 
-@keyframes spin {
-  to { transform: rotate(360deg); }
+/* Video inside zooming-out */
+.preloader-container.zooming-out .preloader-video {
+  width: 100%;
+  height: 90%;
+  object-fit: cover;
+  border-radius: 10px;
+  opacity: 1;
+  transition: opacity 0.6s ease-in-out;
 }
 
-.skip-button {
-  position: absolute;
-  bottom: 30px;
-  right: 30px;
-  padding: 10px 20px;
-  background: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: 1px solid white;
-  border-radius: 20px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: all 0.3s ease;
-}
-
-.skip-button:hover {
-  background: rgba(255, 255, 255, 0.2);
+/* New keyframes: slide left, move up, fade out, scale down */
+@keyframes slideLeftUpFadeScale {
+  0% {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    border-radius: 0;
+    opacity: 1;
+    transform: translate(0, 0) scale(1);
+  }
+  60% {
+    width: 110px;
+    height: 100px;
+    top: -10px;
+    left: 20px;
+    border-radius: 12px;
+    opacity: 0.8;
+    transform: translate(-20vw, -10px) scale(-0.3);
+  }
+  100% {
+    width: 100px;
+    height: 90px;
+    top: -20px;
+    left: 20px;
+    border-radius: 10px;
+    opacity: 0;
+    transform: translate(-25vw, -20px) scale(-0.6);
+  }
 }
