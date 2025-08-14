@@ -6,10 +6,10 @@ import ProjectBg1 from '../../assets/minimalist-interior-design3.jpg';
 import ProjectBg2 from '../../assets/minimalist-interior-design3.jpg';
 import ProjectBg3 from '../../assets/minimalist-interior-design3.jpg';
 
-import Commercial1 from '../../assets/COMMERCIAL PROJECTS/SALOON PROJECT/final view of salon 2 with logo.jpg';
-import Commercial2 from '../../assets/COMMERCIAL PROJECTS/SALOON PROJECT/final view of salon 7 with logo.jpg';
-import Residential1 from '../../assets/RESIDENTIALPROJECTS/BHAVESHSHARMA/FINAL VIEW 1 OF KITCHEN OF 2BHK WITH LOGO.jpg';
-import Residential2 from '../../assets/RESIDENTIALPROJECTS/SWAPNILPATIL/view 3 with logo.jpg';
+import Commercial1 from '../../assets/COMMERCIAL PROJECTS/SALOON PROJECT/finalviewofsalon2withlogo.jpg';
+import Commercial2 from '../../assets/COMMERCIAL PROJECTS/SALOON PROJECT/finalviewofsalon1withlogo.jpg';
+import Residential1 from '../../assets/RESIDENTIALPROJECTS/BHAVESHSHARMA/finalview1ofkitchenof2bhkwithlogo.jpg';
+import Residential2 from '../../assets/RESIDENTIALPROJECTS/SWAPNILPATIL/view2withlogo.jpg';
 
 import Footer from '../../Footer/Footer';
 

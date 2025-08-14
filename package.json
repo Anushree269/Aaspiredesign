@@ -1,13 +1,11 @@
 {
   "name": "aspire-design",
+  "version": "1.0.0",
   "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "homepage": "https://anushree269.github.io/Aspire-design",
+  "homepage": "https://Anushree269.github.io/Aspire-design",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
