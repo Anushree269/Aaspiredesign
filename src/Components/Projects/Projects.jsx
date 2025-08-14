@@ -6,8 +6,8 @@ import ProjectBg1 from '../../assets/minimalist-interior-design3.jpg';
 import ProjectBg2 from '../../assets/minimalist-interior-design3.jpg';
 import ProjectBg3 from '../../assets/minimalist-interior-design3.jpg';
 
-import Commercial1 from '../../assets/COMMERCIAL PROJECTS/SALOON PROJECT/finalviewofsalon2withlogo.jpg';
-import Commercial2 from '../../assets/COMMERCIAL PROJECTS/SALOON PROJECT/finalviewofsalon1withlogo.jpg';
+import Commercial1 from '../../assets/COMMERCIALPROJECTS/SALOONPROJECT/finalviewofsalon2withlogo.jpg';
+import Commercial2 from '../../assets/COMMERCIALPROJECTS/SALOONPROJECT/finalviewofsalon1withlogo.jpg';
 import Residential1 from '../../assets/RESIDENTIALPROJECTS/BHAVESHSHARMA/finalview1ofkitchenof2bhkwithlogo.jpg';
 import Residential2 from '../../assets/RESIDENTIALPROJECTS/SWAPNILPATIL/view2withlogo.jpg';
 
