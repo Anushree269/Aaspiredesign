@@ -6,14 +6,14 @@ import './Project.css';
 import bg1 from '../../assets/3d-room-interior-with-classic-design-furniture1.jpg';
 import bg2 from '../../assets/view-room-interior-with-furniture-copy-space2.jpg';
 // Import all your image assets
-import img1 from '../../assets/COMMERCIAL PROJECTS/SALOON PROJECT/finalviewofsalon1withlogo.jpg';
-import img2 from '../../assets/COMMERCIAL PROJECTS/SALOON PROJECT/finalviewofsalon2withlogo.jpg';
-import img3 from '../../assets/COMMERCIAL PROJECTS/SALOON PROJECT/finalviewofsalon3withlogo.jpg';
-import img4 from '../../assets/COMMERCIAL PROJECTS/SALOON PROJECT/finalviewofsalon4withlogo.jpg';
-import img5 from '../../assets/COMMERCIAL PROJECTS/SALOON PROJECT/finalviewofsalon5withlogo.jpg';
-import img6 from '../../assets/COMMERCIAL PROJECTS/SALOON PROJECT/finalviewofsalon6withlogo.jpg';
-import img7 from '../../assets/COMMERCIAL PROJECTS/SALOON PROJECT/finalviewofsalon7withlogo.jpg';
-import img8 from '../../assets/COMMERCIAL PROJECTS/SALOON PROJECT/rerenderview1.jpg';
+import img1 from '../../assets/COMMERCIALPROJECTS/SALOONPROJECT/SALOON PROJECT/finalviewofsalon1withlogo.jpg';
+import img2 from '../../assets/COMMERCIALPROJECTS/SALOONPROJECT/SALOON PROJECT/finalviewofsalon2withlogo.jpg';
+import img3 from '../../assets/COMMERCIALPROJECTS/SALOONPROJECT/SALOON PROJECT/finalviewofsalon3withlogo.jpg';
+import img4 from '../../assets/COMMERCIALPROJECTS/SALOONPROJECT/SALOON PROJECT/finalviewofsalon4withlogo.jpg';
+import img5 from '../../assets/COMMERCIALPROJECTS/SALOONPROJECT/SALOON PROJECT/finalviewofsalon5withlogo.jpg';
+import img6 from '../../assets/COMMERCIALPROJECTS/SALOONPROJECT/SALOON PROJECT/finalviewofsalon6withlogo.jpg';
+import img7 from '../../assets/COMMERCIALPROJECTS/SALOONPROJECT/SALOON PROJECT/finalviewofsalon7withlogo.jpg';
+import img8 from '../../assets/COMMERCIALPROJECTS/SALOONPROJECT/SALOON PROJECT/rerenderview1.jpg';
 import img11 from '../../assets/RESIDENTIALPROJECTS/ATULSHAH/gbv2withlogo.jpg';
 import img12 from '../../assets/RESIDENTIALPROJECTS/ATULSHAH/gbv3withlogo.jpg';
 import img13 from '../../assets/RESIDENTIALPROJECTS/ATULSHAH/kidsbed4withlogo.jpg';
@@ -106,7 +106,7 @@ import defaultOverlayimg from '../../assets/white-armchair.jpg';
 // Project categories data structure
 const PROJECT_CATEGORIES = {
   commercial: {
-    title: "Commercial Projects",
+    title: "COMMERCIALPROJECTS/SALOONPROJECT",
     description: "Professional spaces designed for business and commerce",
     projects: [
       {
@@ -124,7 +124,7 @@ const PROJECT_CATEGORIES = {
           // Add all commercial images here
         ]
       },
-      // Add more commercial projects as needed
+      // Add more COMMERCIALPROJECTS/SALOONPROJECT as needed
     ]
   },
   residential: {
