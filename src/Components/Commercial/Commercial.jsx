@@ -16,7 +16,7 @@ import Img8 from '../../assets/COMMERCIALPROJECTS/SALOONPROJECT/rerenderview1.jp
 const imageData = [
   { 
     src: Img1, 
-    title: 'final view of salon 1 ', 
+    title: 'final view of salon 1 ',
     alt: 'Salon reception area with elegant decor',
   },
   { 
