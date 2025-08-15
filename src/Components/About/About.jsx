@@ -12,7 +12,7 @@ import Aboutimage from '../../assets/minimal-amazing-interior-design2.jpg';
 import FounderBg from '../../assets/3d-room-interior-with-classic-design-furniture1.jpg';
 import FoundationBg from '../../assets/minimal-amazing-interior-design2.jpg';
 
-// Founder images
+// Founder images - verify these files exist in your assets folder
 import Founder1 from '../../assets/paragsir.jpg';
 import Founder2 from '../../assets/dhwani.jpg';
 
@@ -29,6 +29,12 @@ const About = () => {
     }, 5000);
     return () => clearInterval(interval);
   }, []);
+
+  // Add error handling for images
+  const handleImageError = (e) => {
+    e.target.style.display = 'none'; // Hide broken image
+    console.error('Failed to load image:', e.target.src);
+  };
 
   return (
     <>
@@ -60,6 +66,7 @@ const About = () => {
               src={imageSlides[currentImage]}
               alt="Interior Design"
               className="about-image-slide"
+              onError={handleImageError}
             />
           </div>
         </div>
@@ -89,7 +96,11 @@ const About = () => {
           {/* Founder 1 - Image Left */}
           <div className="founder-profile">
             <div className="founder-img">
-              <img src={Founder1} alt="Dhwani Sanghavi" />
+              <img 
+                src={Founder1} 
+                alt="Dhwani Sanghavi" 
+                onError={handleImageError}
+              />
             </div>
             <div className="founder-info">
               <h3>Dhwani Sanghavi</h3>
@@ -109,7 +120,11 @@ const About = () => {
           {/* Founder 2 - Image Right */}
           <div className="founder-profile reverse">
             <div className="founder-img">
-              <img src={Founder2} alt="Parag Shelar" />
+              <img 
+                src={Founder2} 
+                alt="Parag Shelar" 
+                onError={handleImageError}
+              />
             </div>
             <div className="founder-info">
               <h3>Parag Shelar</h3>
@@ -119,8 +134,8 @@ const About = () => {
               </h4>
               <p>
                 Parag Shelar is a seasoned interior designer with over 10 years of experience in designing and delivering thoughtfully curated residential and commercial spaces. As the Principal Designer at Aaspire Design, he has led numerous projects from concept to completion, bringing spaces to life through a perfect blend of aesthetic vision, functional planning, and technical precision.
-                With a deep-rooted understanding of materiality, site coordination, and execution processes, Parag is known for his ability to make designs not only look beautiful but also work efficiently in real-world contexts. His design approach is grounded in practicality, ensuring every detail—from finishes to furnishings—aligns with the client’s lifestyle and the site’s potential.
-                Parag’s passion for the field extends beyond practice into education. As the Managing Director at INSD Baner Pune, he is committed to shaping the future of design by imparting real-time industry knowledge to students. He mentors budding designers with a focus on on-site exposure, material understanding, and practical problem-solving—bridging the gap between academic learning and professional execution.
+                With a deep-rooted understanding of materiality, site coordination, and execution processes, Parag is known for his ability to make designs not only look beautiful but also work efficiently in real-world contexts. His design approach is grounded in practicality, ensuring every detail—from finishes to furnishings—aligns with the client's lifestyle and the site's potential.
+                Parag's passion for the field extends beyond practice into education. As the Managing Director at INSD Baner Pune, he is committed to shaping the future of design by imparting real-time industry knowledge to students. He mentors budding designers with a focus on on-site exposure, material understanding, and practical problem-solving—bridging the gap between academic learning and professional execution.
                 Driven by innovation, discipline, and a hands-on approach, Parag Shelar continues to influence the design community by crafting spaces that are not only visually striking but also deeply meaningful and buildable.
               </p>
             </div>
