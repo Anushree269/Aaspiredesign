@@ -14,7 +14,7 @@ import img5 from '../../assets/COMMERCIALPROJECTS/SALOONPROJECT/finalviewofsalon
 import img6 from '../../assets/COMMERCIALPROJECTS/SALOONPROJECT/finalviewofsalon6withlogo.jpg';
 import img7 from '../../assets/COMMERCIALPROJECTS/SALOONPROJECT/finalviewofsalon7withlogo.jpg';
 import img8 from '../../assets/COMMERCIALPROJECTS/SALOONPROJECT/rerenderview1.jpg';
-import img11 from '../../assets/RESIDENTIALPROJECTS/ATULSHAH/gbv2withlogo.jpg';
+import img11 from '../../assets/RESIDENTIALPROJECTS/ATULSHAH/gbv2withlog.jpg';
 import img12 from '../../assets/RESIDENTIALPROJECTS/ATULSHAH/gbv3withlogo.jpg';
 import img13 from '../../assets/RESIDENTIALPROJECTS/ATULSHAH/kidsbed4withlogo.jpg';
 import img14 from '../../assets/RESIDENTIALPROJECTS/ATULSHAH/kidsbed5withlogo.jpg';
