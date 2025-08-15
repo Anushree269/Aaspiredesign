@@ -81,9 +81,9 @@ import ResImg73 from '../../assets/RESIDENTIALPROJECTS/SWAPNILPATIL/view4withlog
 import ResImg74 from '../../assets/RESIDENTIALPROJECTS/VIJAYMACCHA/kidsbedroomview1withlogo.jpg';
 import ResImg75 from '../../assets/RESIDENTIALPROJECTS/VIJAYMACCHA/kidsbedroomview3withlogo.jpg';
 import ResImg76 from '../../assets/RESIDENTIALPROJECTS/VIJAYMACCHA/view1.jpg';
-import ResImg77 from '../../assets/RESIDENTIALPROJECTS/VIJAYMACCHA/view2jpg.jpg';
-import ResImg78 from '../../assets/RESIDENTIALPROJECTS/VIJAYMACCHA/view3jpg.jpg';
-import ResImg79 from '../../assets/RESIDENTIALPROJECTS/VIJAYMACCHA/view4jpg.jpg';
+import ResImg77 from '../../assets/RESIDENTIALPROJECTS/VIJAYMACCHA/view2.jpg';
+import ResImg78 from '../../assets/RESIDENTIALPROJECTS/VIJAYMACCHA/view3.jpg';
+import ResImg79 from '../../assets/RESIDENTIALPROJECTS/VIJAYMACCHA/view4.jpg';
 
 
 // Create an array of objects with image data
