@@ -24,7 +24,7 @@ import img17 from '../../assets/RESIDENTIALPROJECTS/ATULSHAH/firstfloorbv2withlo
 import img18 from '../../assets/RESIDENTIALPROJECTS/ATULSHAH/firstfloorbv3withlogo.jpg';
 import img19 from '../../assets/RESIDENTIALPROJECTS/ATULSHAH/gbv1withlogo.jpg';
 import img20 from '../../assets/RESIDENTIALPROJECTS/ATULSHAH/gbv2withlog.jpg';
-import img21 from '../../assets/RESIDENTIALPROJECTS/ATULSHA/gbv3withlog.jpg';
+import img21 from '../../assets/RESIDENTIALPROJECTS/ATULSHAH/gbv3withlog.jpg';
 import img22 from '../../assets/RESIDENTIALPROJECTS/ATULSHAH/kidsbed4withlogo.jpg';
 import img23 from '../../assets/RESIDENTIALPROJECTS/ATULSHAH/mbedview7withlogo.jpg';
 import img24 from '../../assets/RESIDENTIALPROJECTS/ATULSHAH/mbedview8withlogo.jpg';
