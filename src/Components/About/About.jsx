@@ -3,9 +3,9 @@ import { Helmet } from 'react-helmet-async';
 import './About.css';
 
 // Image slider
-import ImgOne from '../../assets/commercialprojects/salonproject/finalviewofsalon6withlogo.jpg';
-import ImgTwo from '../../assets/commercialprojects/salonproject/finalviewofsalon4withlogo.jpg';
-import ImgThree from '../../assets/commercialprojects/salonproject/finalviewofsalon2withlogo.jpg';
+import ImgOne from '../../assets/commercialprojects/salonproject/finalviewofsalon2withlogo.jpg';
+import ImgTwo from '../../assets/commercialprojects/salonproject/finalviewofsalon3withlogo.jpg';
+import ImgThree from '../../assets/commercialprojects/salonproject/finalviewofsalon5withlogo.jpg';
 import Aboutimage from '../../assets/minimal-amazing-interior-design2.jpg';
 
 // Section backgrounds
