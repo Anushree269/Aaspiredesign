@@ -4,14 +4,14 @@ import { Helmet } from 'react-helmet-async';
 import BgImage from '../../assets/gray-chair-living-room-with-copy-space.jpg';
 
 // Import images with detailed descriptions
-import Img1 from '../../assets/COMMERCIALPROJECTS/SALOONPROJECT/finalviewofsalon1withlogo.jpg';
-import Img2 from '../../assets/COMMERCIALPROJECTS/SALOONPROJECT/finalviewofsalon2withlogo.jpg';
-import Img3 from '../../assets/COMMERCIALPROJECTS/SALOONPROJECT/finalviewofsalon3withlogo.jpg';
-import Img4 from '../../assets/COMMERCIALPROJECTS/SALOONPROJECT/finalviewofsalon4withlogo.jpg';
-import Img5 from '../../assets/COMMERCIALPROJECTS/SALOONPROJECT/finalviewofsalon5withlogo.jpg';
-import Img6 from '../../assets/COMMERCIALPROJECTS/SALOONPROJECT/finalviewofsalon6withlogo.jpg';
-import Img7 from '../../assets/COMMERCIALPROJECTS/SALOONPROJECT/finalviewofsalon7withlogo.jpg';
-import Img8 from '../../assets/COMMERCIALPROJECTS/SALOONPROJECT/rerenderview1.jpg';
+import Img1 from '../../assets/commercialprojects/salonproject/finalviewofsalon1withlogo.jpg';
+import Img2 from '../../assets/commercialprojects/salonproject/finalviewofsalon2withlogo.jpg';
+import Img3 from '../../assets/commercialprojects/salonproject/finalviewofsalon3withlogo.jpg';
+import Img4 from '../../assets/commercialprojects/salonproject/finalviewofsalon4withlogo.jpg';
+import Img5 from '../../assets/commercialprojects/salonproject/finalviewofsalon5withlogo.jpg';
+import Img6 from '../../assets/commercialprojects/salonproject/finalviewofsalon6withlogo.jpg';
+import Img7 from '../../assets/commercialprojects/salonproject/finalviewofsalon7withlogo.jpg';
+import Img8 from '../../assets/commercialprojects/salonproject/rerenderview1.jpg';
 
 const imageData = [
   { 
@@ -139,11 +139,11 @@ const Commercial = () => {
       style={{ backgroundImage: `url(${BgImage})` }}
     >
       <Helmet>
-        <title>COMMERCIALPROJECTS | Aaspire Design</title>
+        <title>commercialprojects | Aaspire Design</title>
         <meta name="description" content="Explore our commercial interior design projects including salons, offices, and retail spaces with detailed descriptions of each design element." />
       </Helmet>
 
-      <h2 className="commercial-heading">COMMERCIALPROJECTS</h2>
+      <h2 className="commercial-heading">commercialprojects</h2>
 
       <div className="commercial-row">
         <div className="project-grid">

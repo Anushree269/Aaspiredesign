@@ -3,9 +3,9 @@ import { Helmet } from 'react-helmet-async';
 import './About.css';
 
 // Image slider
-import ImgOne from '../../assets/final view of salon 6 with logo.jpg';
-import ImgTwo from '../../assets/final view of salon 4 with logo.jpg';
-import ImgThree from '../../assets/final view of salon 2 with logo.jpg';
+import ImgOne from '../../assets/commercialprojects/salonproject/finalviewofsalon6withlogo.jpg';
+import ImgTwo from '../../assets/commercialprojects/salonproject/finalviewofsalon4withlogo.jpg';
+import ImgThree from '../../assets/commercialprojects/salonproject/finalviewofsalon2withlogo.jpg';
 import Aboutimage from '../../assets/minimal-amazing-interior-design2.jpg';
 
 // Section backgrounds
@@ -13,8 +13,8 @@ import FounderBg from '../../assets/3d-room-interior-with-classic-design-furnitu
 import FoundationBg from '../../assets/minimal-amazing-interior-design2.jpg';
 
 // Founder images
-import Founder1 from '../../assets/2H0A6561.jpg';
-import Founder2 from '../../assets/2H0A2815.jpg';
+import Founder1 from '../../assets/paragsir.jpg';
+import Founder2 from '../../assets/dhwani.jpg';
 
 import Footer from '../../Footer/Footer';
 
