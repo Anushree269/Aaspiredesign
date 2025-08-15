@@ -23,8 +23,6 @@ const Footer = () => {
           <a href="#" className="footer-link"><FiInstagram className="footer-icon" /> Instagram</a>
           <a href="#" className="footer-link"><FiLinkedin className="footer-icon" /> Linkedin</a>
           <a href="#" className="footer-link"><FiYoutube className="footer-icon" /> Youtube</a>
-
-
         </div>
 
       </div>

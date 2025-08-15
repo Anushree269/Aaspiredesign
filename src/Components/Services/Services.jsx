@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './Services.css';
-import Service1 from '../../assets/TERRACE VIEW 1 WITHOUT LOGO.jpg';
-import Service2 from '../../assets/final view of salon 2 with logo.jpg';
+import Service1 from '../../assets/nareshjain/terraceview2withlogo.jpg';
+import Service2 from '../../assets/atulshah/finalviews8withlogo.jpg';
 import Service3 from '../../assets/shopping-center-showroom-with-clothes-from-trendy-collections-retail-market-boutique-with-modern-fashionable-wear-empty-clothing-store-filled-with-new-trends-fashion-brands.jpg';
 import Service4 from '../../assets/covered-lifestyle-garden-with-indoor-outdoor-living.jpg';
 import ServicesBg from '../../assets/minimal-amazing-interior-design2.jpg';
