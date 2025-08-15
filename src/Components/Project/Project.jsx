@@ -24,7 +24,7 @@ import img17 from '../../assets/RESIDENTIALPROJECTS/BHAVESHSHARMA/finallivingroo
 import img18 from '../../assets/RESIDENTIALPROJECTS/BHAVESHSHARMA/finallivingroomview2withlogo.jpg';
 import img19 from '../../assets/RESIDENTIALPROJECTS/BHAVESHSHARMA/finalview1ofkitchenof2bhkwithlogo.jpg';
 import img20 from '../../assets/RESIDENTIALPROJECTS/BHAVESHSHARMA/finalview2ofkitchenof2bhkwithlogo.jpg';
-import img21 from '../../assets/RESIDENTIALPROJECTS/BHAVESHSHARMA/finalview3ofmasterbedroom1withlogo.jpg';
+import img21 from '../../assets/RESIDENTIALPROJECTS/BHAVESHSHARMA/finalview3ofmasterbedroom1withlog.jpg';
 import img22 from '../../assets/RESIDENTIALPROJECTS/BHAVESHSHARMA/finalview4ofmasterbedroom1withlogo.jpg';
 import img23 from '../../assets/RESIDENTIALPROJECTS/BHAVESHSHARMA/finalview4ofmasterbedroom2withlogo.jpg';
 import img24 from '../../assets/RESIDENTIALPROJECTS/NARESHJAIN/finalbedroom2view1oflonavalabungalowwithlogo.jpg';
