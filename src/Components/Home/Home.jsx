@@ -242,7 +242,13 @@ const Home = () => {
           <div className="about-right">
             <h2 className="about-heading1">About Aspire Design</h2>
             <p className="about-text">
-              Aaspire Design is a multidisciplinary design institute and consulting firm based in Baner, Pune...
+              Aaspire Design is a multidisciplinary design institute and consulting firm based in Baner, Pune,
+              offering expert services in interior design. We specialize in creating modern, customized residential
+              and commercial spaces through turnkey solutions, smart space planning, and innovative design that reflects
+              your personality and lifestyle.
+              <br /><br />
+              Our experienced team believes in understanding your needs deeply to deliver affordable, high-quality design
+              solutions — on time and within budget.
             </p>
           </div>
         </div>

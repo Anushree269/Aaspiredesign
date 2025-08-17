@@ -2,7 +2,7 @@
   "name": "aspire-design",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://Anushree269.github.io/Aspire-design",
+  "homepage": "https://github.com/Anushree269/Aspire-design",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
