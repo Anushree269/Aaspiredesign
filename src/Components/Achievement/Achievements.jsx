@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import './Achievements.css';
 import { Helmet } from 'react-helmet-async';
-import AchieveBg from '../../assets/2H0A3037.jpg'; // Background image
+import AchieveBg from '../../assets/achievement.jpg'; // Background image
 
 const achievements = [
   'Innovating since 2015.',
