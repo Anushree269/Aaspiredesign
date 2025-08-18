@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './FAQ.css';
+import './Faq.css';
 import FAQBg from '../../assets/interior-design2.jpg';
 import { FaPlus, FaMinus } from 'react-icons/fa';
 
