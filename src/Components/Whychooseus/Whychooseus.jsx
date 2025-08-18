@@ -3,9 +3,9 @@ import './WhyChooseus.css';
 import { FaCouch, FaLightbulb, FaUsers } from 'react-icons/fa';
 
 // ✅ Import background images
-import bg1 from '../../assets/gray-chair-living-room-with-copy-space.jpg';
-import bg2 from '../../assets/3d-room-interior-with-classic-design-furniture1.jpg';
-import bg3 from '../../assets/gray-chair-living-room-with-copy-space.jpg';
+import bg1 from '../../assets/livingroom.jpg';
+import bg2 from '../../assets/3droom.jpg';
+import bg3 from '../../assets/livingroom.jpg';
 
 // ✅ Card content
 const cardData = [

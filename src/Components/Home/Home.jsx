@@ -3,12 +3,12 @@ import { Helmet } from 'react-helmet-async';
 import './Home.css';
 
 // Assets
-import Frontimage from '../../assets/elegant-black-minimal-interior-design.jpg';
+import Frontimage from '../../assets/homeimage.jpg';
 import Logo from '../../assets/Aaspirepng.png';
 import ImgOne from '../../assets/residentialprojects/atulshah/finalviews6withlogo.jpg';
 import ImgTwo from '../../assets/residentialprojects/atulshah/finalviews7withlogo.jpg';
 import ImgThree from '../../assets/residentialprojects//atulshah/finalviews10withlogo.jpg';
-import Aboutimage from '../../assets/minimal-amazing-interior-design2.jpg';
+import Aboutimage from '../../assets/interior-design2.jpg';
 import emailjs from '@emailjs/browser';
 
 // Icons

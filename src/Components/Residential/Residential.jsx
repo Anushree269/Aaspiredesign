@@ -2,48 +2,46 @@ import React, { useState, useEffect, useRef } from 'react';
 import './Residential.css';
 import { Helmet } from 'react-helmet-async';
 
-import bgImage from '../../assets/gray-chair-living-room-with-copy-space.jpg';
+import bgImage from '../../assets/livingroom.jpg';
 
 // Import all residential images with corrected paths
 import ResImg1 from '../../assets/residentialprojects/atulshah/finalviews6withlogo.jpg';
 import ResImg2 from '../../assets/residentialprojects/atulshah/finalviews7withlogo.jpg';
 import ResImg3 from '../../assets/residentialprojects/atulshah/finalviews8withlogo.jpg';
 import ResImg4 from '../../assets/residentialprojects/atulshah/finalviews10withlogo.jpg';
-import ResImg5 from '../../assets/residentialprojects/atulshah/finalviews11withlogo.jpg';
-import ResImg6 from '../../assets/residentialprojects/atulshah/finalviews12withlogo.jpg';
-import ResImg7 from '../../assets/residentialprojects/atulshah/firstfloorbv1withlogo.jpg';
-import ResImg8 from '../../assets/residentialprojects/atulshah/firstfloorbv2withlogo.jpg';
-import ResImg9 from '../../assets/residentialprojects/atulshah/firstfloorbv3withlogo.jpg';
-import ResImg10 from '../../assets/residentialprojects/atulshah/gbv1withlogo.jpg';
+import ResImg5 from '../../assets/residentialprojects/atulshah/finalviews11withlog.jpg';
+import ResImg6 from '../../assets/residentialprojects/atulshah/firstfloorbv2withlogo.jpg';
+import ResImg7 from '../../assets/residentialprojects/atulshah/firstfloorbv3withlogo.jpg';
+import ResImg8 from '../../assets/residentialprojects/atulshah/gbv1withlogo.jpg';
+import ResImg9 from '../../assets/residentialprojects/atulshah/gbv2withlogo.jpg';
+import ResImg10 from '../../assets/residentialprojects/atulshah/gbv3withlogo.jpg';
 import ResImg11 from '../../assets/residentialprojects/atulshah/gbv2withlogo.jpg'; // Fixed typo
-import ResImg12 from '../../assets/residentialprojects/atulshah/gbv3withlogo.jpg'; // Fixed typo
-import ResImg13 from '../../assets/residentialprojects/atulshah/kidsbed4withlogo.jpg';
-import ResImg14 from '../../assets/residentialprojects/atulshah/kidsbed5withlogo.jpg';
-import ResImg15 from '../../assets/residentialprojects/atulshah/mbedview7withlogo.jpg';
-import ResImg16 from '../../assets/residentialprojects/atulshah/mbedview8withlogo.jpg';
-import ResImg17 from '../../assets/residentialprojects/bhavessharma/finallivingroomview1withlogo.jpg';
-import ResImg18 from '../../assets/residentialprojects/bhavessharma/finallivingroomview2withlogo.jpg';
-import ResImg19 from '../../assets/residentialprojects/bhavessharma/finalview1ofkitchenof2bhkwithlogo.jpg';
-import ResImg20 from '../../assets/residentialprojects/bhavessharma/finalview2ofkitchenof2bhkwithlogo.jpg';
-import ResImg21 from '../../assets/residentialprojects/bhavessharma/finalview3ofmasterbedroom1withlog.jpg'; // Fixed typo
-import ResImg22 from '../../assets/residentialprojects/bhavessharma/finalview4ofmasterbedroom1withlogo.jpg';
-import ResImg23 from '../../assets/residentialprojects/bhavessharma/finalview4ofmasterbedroom2withlogo.jpg';
-import ResImg24 from '../../assets/residentialprojects/nareshjain/finalbedroom2view1oflonavalabungalowwithlogo.jpg';
-import ResImg25 from '../../assets/residentialprojects/nareshjain/finalbedroom2view2oflonavalabungalowwithlogo.jpg';
-import ResImg26 from '../../assets/residentialprojects/nareshjain/finalview1ofbedroom1oflonavalabunglowwithlogo.jpg';
-import ResImg27 from '../../assets/residentialprojects/nareshjain/finalview1ofbedroom4withlogo.jpg';
-import ResImg28 from '../../assets/residentialprojects/nareshjain/finalview1oflivingroomoflonavalabungalowwithlogo.jpg';
-import ResImg29 from '../../assets/residentialprojects/nareshjain/finalview2ofbedroom1oflonavalabunglowwithlogo.jpg';
-import ResImg30 from '../../assets/residentialprojects/nareshjain/finalview2ofbedroom4withlogo.jpg';
-import ResImg31 from '../../assets/residentialprojects/nareshjain/finalview3ofbedroom4withlogo.jpg';
-import ResImg32 from '../../assets/residentialprojects/nareshjain/finalview3ofmasterbedroom1withlogo.jpg';
-import ResImg33 from '../../assets/residentialprojects/nareshjain/modifiedbedroom4view1withlogo.jpg';
-import ResImg34 from '../../assets/residentialprojects/nareshjain/modifiedbedroom4view2withlogo.jpg';
-import ResImg35 from '../../assets/residentialprojects/nareshjain/modifiedfinalview3withlogo.jpg';
-import ResImg36 from '../../assets/residentialprojects/nareshjain/modifiedfinalview4withlogo.jpg';
-import ResImg37 from '../../assets/residentialprojects/nareshjain/modifiedfinalview5withlogo.jpg';
-import ResImg38 from '../../assets/residentialprojects/nareshjain/terraceview1withoutlogo.jpg';
-import ResImg39 from '../../assets/residentialprojects/nareshjain/terraceview2withlogo.jpg';
+import ResImg12 from '../../assets/residentialprojects/atulshah/kidsbed4withlogo.jpg'; // Fixed typo
+import ResImg13 from '../../assets/residentialprojects/atulshah/kidsbed5withlogo.jpg';
+import ResImg14 from '../../assets/residentialprojects/atulshah/mbedview7withlogo.jpg';
+import ResImg15 from '../../assets/residentialprojects/atulshah/mbedview8withlogo.jpg';
+import ResImg17 from '../../assets/residentialprojects/bhavessharma/finallivingroomview2withlogo.jpg';
+import ResImg18 from '../../assets/residentialprojects/bhavessharma/finalview1ofkitchenof2bhkwithlogo.jpg';
+import ResImg19 from '../../assets/residentialprojects/bhavessharma/finalview2ofkitchenof2bhkwithlogo.jpg';
+import ResImg20 from '../../assets/residentialprojects/bhavessharma/finalview3ofmasterbedroom1withlog.jpg';
+import ResImg21 from '../../assets/residentialprojects/bhavessharma/finalview4ofmasterbedroom1withlogo.jpg'; // Fixed typo
+import ResImg22 from '../../assets/residentialprojects/bhavessharma/inallivingroomview1withlogo.jpg';
+import ResImg23 from '../../assets/residentialprojects/bhavessharma/inalview4ofmasterbedroom2withlogo.jpg';
+import ResImg24 from '../../assets/residentialprojects/nareshjain/bedroomview.jpg';
+import ResImg25 from '../../assets/residentialprojects/nareshjain/finalview1ofbedroom1oflonavalabunglowwithlogo.jpg';
+import ResImg26 from '../../assets/residentialprojects/nareshjain/finalview1ofbedroom4withlogo.jpg';
+import ResImg27 from '../../assets/residentialprojects/nareshjain/finalview1oflivingroomoflonavalabungalowwithlogo.jpg';
+import ResImg28 from '../../assets/residentialprojects/nareshjain/finalview2ofbedroom1oflonavalabunglowwithlogo.jpg';
+import ResImg29 from '../../assets/residentialprojects/nareshjain/finalview2ofbedroom4withlogo.jpg';
+import ResImg30 from '../../assets/residentialprojects/nareshjain/finalview3ofbedroom4withlogo.jpg';
+import ResImg31 from '../../assets/residentialprojects/nareshjain/finalview3ofmasterbedroom1withlogo.jpg';
+import ResImg32 from '../../assets/residentialprojects/nareshjain/modifiedbedroom4view1withlogo.jpg';
+import ResImg33 from '../../assets/residentialprojects/nareshjain/modifiedbedroom4view2withlogo.jpg';
+import ResImg34 from '../../assets/residentialprojects/nareshjain/modifiedfinalview3withlogo.jpg';
+import ResImg35 from '../../assets/residentialprojects/nareshjain/modifiedfinalview4withlogo.jpg';
+import ResImg36 from '../../assets/residentialprojects/nareshjain/modifiedfinalview5withlogo.jpg';
+import ResImg37 from '../../assets/residentialprojects/nareshjain/terraceview1withoutlogo.jpg';
+import ResImg38 from '../../assets/residentialprojects/nareshjain/terraceview2withlogo.jpg';
 import ResImg40 from '../../assets/residentialprojects/rakeshjain/finalkidsbedroomview3withlogo.jpg';
 import ResImg41 from '../../assets/residentialprojects/rakeshjain/finalkidsbedroomview4withlogo.jpg';
 import ResImg42 from '../../assets/residentialprojects/rakeshjain/finalterraceview1ofbedroom1withlogo.jpg';
@@ -63,7 +61,7 @@ import ResImg55 from '../../assets/residentialprojects/rakeshjain/finalview6ofli
 import ResImg56 from '../../assets/residentialprojects/rakeshjain/finalview7oflivingroomof3bhkwithlogo.jpg';
 import ResImg57 from '../../assets/residentialprojects/rakeshjain/finalview8oflivingroomof3bhkwithlogo.jpg';
 import ResImg58 from '../../assets/residentialprojects/rakeshjain/finalview9oflivingroomof3bhkwithlogo.jpg';
-import ResImg59 from '../../assets/residentialprojects/rakeshjain/modifiedfinalview1ofbedroom1withoutlogo.jpg';
+import ResImg59 from '../../assets/residentialprojects/rakeshjain/finalview10oflivingroomof3bhkwithlogo.jpg';
 import ResImg60 from '../../assets/residentialprojects/rakeshjain/modifiedfinalview1ofkidsbedroomwithoutlogo.jpg';
 import ResImg61 from '../../assets/residentialprojects/rakeshjain/modifiedfinalview1ofterracewithlogo.jpg';
 import ResImg62 from '../../assets/residentialprojects/rakeshjain/modifiedfinalview2ofkidsbedroomwithlogo.jpg';
@@ -103,7 +101,6 @@ const allImages = [
   { src: ResImg13, title: "Kids Bedroom 4" },
   { src: ResImg14, title: "Kids Bedroom 5" },
   { src: ResImg15, title: "Master Bedroom View 8" },
-  { src: ResImg16, title: "Final Views 6" },
   { src: ResImg17, title: "Living Room View 1" },
   { src: ResImg18, title: "Living Room View 2" },
   { src: ResImg19, title: "Kitchen View 1" },
@@ -126,7 +123,6 @@ const allImages = [
   { src: ResImg36, title: "Terrace View 1" },
   { src: ResImg37, title: "Terrace View 2" },
   { src: ResImg38, title: "Bungalow Bedroom View 1" },
-  { src: ResImg39, title: "Bungalow Bedroom View 1" },
   { src: ResImg40, title: "Kids Bedroom View 3" },
   { src: ResImg41, title: "Kids Bedroom View 4" },
   { src: ResImg42, title: "Terrace View 1" },

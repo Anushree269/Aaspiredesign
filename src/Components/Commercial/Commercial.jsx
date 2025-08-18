@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Commercial.css';
 import { Helmet } from 'react-helmet-async';
-import BgImage from '../../assets/gray-chair-living-room-with-copy-space.jpg';
+import BgImage from '../../assets/livingroom.jpg';
 
 // Import images with detailed descriptions
 import Img1 from '../../assets/commercialprojects/salonproject/finalviewofsalon1withlogo.jpg';

@@ -2,9 +2,9 @@ import React, { useEffect, useState, useRef, Suspense, lazy } from 'react';
 import { Helmet } from 'react-helmet-async'; // ✅ Updated import
 import './Projects.css';
 
-import ProjectBg1 from '../../assets/minimalist-interior-design3.jpg';
-import ProjectBg2 from '../../assets/minimalist-interior-design3.jpg';
-import ProjectBg3 from '../../assets/minimalist-interior-design3.jpg';
+import ProjectBg1 from '../../assets/interior-design-1.jpg';
+import ProjectBg2 from '../../assets/interior-design2.jpg';
+import ProjectBg3 from '../../assets/interior-design3.jpg';
 
 import Commercial1 from '../../assets/commercialprojects/salonproject/finalviewofsalon2withlogo.jpg';
 import Commercial2 from '../../assets/commercialprojects/salonproject/finalviewofsalon1withlogo.jpg';

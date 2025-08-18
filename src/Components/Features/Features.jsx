@@ -4,9 +4,9 @@ import { FaEye, FaBuilding, FaTools, FaUserCheck } from "react-icons/fa";
 import { Helmet } from 'react-helmet-async';
 
 // Import images for background slideshow
-import bg1 from '../../assets/view-room-interior-with-furniture-copy-space2.jpg';
-import bg2 from '../../assets/gray-chair-living-room-with-copy-space.jpg';
-import bg3 from '../../assets/3d-room-interior-with-classic-design-furniture1.jpg';
+import bg1 from '../../assets/viewroomimage.jpg';
+import bg2 from '../../assets/livingroom.jpg';
+import bg3 from '../../assets/3droom.jpg';
 
 const features = [
   {

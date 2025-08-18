@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './FAQ.css';
-import FAQBg from '../../assets/minimal-amazing-interior-design2.jpg';
+import FAQBg from '../../assets/interior-design2.jpg';
 import { FaPlus, FaMinus } from 'react-icons/fa';
 
 const faqData = [

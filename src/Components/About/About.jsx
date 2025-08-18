@@ -6,15 +6,15 @@ import './About.css';
 import ImgOne from '../../assets/commercialprojects/salonproject/finalviewofsalon2withlogo.jpg';
 import ImgTwo from '../../assets/commercialprojects/salonproject/finalviewofsalon3withlogo.jpg';
 import ImgThree from '../../assets/commercialprojects/salonproject/finalviewofsalon5withlogo.jpg';
-import Aboutimage from '../../assets/minimal-amazing-interior-design2.jpg';
+import Aboutimage from '../../assets/interior-design2.jpg';
 
 // Section backgrounds
-import FounderBg from '../../assets/3d-room-interior-with-classic-design-furniture1.jpg';
-import FoundationBg from '../../assets/minimal-amazing-interior-design2.jpg';
+import FounderBg from '../../assets/3droom.jpg';
+import FoundationBg from '../../assets/interior-design-1.jpg';
 
 // Founder images - verify these files exist in your assets folder
 import Founder1 from '../../assets/paragsir.jpg';
-import Founder2 from '../../assets/dhwani.jpg';
+import Founder2 from '../../assets/dhwanimam.jpg';
 
 import Footer from '../../Footer/Footer';
 
