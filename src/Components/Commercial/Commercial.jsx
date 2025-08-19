@@ -16,42 +16,34 @@ import Img8 from '../../assets/commercialprojects/salonproject/rerenderview1.jpg
 const imageData = [
   { 
     src: Img1, 
-    title: 'final view of salon 1 ',
     alt: 'Salon reception area with elegant decor',
   },
   { 
     src: Img2, 
-    title: 'final view of salon 2 ', 
     alt: 'Professional hair styling station',
   },
   { 
     src: Img3, 
-    title: 'final view of salon 3 ', 
     alt: 'Comfortable waiting area',
   },
   { 
     src: Img4, 
-    title: 'final view of salon 4 ', 
     alt: 'Hair washing station',
   },
   { 
     src: Img5, 
-    title: 'final view of salon 5 ', 
     alt: 'Salon treatment room',
   },
   { 
     src: Img6, 
-    title: 'final view of salon 6 ', 
     alt: 'Product display area',
   },
   { 
     src: Img7, 
-    title: 'final view of salon 7 ', 
     alt: 'Nail care area',
   },
   { 
     src: Img8, 
-    title: 'rerender view 1', 
     alt: 'Complete salon layout',
   },
 ];
@@ -143,7 +135,7 @@ const Commercial = () => {
         <meta name="description" content="Explore our commercial interior design projects including salons, offices, and retail spaces with detailed descriptions of each design element." />
       </Helmet>
 
-      <h2 className="commercial-heading">commercialprojects</h2>
+      <h2 className="commercial-heading">Commercial Projects</h2>
 
       <div className="commercial-row">
         <div className="project-grid">

@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
 
-
 .contact-container {
-    font-family: 'Lora', serif;
-
+  font-family: 'Lora', serif;
   display: flex;
   flex-direction: column;
   padding: 2rem 1rem;
@@ -26,7 +24,6 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.7);
   z-index: 0;
 }
 
@@ -46,7 +43,7 @@
 .contact-left h2 {
   font-size: 1.8rem;
   font-weight: bold;
-  color: #1c2d57;
+  color: #011739;
   margin-bottom: 0.75rem;
 }
 
@@ -67,10 +64,13 @@
   font-weight: 600;
   font-size: 0.95rem;
   color: #333;
+  display: block;
+  margin-bottom: 0.5rem;
 }
 
 .contact-form input,
-.contact-form textarea {
+.contact-form textarea,
+.contact-form select {
   width: 100%;
   border: none;
   border-bottom: 2px solid #999;
@@ -80,10 +80,21 @@
   resize: none;
   outline: none;
   transition: border-color 0.3s ease;
+  font-family: 'Lora', serif;
+}
+
+.contact-form select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  background-size: 1rem;
+  padding-right: 2rem;
 }
 
 .contact-form input:focus,
-.contact-form textarea:focus {
+.contact-form textarea:focus,
+.contact-form select:focus {
   border-bottom-color: #1c2d57;
 }
 
@@ -106,24 +117,44 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.contact-form button:disabled {
+  background-color: #999;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.success-message {
+  color: #2e7d32;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
+.error-message {
+  color: #d32f2f;
+  margin-top: 1rem;
+  font-weight: 500;
+}
+
 .contact-right h3 {
   font-size: 1.5rem;
   font-weight: bold;
   margin-bottom: 1.25rem;
-  color: #1c2d57;
+  color: #011739;
 }
 
 .info-item {
   display: flex;
   align-items: flex-start;
-  gap: 0.75rem;
+  gap: 1rem;
   margin-bottom: 1.25rem;
 }
 
 .icon {
-  font-size: 1.25rem;
+  font-size: 1.28rem;
   margin-top: 0.25rem;
-  color: #1c2d57;
+  color: #011739;
+  flex-shrink: 0;
 }
 
 .title {
@@ -133,12 +164,38 @@
 }
 
 .contact-right a {
-  color: #1c2d57;
+  color: #011739;
   text-decoration: underline;
   transition: color 0.3s ease;
+  word-break: break-all;
 }
 
 .contact-right a:hover {
+  color: #0f1a3a;
+}
+
+.social-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.social-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-icons a {
+  text-decoration: none;
+}
+
+.social-icons .icon {
+  font-size: 1.5rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icons .icon:hover {
+  transform: translateY(-3px);
   color: #0f1a3a;
 }
 
@@ -196,7 +253,8 @@
   }
 
   .contact-form input,
-  .contact-form textarea {
+  .contact-form textarea,
+  .contact-form select {
     padding: 1rem 0.5rem;
     font-size: 1.05rem;
   }

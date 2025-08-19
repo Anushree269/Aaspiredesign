@@ -93,9 +93,9 @@ const Projects = () => {
             <p className="project-description">
               {selectedTab === 'commercial'
                 ? `Commercial interior design involves creating functional and visually appealing spaces for business purposes such as offices, restaurants, or retail stores. The focus is on branding, efficiency, and customer experience. 
-                   Commercial interior design focuses on functional and brand-driven spaces like offices, restaurants, and stores, while residential interior design creates comfortable and personalized homes. At Aaspire Design, we blend interior, fashion, and graphic design to deliver creative solutions. Led by Dhwani Sanghavi, Director and mentor at INSD Baner, Pune, we craft spaces that are both stylish and purposeful.`
-                : `Residential interior design focuses on creating comfortable, personal, and stylish living spaces such as homes or apartments. It emphasizes functionality, comfort, and individual preferences.
-                   Commercial interior design focuses on functional and brand-driven spaces like offices, restaurants, and stores, while residential interior design creates comfortable and personalized homes. At Aaspire Design, we blend interior design to deliver creative solutions. Led by Dhwani Sanghavi, Director and mentor at INSD Baner, Pune, we craft spaces that are both stylish and purposeful.`}
+                   Commercial interior design focuses on functional and brand-driven spaces like Bungalow,Rouhouses,Duplex, while residential interior design creates comfortable and personalized homes. At Aaspire Design, we blend interior designer to deliver creative solutions. Led by Dhwani Sanghavi and Parag Shelar, Director and mentor at INSD Baner, Pune, we craft spaces that are both stylish and purposeful.`
+                : `We specialize in creating residential interiors that combine functionality with aesthetics, ensuring every home reflects the personality and lifestyle of its residents. From modern apartments to luxurious villas, our designs focus on smart space planning, elegant material selection, and harmonious color palettes that bring warmth and comfort to living spaces. We also integrate landscaping solutions to seamlessly connect indoor and outdoor environments, adding a refreshing natural touch. Our goal is to transform houses into personalized havens 
+                   that balance style, comfort, and timeless appeal.`}
             </p>
           </div>
 

@@ -3,7 +3,7 @@ import './Project.css';
 
 // Background slideshow images
 
-import bg1 from '../../assets/3droom.jpg';
+import bg1 from '../../assets/3d-room-interior.jpg';
 import bg2 from '../../assets/viewroomimage.jpg';
 // Import all your image assets
 import img1 from '../../assets/commercialprojects/salonproject/finalviewofsalon1withlogo.jpg';
@@ -102,20 +102,20 @@ import defaultOverlayimg from '../../assets/white-armchair.jpg';
 // Project categories data structure
 const PROJECT_CATEGORIES = {
   commercial: {
-    title: "commercialprojects/salonproject",
+    title: "Commercial projects",
     description: "Professional spaces designed for business and commerce",
     projects: [
       {
         title: "Salon Project",
         images: [
-          { src: img1, alt: "Salon View 1", title: "final view of salon 1 with logo" },
-          { src: img2, alt: "Salon View 2", title: "final view of salon 2 with logo" },
-          { src: img3, alt: "Salon View 3", title: "final view of salon 3 with logo",  },
-          { src: img4, alt: "Salon View 4", title: "final view of salon 4 with logo",  },
-          { src: img5, alt: "Salon View 5", title: "final view of salon 5 with logo",  },
-          { src: img6, alt: "Salon View 6", title: "final view of salon 6 with logo",  },
-          { src: img7, alt: "Salon View 7", title: "final view of salon 7 with logo", },
-          { src: img8, alt: "Salon View 8", title: "rerender view 1",  },
+          { src: img1, alt: "Salon View 1", },
+          { src: img2, alt: "Salon View 2",  },
+          { src: img3, alt: "Salon View 3",  },
+          { src: img4, alt: "Salon View 4",  },
+          { src: img5, alt: "Salon View 5",  },
+          { src: img6, alt: "Salon View 6",   },
+          { src: img7, alt: "Salon View 7", },
+          { src: img8, alt: "Salon View 8",   },
           
           // Add all commercial images here
         ]
@@ -130,53 +130,53 @@ const PROJECT_CATEGORIES = {
       {
         title: "Atul Shah Residence",
         images: [
-          { src: img11, alt: "Salon View 1", title: "final views 6 with ", },
-          { src: img12, alt: "Salon View 2", title: "final views 7 with ",  },
-          { src: img13, alt: "Salon View 3", title: "final views 8 with ", },
-          { src: img14, alt: "Salon View 4", title: "final views 10 with final views 10 ",  },
-          { src: img15, alt: "Salon View 5", title: "final views 11 ",  },
-          { src: img16, alt: "Salon View 6", title: "final views 12 ", },
-          { src: img17, alt: "Salon View 7", title: "first floor bv 1 " },
-          { src: img18, alt: "Salon View 8", title: "first floor bv 2 ", },
-          { src: img19, alt: "Salon View 9", title: "first floor bv 3 ",  },
-          { src: img20, alt: "Salon View 10", title: "gb v 1 ",  },
-          { src: img21, alt: "Salon View 11", title: "gb v 2",  },
-          { src: img22, alt: "Salon View 12", title: "gb v 3 ",  },
-          { src: img23, alt: "Salon View 13", title: "KIDS BED 4 ", },
-          { src: img24, alt: "Salon View 14", title: "KIDS BED 5 ",  },
+          { src: img11, alt: "Salon View 1",  },
+          { src: img12, alt: "Salon View 2",   },
+          { src: img13, alt: "Salon View 3",  },
+          { src: img14, alt: "Salon View 4",   },
+          { src: img15, alt: "Salon View 5",   },
+          { src: img16, alt: "Salon View 6",  },
+          { src: img17, alt: "Salon View 7",  },
+          { src: img18, alt: "Salon View 8",  },
+          { src: img19, alt: "Salon View 9",  },
+          { src: img20, alt: "Salon View 10",   },
+          { src: img21, alt: "Salon View 11",  },
+          { src: img22, alt: "Salon View 12",  },
+          { src: img23, alt: "Salon View 13", },
+          { src: img24, alt: "Salon View 14",   },
           // Add all residential images here
         ]
       },
       {
         title: "Bhavesh Sharma Residence",
         images: [
-          { src: img26, alt: "Living Room1", title: "FINAL LIVING ROOM VIEW 1 ", },
-          { src: img27, alt: "Living Room2", title: "FINAL LIVING ROOM VIEW 2 ", },
-          { src: img28, alt: "Living Room3", title: "FINAL VIEW 1 OF KITCHEN OF 2BHK ", },
-          { src: img29, alt: "Living Room4", title: "FINAL VIEW 2 OF KITCHEN OF 2BHK ", },
-          { src: img30, alt: "Living Room5", title: "FINAL VIEW 3 OF MASTER BEDROOM 1", },
-          { src: img31, alt: "Living Room6", title: "FINAL VIEW 4 OF MASTER BEDROOM 1 ", },
-          { src: img32, alt: "Living Room8", title: "FINAL VIEW 4 OF MASTER BEDROOM 2 ",  },
+          { src: img26, alt: "Living Room1",  },
+          { src: img27, alt: "Living Room2",  },
+          { src: img28, alt: "Living Room3",  },
+          { src: img29, alt: "Living Room4",  },
+          { src: img30, alt: "Living Room5", },
+          { src: img31, alt: "Living Room6",  },
+          { src: img32, alt: "Living Room8",  },
         // Add more images
         ]
       },
       {
         title: "Naresh Jain Residence",
         images: [
-          { src: img33, alt: "Living Room9", title: "FINAL BEDROOM 2 VIEW 1 OF LONAVALA BUNGALOW WITH LOGO", },
-          { src: img34, alt: "Living Room", title: "FINAL BEDROOM 2 VIEW 2 OF LONAVALA BUNGALOW WITH LOGO",  },
-          { src: img35, alt: "Living Room", title: "FINAL VIEW 1 OF BEDROOM 1 OF LONAVALA BUNGLOW WITH LOGO", },
-          { src: img36, alt: "Living Room", title: "FINAL VIEW 1 OF BEDROOM 4 WITH LOGO", },
-          { src: img37, alt: "Living Room", title: "FINAL VIEW 1 OF LIVING ROOM OF LONAVALA BUNGALOW WITH LOGO", },
-          { src: img38, alt: "Living Room", title: "FINAL VIEW 2 OF BEDROOM 1 OF LONAVALA BUNGLOW WITH LOGO", },
-          { src: img39, alt: "Living Room", title: "FINAL VIEW 2 OF BEDROOM 4 WITH LOGO",  },
-          { src: img40, alt: "Living Room", title: "FINAL VIEW 2 OF LIVING ROOM OF LONAVALA BUNGALOW WITH LOGO",  },
-          { src: img41, alt: "Living Room", title: "FINAL VIEW 3 OF BEDROOM 4 WITH LOGO",  },
-          { src: img42, alt: "Living Room", title: "FINAL VIEW 3 OF LIVING ROOM OF LONAVALA BUNGALOW WITH LOGO",  },
-          { src: img43, alt: "Living Room", title: "FINAL VIEW 3 OF MASTER BEDROOM 1 WITH LOGO",  },
-          { src: img44, alt: "Living Room", title: "MODIFIED BEDROOM 4 VIEW 1 WITH LOGO",  },
-          { src: img46, alt: "Living Room", title: "MODIFIED FINAL VIEW 3 WITH LOGO",  },
-         {src: img49, alt: "Living Room", title: "MODIFIED FINAL VIEW 4 WITHLOGO",  },
+          { src: img33, alt: "Living Room9",  },
+          { src: img34, alt: "Living Room",   },
+          { src: img35, alt: "Living Room",  },
+          { src: img36, alt: "Living Room",  },
+          { src: img37, alt: "Living Room",  },
+          { src: img38, alt: "Living Room",  },
+          { src: img39, alt: "Living Room",   },
+          { src: img40, alt: "Living Room",  },
+          { src: img41, alt: "Living Room",  },
+          { src: img42, alt: "Living Room",  },
+          { src: img43, alt: "Living Room",   },
+          { src: img44, alt: "Living Room",   },
+          { src: img46, alt: "Living Room",   },
+         {src: img49, alt: "Living Room",   },
 
 
 
@@ -186,52 +186,52 @@ const PROJECT_CATEGORIES = {
       {
         title: "Rakesh Jain Residence",
         images: [
-          { src: img51, alt: "Living Room", title: "FINAL TERRACE VIEW 1 OF BEDROOM 1 WITH LOGO",  },
-          { src: img52, alt: "Living Room", title: "FINAL VIEW 1 OF KIDS BEDROOM TERRACE WITH LOGO",  },
-          { src: img53, alt: "Living Room", title: "FINAL VIEW 1 OF KITCHEN OF 3BHK WITH LOGO", },
-          { src: img54, alt: "Living Room", title: "FINAL VIEW 1 OF MASTER BEDROOM 1 WITH LOGO", },
-          { src: img55, alt: "Living Room", title: "FINAL VIEW 1 OF MASTER BEDROOM 2 WITH LOGO",  },
-          { src: img56, alt: "Living Room", title: "FINAL VIEW 1 OF MASTER TOILET 1 WITH LOGO",  },
-          { src: img57, alt: "Living Room", title: "FINAL VIEW 2 OF KIDS BEDROOM TERRACE WITH LOGO", },
-          { src: img58, alt: "Living Room", title: "FINAL VIEW 2 OF KITCHEN OF 3BHK WITH LOGO",  },
-          { src: img59, alt: "Living Room", title: "FINAL VIEW 2 OF MASTER BEDROOM 1 WITH LOGO", },
-          { src: img60, alt: "Living Room", title: "FINAL VIEW 2 OF MASTER BEDROOM 2 WITH LOGO",  },
-          { src: img61, alt: "Living Room", title: "FINAL VIEW 2 OF MASTER TOILET 1 WITH LOGO", },
-          { src: img62, alt: "Living Room", title: "FINAL VIEW 3 OF KITCHEN OF 3BHK WITH LOGO", },
-          { src: img63, alt: "Living Room", title: "FINAL VIEW 3 OF MASTER BEDROOM 1 WITHOUT LOGO",  },
-          { src: img64, alt: "Living Room", title: "FINAL VIEW 4 OF KITCHEN OF 3BHK WITH LOGO",  },
-          { src: img65, alt: "Living Room", title: "FINAL VIEW 5 OF LIVING ROOM OF 3 BHK WITH LOGO",  },
-          { src: img66, alt: "Living Room", title: "FINAL VIEW 6 OF LIVING ROOM OF 3 BHK WITH LOGO",  },
-          { src: img67, alt: "Living Room", title: "FINAL VIEW 7 OF LIVING ROOM OF 3 BHK WITH LOGO",  },
-          { src: img68, alt: "Living Room", title: "FINAL VIEW 8 OF LIVING ROOM OF 3 BHK WITH LOGO",},
-          { src: img69, alt: "Living Room", title: "FINAL VIEW 9 OF LIVING ROOM OF 3 BHK WITH LOGO",  },
-          { src: img70, alt: "Living Room", title: "MODIFIED FINAL VIEW 1 OF BEDROOM 1 WITHOUT LOGO", },
-          { src: img71, alt: "Living Room", title: "MODIFIED FINAL VIEW 1 OF KIDS BEDROOM WITHOUT LOGO",  },
-           { src: img72, alt: "Living Room", title: "MODIFIED FINAL VIEW 1 OF TERRACE WITH LOGO",  },
-           { src: img73, alt: "Living Room", title: "MODIFIED FINAL VIEW 2 OF KIDS BEDROOM WITH LOGO",  },
-            { src: img74, alt: "Living Room", title: "MODIFIED FINAL VIEW 2 OF TERRACE WITHOUT LOGO", },
-            { src: img75, alt: "Living Room", title: "MODIFIED FINAL VIEW 3 OF BEDROOM 1 WITH LOGO",  },
+          { src: img51, alt: "Living Room",  },
+          { src: img52, alt: "Living Room",   },
+          { src: img53, alt: "Living Room", },
+          { src: img54, alt: "Living Room",  },
+          { src: img55, alt: "Living Room",   },
+          { src: img56, alt: "Living Room",   },
+          { src: img57, alt: "Living Room",  },
+          { src: img58, alt: "Living Room",  },
+          { src: img59, alt: "Living Room",  },
+          { src: img60, alt: "Living Room",   },
+          { src: img61, alt: "Living Room",  },
+          { src: img62, alt: "Living Room", },
+          { src: img63, alt: "Living Room",  },
+          { src: img64, alt: "Living Room",   },
+          { src: img65, alt: "Living Room",  },
+          { src: img66, alt: "Living Room", },
+          { src: img67, alt: "Living Room",  },
+          { src: img68, alt: "Living Room", },
+          { src: img69, alt: "Living Room",   },
+          { src: img70, alt: "Living Room",  },
+          { src: img71, alt: "Living Room",   },
+           { src: img72, alt: "Living Room",  },
+           { src: img73, alt: "Living Room",  },
+            { src: img74, alt: "Living Room", },
+            { src: img75, alt: "Living Room",  },
 
 
 
           {
         title: "Swapnil Patil Residence",
         images: [
-         { src: img78, alt: "Living Room", title: "MASTER BEDROOM IEW 1 WITH LOGO",  },
-          { src: img79, alt: "Living Room", title: "MASTER BEDROOM IEW 2 WITH LOGO",  },
-          { src: img80, alt: "Living Room", title: "MASTER BEDROOM IEW 3 WITH LOGO", },
-          { src: img81, alt: "Living Room", title: "view 1 with logo",  },
-          { src: img82, alt: "Living Room", title: "view 2 with logo", },
-          { src: img83, alt: "Living Room", title: "view 3 with logo",  },
-          { src: img84, alt: "Living Room", title: "view 4 with logo",  },
-          { src: img85, alt: "Living Room", title: "Cozy Lounge",  },
-          { src: img86, alt: "Living Room", title: "Cozy Lounge",  },
-          { src: img87, alt: "Living Room", title: "Cozy Lounge",  },
-          { src: img88, alt: "Living Room", title: "Cozy Lounge", },
-          { src: img89, alt: "Living Room", title: "Cozy Lounge", },
-          { src: img90, alt: "Living Room", title: "Cozy Lounge",},
-         { src: img91, alt: "Living Room", title: "View 1",},
-          { src: img92, alt: "Living Room", title: "View 2",},
+         { src: img78, alt: "Living Room",   },
+          { src: img79, alt: "Living Room",  },
+          { src: img80, alt: "Living Room", },
+          { src: img81, alt: "Living Room",   },
+          { src: img82, alt: "Living Room",  },
+          { src: img83, alt: "Living Room",   },
+          { src: img84, alt: "Living Room",  },
+          { src: img85, alt: "Living Room",  },
+          { src: img86, alt: "Living Room",  },
+          { src: img87, alt: "Living Room",  },
+          { src: img88, alt: "Living Room",  },
+          { src: img89, alt: "Living Room", },
+          { src: img90, alt: "Living Room",},
+         { src: img91, alt: "Living Room",},
+          { src: img92, alt: "Living Room", },
 
          
 
@@ -288,7 +288,7 @@ const Project = () => {
           <div className="project-header">
             <h1 className="project-title">Our Projects</h1>
             <p className="project-intro">
-              At Aaspire Design, we specialize in creating sophisticated and functional interior spaces that reflect a deep attention to detail and refined luxury. Combining artistic vision with technical precision, our designs embody both elegance and purpose. Led by Dhwani Sanghavi — Director of Aaspire Design and mentor at INSD Baner, Pune — we are committed to delivering spaces that inspire, elevate, and endure.
+              At Aaspire Design, we specialize in creating sophisticated and functional interior spaces that reflect a deep attention to detail and refined luxury. Combining artistic vision with technical precision, our designs embody both elegance and purpose. Led by Dhwani Sanghavi and Parag Shelar— Director of Aaspire Design and mentor at INSD Baner, Pune — we are committed to delivering spaces that inspire, elevate, and endure.
             </p>
           </div>
 

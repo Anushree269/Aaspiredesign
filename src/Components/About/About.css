@@ -20,7 +20,6 @@ body {
   flex-direction: column;
   align-items: center;
   position: relative;
-  min-height: auto;
   width: 100%;
   padding: 2rem 1rem;
   gap: 2rem;
@@ -28,8 +27,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   overflow: hidden;
- font-family: 'Lora', serif;
-
+  font-family: 'Lora', serif;
 }
 
 .about-background-overlay {
@@ -52,14 +50,12 @@ body {
 .about-left {
   display: flex;
   justify-content: center;
-  margin-right: 0;
   margin-bottom: 1.5rem;
 }
 
 .about-image-slide {
   width: 100%;
   max-width: 400px;
-  height: auto;
   aspect-ratio: 4/3;
   object-fit: cover;
   border-radius: 15px;
@@ -68,12 +64,11 @@ body {
 }
 
 .about-right {
-  padding-left: 0;
   text-align: center;
 }
 
 .about-heading {
-   font-size: 2rem;     /* ~32px */
+  font-size: 2rem;
   font-weight: 600;
   line-height: 1.3;
   margin-bottom: 0.5em;
@@ -86,7 +81,7 @@ body {
 
 .about-text {
   font-size: 1rem;
-  line-height: 1.3;
+  line-height: 1.5;
   font-weight: 400;
   color: #111;
   margin-bottom: 1rem;
@@ -113,19 +108,18 @@ body {
 .founder-content {
   position: relative;
   z-index: 2;
-  max-width: 100%;
   margin: 0 auto;
-  color: #02024a;
+  max-width: 100%;
   padding: 0 1rem;
+  color: #02024a;
 }
 
 .founder-heading {
-   font-size: 2rem;     /* ~32px */
+  font-size: 2rem;
   font-weight: 600;
-  line-height: 1.3;
-  margin-bottom: 0.5em;
+  margin-bottom: 1.5rem;
   text-align: center;
-  color: #02024a;
+  color: #011739;
 }
 
 .founder-profile {
@@ -135,7 +129,7 @@ body {
   background: rgba(255, 255, 255, 0.2);
   border-radius: 15px;
   margin-bottom: 2rem;
-  width: 110%;
+  width: 100%;
   padding: 1.5rem;
   gap: 1.5rem;
   backdrop-filter: blur(8px);
@@ -152,7 +146,7 @@ body {
 }
 
 .founder-img img {
-  width: 112%;
+  width: 100%;
   max-width: 280px;
   height: auto;
   border-radius: 10px;
@@ -161,31 +155,29 @@ body {
 }
 
 .founder-info {
-  width: 80%;
+  width: 100%;
   text-align: center;
 }
 
 .founder-info h4 {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
   color: #161627;
 }
-.founder-info h3{
-   font-size: 1.75rem;  /* ~28px */
-  font-weight: 600;
-  line-height: 1.3;
-  margin-bottom: 0.5rem;
-  color: #161627;
 
+.founder-info h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #161627;
 }
+
 .founder-info p {
   font-size: 1rem;
   color: #131212;
   font-weight: 400;
-    line-height: 1.3;
-
-
+  line-height: 1.5;
 }
 
 /* === Foundation Section === */
@@ -194,42 +186,30 @@ body {
   background-size: cover;
   background-position: center;
   padding: 3rem 1rem;
-  color: #13014e;
-   font-family: 'Lora', serif;
-
   text-align: center;
-}
-
-.foundation-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
+  color: #011739;
+  font-family: 'Lora', serif;
 }
 
 .foundation-content {
   position: relative;
   z-index: 2;
-  max-width: 100%;
   margin: 0 auto;
+  max-width: 100%;
   padding: 0 1rem;
 }
 
 .foundation-heading {
-   font-size: 2rem;     /* ~32px */
+  font-size: 2rem;
   font-weight: 600;
-  line-height: 1.3;
   margin-bottom: 0.5em;
-  color: #032f75;
+  color: #011739;
 }
 
 .foundation-text {
   font-size: 1rem;
-  line-height: 1.3;
   font-weight: 400;
-
+  line-height: 1.5;
   color: #1e1e1e;
 }
 
@@ -283,8 +263,8 @@ body {
 
   .about-right {
     flex: 1;
-    padding-left: 2rem;
     text-align: left;
+    padding-left: 2rem;
   }
 
   .about-heading {
@@ -308,11 +288,9 @@ body {
 
   .founder-info {
     text-align: left;
+    width: 80%;
   }
 
-  founder-info1{
-    text-align:left;
-  }
   .founder-section {
     padding: 5rem 3rem;
   }

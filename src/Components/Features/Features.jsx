@@ -49,7 +49,7 @@ const expertise = [
 const bgImages = [bg1, bg2, bg3];
 
 const Features = () => {
-  const [activeTab, setActiveTab] = useState('features');
+  const [activeTab, setActiveTab] = useState('expertise'); // default set to expertise
   const sectionRef = useRef(null);
   const [bgIndex, setBgIndex] = useState(0);
 
@@ -94,41 +94,42 @@ const Features = () => {
       }}
     >
       <div className="feature-tabs-column">
-        <button
-          className={`tab-button ${activeTab === 'features' ? 'active' : ''}`}
-          onClick={() => setActiveTab('features')}
-        >
-          <span className="plus-icon">➕</span> Features
-        </button>
+        {/* Swapped the button order */}
         <button
           className={`tab-button ${activeTab === 'expertise' ? 'active' : ''}`}
           onClick={() => setActiveTab('expertise')}
         >
           <span className="plus-icon">➕</span> Expertise
         </button>
+        <button
+          className={`tab-button ${activeTab === 'features' ? 'active' : ''}`}
+          onClick={() => setActiveTab('features')}
+        >
+          <span className="plus-icon">➕</span> Features
+        </button>
       </div>
 
       <div className="feature-content">
         <h2 className="features-heading">
-          {activeTab === 'features' ? 'FEATURES' : 'OUR EXPERTISE'}
+          {activeTab === 'expertise' ? 'OUR EXPERTISE' : 'FEATURES'}
         </h2>
 
-        {activeTab === 'features' ? (
-          <div className="feature-container">
-            {features.map((item, index) => (
-              <div className="feature-item" key={index}>
-                <div className="feature-circle">{item.title}</div>
-                <div className="feature-rectangle">{item.description}</div>
-              </div>
-            ))}
-          </div>
-        ) : (
+        {activeTab === 'expertise' ? (
           <div className="expertise-grid">
             {expertise.map((item, index) => (
               <div className="expertise-box" key={index}>
                 <div className="expertise-icon">{item.icon}</div>
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <div className="feature-container">
+            {features.map((item, index) => (
+              <div className="feature-item" key={index}>
+                <div className="feature-circle">{item.title}</div>
+                <div className="feature-rectangle">{item.description}</div>
               </div>
             ))}
           </div>

@@ -6,9 +6,12 @@ import AchieveBg from '../../assets/achievement.jpg'; // Background image
 const achievements = [
   'Innovating since 2015.',
   'Co-powered design show with Bharat 24.',
+  'Top 10 Interior Designer of Pune 2025',
   'Featured in Mrs. India platform.',
   'Featured in Ms. Pune platform.',
   'Featured in A & I.',
+    'Featured in A & I.',
+
 ];
 
 const Achievements = () => {

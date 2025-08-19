@@ -105,24 +105,14 @@
   line-height: 1.2;
   color: rgb(143, 235, 89);
   margin-bottom: 0.8rem;
-  max-width: 750px;
+  max-width: 880px;
   opacity: 0;
   transform: translateY(20px);
   transition: all 0.8s ease 0.6s;
 }
 
-.hero-tagline p {
-  margin-left: 40px;
-  font-size: 1.2rem;
-  max-width: 750px;
-  color: white;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.8s ease 0.9s;
-}
 
-.hero-tagline h1.active,
-.hero-tagline p.active {
+.hero-tagline h1.active {
   opacity: 1;
   transform: translateY(0);
 }

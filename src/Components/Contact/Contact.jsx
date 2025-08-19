@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import emailjs from '@emailjs/browser';
 import './Contact.css';
-import { FiMapPin, FiMail, FiPhone, FiInstagram, FiLinkedin, FiFacebook, FiYoutube } from 'react-icons/fi';
+import { FiMapPin, FiMail, FiPhone, FiInstagram, FiLinkedin } from 'react-icons/fi';
 
 export const Contact = () => {
   const form = useRef();
@@ -80,6 +80,23 @@ export const Contact = () => {
           </div>
 
           <div className="form-group">
+            <label htmlFor="property-type">Property Type</label>
+            <select 
+              id="property-type"
+              name="property_type" 
+              required
+            >
+              <option value="">Select Property Type</option>
+              <option value="1BHK">1BHK</option>
+              <option value="2BHK">2BHK</option>
+              <option value="3BHK">3BHK</option>
+              <option value="Bungalow">Bungalow</option>
+              <option value="Above">Above</option>
+              <option value="Commercial">Commercial</option>
+            </select>
+          </div>
+
+          <div className="form-group">
             <label htmlFor="message">Message</label>
             <textarea 
               id="message"
@@ -121,7 +138,7 @@ export const Contact = () => {
           <FiMail className="icon" />
           <div>
             <p className="title">Email Address:</p>
-            <a href="mailto:aaspiredesign@gmail.com">aaspiredesign@gmail.com</a>
+            <a href="mailto:aaspiredesign9@gmail.com">aaspiredesign9@gmail.com</a>
           </div>
         </div>
 
@@ -129,29 +146,20 @@ export const Contact = () => {
           <FiPhone className="icon" />
           <div>
             <p className="title">Phone Number:</p>
-            <a href="tel:+917507857008">+91 - 7507857008</a>
+            <a href="tel:+91-7755924414">+91-7755924414</a>
           </div>
         </div>
 
         <div className="info-item social-section">
           <div>
             <p className="title">Follow us</p>
-            <a href="https://instagram.com/aaspiredesign" target="_blank" rel="noopener noreferrer">
-              @aaspiredesign
-            </a>
           </div>
           <div className="social-icons">
-            <a href="https://instagram.com/aaspiredesign" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <a href="https://www.instagram.com/aaspire_design?igsh=dXYzM3cwcHdxaGpl" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
               <FiInstagram className="icon" />
             </a>
-            <a href="https://linkedin.com/company/aaspiredesign" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <a href="https://www.linkedin.com/in/dhwani-sanghavi-835a75255?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
               <FiLinkedin className="icon" />
-            </a>
-            <a href="https://facebook.com/aaspiredesign" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-              <FiFacebook className="icon" />
-            </a>
-            <a href="https://youtube.com/aaspiredesign" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-              <FiYoutube className="icon" />
             </a>
           </div>
         </div>

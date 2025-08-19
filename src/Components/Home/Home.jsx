@@ -168,13 +168,7 @@ const Home = () => {
                 <h1 className={`animated ${textVisible ? 'active' : ''}`}>
                   Aspire Design: The Art of Extraordinary Spaces
                 </h1>
-                <p className={`animated ${textVisible ? 'active' : ''}`}>
-                  At Aspire Design, we see blank walls as unwritten stories, empty rooms as uncharted adventures, and
-                  every home as a living canvas waiting to be transformed. Our journey began with a simple truth: great
-                  design doesn't just please the eye - it speaks to the soul. At Aspire Design, we believe interiors
-                  should be more than just beautiful—they should tell your story, elevate your experiences, and inspire
-                  daily life. Our approach transforms ordinary spaces into extraordinary environments through:
-                </p>
+                
               </div>
             </div>
           </div>
@@ -240,9 +234,9 @@ const Home = () => {
             <img src={imageSlides[currentImage]} alt="Interior Design" className="about-image-slide" />
           </div>
           <div className="about-right">
-            <h2 className="about-heading1">About Aspire Design</h2>
+            <h2 className="about-heading1">About Aaspire Design</h2>
             <p className="about-text">
-              Aaspire Design is a multidisciplinary design institute and consulting firm based in Baner, Pune,
+              Aaspire Design is a multidisciplinary design studio and consulting firm based in Baner, Pune,
               offering expert services in interior design. We specialize in creating modern, customized residential
               and commercial spaces through turnkey solutions, smart space planning, and innovative design that reflects
               your personality and lifestyle.

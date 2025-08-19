@@ -13,8 +13,8 @@ import FounderBg from '../../assets/3droom.jpg';
 import FoundationBg from '../../assets/interior-design-1.jpg';
 
 // Founder images - verify these files exist in your assets folder
-import Founder1 from '../../assets/paragsir.jpg';
-import Founder2 from '../../assets/dhwanimam.jpg';
+import Founder1 from '../../assets/dhwanisanghavi.jpg';
+import Founder2 from '../../assets/paragshelar.jpg';
 
 import Footer from '../../Footer/Footer';
 
@@ -74,7 +74,7 @@ const About = () => {
         <div className="about-right">
           <h2 className="about-heading1">Aaspire Design – Best Interior in Baner, Pune</h2>
           <p className="about-text">
-            Aaspire Design is a multidisciplinary design institute and consulting firm based in Baner, Pune, 
+            Aaspire Design is a multidisciplinary design studio and consulting firm based in Baner, Pune, 
             offering expert services in interior design. We specialize in creating modern, customized residential 
             and commercial spaces through turnkey solutions, smart space planning, and innovative design that reflects your personality and lifestyle.
             <br /><br />
@@ -106,7 +106,7 @@ const About = () => {
               <h3>Dhwani Sanghavi</h3>
               <h4>
                 Aaspire Design – Best Interior in Baner, Pune<br />
-                Creative Director – Dhwani Sanghavi, INSD Baner Pune<br />
+                 Principal Interior Designer – Aaspire Design<br />
                 Interior Designer | Specialist in French Concept Designs
               </h4>
               <p>
@@ -152,8 +152,8 @@ const About = () => {
         <div className="foundation-content">
           <h2 className="foundation-heading">Our Foundation</h2>
           <p className="foundation-text">
-            Founded in 2018, Aaspire Design was born from a shared vision of creating timeless and functional interiors that reflect elegance and personality. What began as a two-member initiative has now grown into a thriving interior design firm, 
-            trusted by over 1000 clients across Maharashtra.
+            Founded in 2014, Aaspire Design was born from a shared vision of creating timeless and functional interiors that reflect elegance and personality. What began as a two-member initiative has now grown into a thriving interior design firm, 
+            trusted by over 100 clients across Maharashtra.
             <br /><br />
             At Aaspire Design, we take pride in transforming both small and large spaces with equal passion and dedication. Our design philosophy is deeply rooted in creativity and functionality, spanning various fields like interior design, fashion design, and graphic design — ensuring a holistic and versatile approach to every project.
             <br /><br />
