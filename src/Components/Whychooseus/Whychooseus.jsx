@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import './WhyChooseus.css';
+import './Whychooseus.css';
 import { FaCouch, FaLightbulb, FaUsers } from 'react-icons/fa';
 
 // ✅ Import background images
