@@ -7,7 +7,7 @@ import Aboutimage from '../../assets/interior-design-1.jpg';
 import FounderBg from '../../assets/3droom.jpg';
 import FoundationBg from '../../assets/interior-design-1.jpg';
 import Founder1 from '../../assets/dhwanisanghavi.jpg';
-import Founder2 from '../../assets/paragshelar.jpg';
+import Founder2 from '../../assets/paragshelar.JPG';
 
 // Footer
 import Footer from '../../Footer/Footer';
