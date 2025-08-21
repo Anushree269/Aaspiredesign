@@ -21,7 +21,7 @@ import { FaUserGraduate, FaLaptopCode, FaChalkboardTeacher, FaBriefcase } from '
 
 // Components
 import Project from '../Project/Project';
-import FAQ from '../FAQ/FAQ';
+import Faq from '../Faq/Faq';
 import Contact from '../Contact/Contact';
 import Footer from '../../Footer/Footer';
 import Services from '../Services/Services';
@@ -300,7 +300,7 @@ const Home = () => {
         <Features />
         <Achievements />
         <Project />
-        <FAQ />
+        <Faq />
         <Contact />
         <Footer />
       </div>

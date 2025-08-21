@@ -7,7 +7,7 @@ import Projects from './Components/Projects/Projects';
 import Contact from './Components/Contact/Contact';
 import Services from './Components/Services/Services';
 import WhyChooseUs from './Components/Whychooseus/Whychooseus';
-import FAQ from './Components/FAQ/FAQ';
+import Faq from './Components/Faq/Faq';
 import './index.css';
 
 const App = () => {
@@ -22,7 +22,7 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/services" element={<Services />} />
           <Route path="/whychooseus" element={<WhyChooseUs />} />
-          <Route path="/faq" element={<FAQ />} />
+          <Route path="/faq" element={<Faq />} />
           <Route path="*" element={<Home />} />
         </Routes>
       </main>
