@@ -1,34 +1,33 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import './About.css';
 
-// Image slider
-import ImgOne from '../../assets/commercialprojects/salonproject/finalviewofsalon2withlogo.jpg';
-import ImgTwo from '../../assets/commercialprojects/salonproject/finalviewofsalon3withlogo.jpg';
-import ImgThree from '../../assets/commercialprojects/salonproject/finalviewofsalon5withlogo.jpg';
-import Aboutimage from '../../assets/interior-design2.jpg';
-
-// Section backgrounds
+// Images
+import Aboutimage from '../../assets/interior-design-1.jpg';
 import FounderBg from '../../assets/3droom.jpg';
 import FoundationBg from '../../assets/interior-design-1.jpg';
-
-// Founder images - verify these files exist in your assets folder
 import Founder1 from '../../assets/dhwanisanghavi.jpg';
 import Founder2 from '../../assets/paragshelar.jpg';
 
+// Footer
 import Footer from '../../Footer/Footer';
 
-const imageSlides = [ImgOne, ImgTwo, ImgThree];
+// Videos
+import video1 from '../../assets/reel/dhwanireel1.mp4';
+import video2 from '../../assets/reel/dhwanireel2.mp4';
+import video3 from '../../assets/reel/dhwanireel3.mp4';
 
 const About = () => {
-  const [currentImage, setCurrentImage] = useState(0);
+  // Store video list
+  const videos = [video1, video2, video3];
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % imageSlides.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
+  // State for current video index
+  const [currentVideo, setCurrentVideo] = useState(0);
+
+  // Handle when a video ends → move to next video
+  const handleVideoEnd = () => {
+    setCurrentVideo((prev) => (prev + 1) % videos.length); // loop through videos
+  };
 
   // Add error handling for images
   const handleImageError = (e) => {
@@ -60,19 +59,36 @@ const About = () => {
         <div className="about-background-overlay"></div>
 
         <div className="about-left">
-          <div className="image-wrapper">
-            <div className="image-border"></div>
-            <img
-              src={imageSlides[currentImage]}
-              alt="Interior Design"
-              className="about-image-slide"
-              onError={handleImageError}
-            />
+          {/* 🔥 Video Player (plays one by one) */}
+          <div className="video-wrapper">
+            <video
+              className="about-video"
+              autoPlay
+              muted
+              playsInline
+              onEnded={handleVideoEnd} // change video when finished
+              key={currentVideo} // force re-render when video changes
+            >
+              <source src={videos[currentVideo]} type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            {/* Progress Dots */}
+            <div className="video-progress">
+              {videos.map((_, index) => (
+                <div
+                  key={index}
+                  className={`progress-dot ${index === currentVideo ? 'active' : ''}`}
+                  onClick={() => setCurrentVideo(index)}
+                />
+              ))}
+            </div>
           </div>
         </div>
 
         <div className="about-right">
-          <h2 className="about-heading1">Aaspire Design – Best Interior in Baner, Pune</h2>
+          <h2 className="about-heading1">
+            Aaspire Design – Best Interior Design studio in Baner, Pune
+          </h2>
           <p className="about-text">
             Aaspire Design is a multidisciplinary design studio and consulting firm based in Baner, Pune, 
             offering expert services in interior design. We specialize in creating modern, customized residential 
@@ -105,8 +121,8 @@ const About = () => {
             <div className="founder-info">
               <h3>Dhwani Sanghavi</h3>
               <h4>
-                Aaspire Design – Best Interior in Baner, Pune<br />
-                 Principal Interior Designer – Aaspire Design<br />
+                Principal Interior Designer – Aaspire Design<br />
+                Creative Director - INSD Baner Pune <br/>
                 Interior Designer | Specialist in French Concept Designs
               </h4>
               <p>
@@ -157,7 +173,7 @@ const About = () => {
             <br /><br />
             At Aaspire Design, we take pride in transforming both small and large spaces with equal passion and dedication. Our design philosophy is deeply rooted in creativity and functionality, spanning various fields like interior design, fashion design, and graphic design — ensuring a holistic and versatile approach to every project.
             <br /><br />
-            Under the leadership of Dhwani Sanghavi, Director of Aaspire Design and a prominent mentor at INSD Baner, Pune, the firm has flourished into a hub of innovative thinking and client-focused execution.
+            Under the leadership of Dhwani Sanghavi and Parag Shelar, Director of Aaspire Design and a prominent mentor at INSD Baner, Pune, the firm has flourished into a hub of innovative thinking and client-focused execution.
           </p>
         </div>
       </section>

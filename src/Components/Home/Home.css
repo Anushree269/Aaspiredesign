@@ -117,6 +117,7 @@
   transform: translateY(0);
 }
 
+
 /* --------------------------------------------------
    4. Inquiry Form
 -------------------------------------------------- */
@@ -318,106 +319,142 @@
    7. About Section
 -------------------------------------------------- */
 .about-section {
-  position: relative;
-  background-size: cover;
-  background-position: center;
-  padding: 6rem 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 80px 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
 
-.about-background-overlay {
+.about-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  gap: 60px;
+  align-items: center;
+  flex-wrap: wrap; /* ✅ Responsive */
+}
+
+.about-left {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.about-right {
+  flex: 1;
+  padding-left: 20px;
+}
+
+/* Video Container */
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 350px;       /* ✅ Reel-style fixed width */
+  aspect-ratio: 9 / 16;   /* ✅ Reels/TikTok format */
+  border-radius: 20px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.video-container:hover {
+  transform: translateY(-5px);
+}
+
+.about-reel {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* ✅ Full screen look */
+  display: block;
+}
+
+/* Video Progress Indicator */
+.video-progress {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.progress-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: 2px solid transparent;
+}
+
+.progress-dot:hover {
+  background: rgba(255, 255, 255, 0.8);
+  transform: scale(1.2);
+}
+
+.progress-dot.active {
+  background: #fff;
+  border-color: #007bff;
+  transform: scale(1.3);
+}
+
+/* Content Styles */
+.about-heading1 {
+  font-size: 2.5rem;
+  color: #011739;
+  margin-bottom: 30px;
+  font-weight: 700;
+  position: relative;
+}
+
+.about-heading1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 60px;
+  height: 4px;
+  background: linear-gradient(90deg, #007bff, #0056b3);
+  border-radius: 2px;
+}
+
+.about-text {
+  font-size: 1rem;
+  line-height: 1.7;
+  font-weight: 400;
+  color: #222;
+  margin-bottom: 1rem;
+  text-align: justify;
+}
+
+/* Video Loading State */
+.about-video::before {
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background: linear-gradient(45deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 200%;
+  animation: loading 1.5s infinite;
+  border-radius: 15px;
+  display: none;
 }
 
-.about-container {
-  display: flex;
-  gap: 3rem;
-  max-width: 1300px;
-  width: 100%;
-  z-index: 2;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
+.about-video.loading::before {
+  display: block;
 }
 
-.about-left {
-  flex: 1 1 45%;
-  min-width: 300px;
-}
-
-.about-image-slide {
-  width: 100%;
-  max-height: 500px;
-  object-fit: cover;
-  border-radius: 16px;
-}
-
-.about-right {
-  flex: 1 1 50%;
-  min-width: 300px;
-  background-color: rgba(204, 204, 204, 0.8);
-  padding: 2rem;
-  border-radius: 12px;
-}
-
-.about-heading1 {
-  font-size: 2rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-.about-text {
-  font-size: 1.1rem;
-  line-height: 1.8;
-}
-
-/* --------------------------------------------------
-   8. Responsive Breakpoints
--------------------------------------------------- */
-@media (max-width: 1200px) {
-  .popup-form.reduced {
-    width: 40%;
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
   }
 }
 
-@media (max-width: 992px) {
-  .hero-content-container {
-    flex-direction: column;
-    padding: 80px 20px;
-  }
-  .hero-logo { margin: 0 auto; width: 280px; }
-  .hero-tagline { text-align: center; margin-left: 0; }
-  .inquiry-form { position: relative; margin: 2rem auto; width: 80%; }
-  .about-container { flex-direction: column; gap: 2rem; }
-  .popup-form.reduced {
-    width: 60%;
-  }
-}
-
-@media (max-width: 768px) {
-  .counter-box { width: 45%; }
-  .inquiry-form { width: 95%; }
-  .popup-form.reduced {
-    width: 80%;
-  }
-}
-
-@media (max-width: 576px) {
-  .hero-tagline h1 { font-size: 1.5rem; margin-left: 0; }
-  .hero-tagline p { font-size: 1rem; margin-left: 0; }
-  .counter-box { width: 100%; }
-  .popup-form.reduced {
-    width: 95%;
-  }
-}
-
-@media (max-width: 400px) {
-  .hero-logo { width: 200px; }
-}

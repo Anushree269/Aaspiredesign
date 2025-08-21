@@ -5,11 +5,16 @@ import './Home.css';
 // Assets
 import Frontimage from '../../assets/homeimage.jpg';
 import Logo from '../../assets/Aaspirepng.png';
-import ImgOne from '../../assets/residentialprojects/atulshah/finalviews6withlogo.jpg';
-import ImgTwo from '../../assets/residentialprojects/atulshah/finalviews7withlogo.jpg';
-import ImgThree from '../../assets/residentialprojects//atulshah/finalviews10withlogo.jpg';
-import Aboutimage from '../../assets/interior-design2.jpg';
 import emailjs from '@emailjs/browser';
+
+// ✅ Import videos correctly from src/assets/reel
+import reel1 from '../../assets/reel/dhwanireel1.mp4';
+import reel2 from '../../assets/reel/dhwanireel2.mp4';
+import reel3 from '../../assets/reel/dhwanireel3.mp4';
+import reel4 from '../../assets/reel/dhwanireel4.mp4';
+
+// About Section Background
+import AboutBg from '../../assets/interior-design-1.jpg';
 
 // Icons
 import { FaUserGraduate, FaLaptopCode, FaChalkboardTeacher, FaBriefcase } from 'react-icons/fa';
@@ -28,9 +33,22 @@ const Home = () => {
   const counterRef = useRef(null);
   const formHeroRef = useRef();
   const formPopupRef = useRef();
+  const videoRef = useRef(null);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
+  const [textVisible, setTextVisible] = useState(false);
+  const [formVisible, setFormVisible] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
+  const [currentVideo, setCurrentVideo] = useState(0);
+
+  // ✅ Use imported videos
+  const videos = [
+    { src: reel4, type: 'video/mp4' },
+    { src: reel3, type: 'video/mp4' },
+    { src: reel2, type: 'video/mp4' },
+    { src: reel1, type: 'video/mp4' }
+  ];
 
   const sendEmail = (e, formRef) => {
     e.preventDefault();
@@ -54,13 +72,6 @@ const Home = () => {
       })
       .finally(() => setIsSubmitting(false));
   };
-
-  const [textVisible, setTextVisible] = useState(false);
-  const [formVisible, setFormVisible] = useState(false);
-  const [showPopup, setShowPopup] = useState(false);
-  const [currentImage, setCurrentImage] = useState(0);
-
-  const imageSlides = [ImgOne, ImgTwo, ImgThree];
 
   // Counter animation
   useEffect(() => {
@@ -91,13 +102,31 @@ const Home = () => {
     return () => observer.disconnect();
   }, []);
 
-  // Image slider
+  // Video auto-cycle
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % imageSlides.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, [imageSlides.length]);
+    const videoElement = videoRef.current;
+    if (!videoElement) return;
+
+    const handleVideoEnd = () => {
+      setCurrentVideo((prev) => (prev + 1) % videos.length);
+    };
+
+    videoElement.addEventListener('ended', handleVideoEnd);
+
+    const playVideo = async () => {
+      try {
+        await videoElement.play();
+      } catch (error) {
+        console.log('Auto-play prevented:', error);
+      }
+    };
+
+    playVideo();
+
+    return () => {
+      videoElement.removeEventListener('ended', handleVideoEnd);
+    };
+  }, [currentVideo, videos.length]);
 
   useEffect(() => {
     setTextVisible(true);
@@ -159,29 +188,25 @@ const Home = () => {
       <section className="hero-section">
         <div className="background-image" style={{ backgroundImage: `url(${Frontimage})` }}></div>
         <div className="hero-content-container">
-          {/* Right Logo & Tagline */}
           <div className="hero-decor">
             <div className="triangle-top-left"></div>
             <div className="rectangle-banner">
               <img src={Logo} alt="Aaspire Design Logo" className="hero-logo" />
               <div className="hero-tagline">
                 <h1 className={`animated ${textVisible ? 'active' : ''}`}>
-                  Aspire Design: The Art of Extraordinary Spaces
+                  The Art of Extraordinary Spaces
                 </h1>
-                
               </div>
             </div>
           </div>
         </div>
 
-        {/* Inquiry Form */}
         <div className={`inquiry-form ${formVisible ? 'active' : ''}`}>
           <h3>Inquire Now</h3>
           {renderForm(formHeroRef, sendEmail)}
         </div>
       </section>
 
-      {/* Popup Form */}
       {showPopup && (
         <div className="popup-overlay">
           <div className="popup-form reduced">
@@ -194,45 +219,66 @@ const Home = () => {
         </div>
       )}
 
-      {/* Counter Section */}
       <section className="counter-section" ref={counterRef}>
         <div className="counter-box">
           <FaUserGraduate className="counter-icon" />
-          <h2 className="count" data-target="60">
-            0
-          </h2>
+          <h2 className="count" data-target="60">0</h2>
           <p>Happy Customers</p>
         </div>
         <div className="counter-box">
           <FaLaptopCode className="counter-icon" />
-          <h2 className="count" data-target="7">
-            0
-          </h2>
+          <h2 className="count" data-target="7">0</h2>
           <p>Live Projects</p>
         </div>
         <div className="counter-box">
           <FaChalkboardTeacher className="counter-icon" />
-          <h2 className="count" data-target="65">
-            0
-          </h2>
+          <h2 className="count" data-target="65">0</h2>
           <p>Project Completed</p>
         </div>
         <div className="counter-box">
           <FaBriefcase className="counter-icon" />
-          <h2 className="count" data-target="12">
-            0
-          </h2>
+          <h2 className="count" data-target="12">0</h2>
           <p>Years of Experience</p>
         </div>
       </section>
 
-      {/* About Section */}
-      <section className="about-section" style={{ backgroundImage: `url(${Aboutimage})` }} id="about">
-        <div className="about-background-overlay"></div>
+      {/* About Section with Background + Video */}
+      <section
+        className="about-section"
+        id="about"
+        style={{
+          backgroundImage: `url(${AboutBg})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+        }}
+      >
         <div className="about-container">
           <div className="about-left">
-            <img src={imageSlides[currentImage]} alt="Interior Design" className="about-image-slide" />
+            <div className="video-container">
+              <video
+                ref={videoRef}
+                key={currentVideo}
+                autoPlay
+                muted
+                playsInline
+                className="about-reel"
+              >
+                <source src={videos[currentVideo].src} type={videos[currentVideo].type} />
+                Your browser does not support the video tag.
+              </video>
+
+              <div className="video-progress">
+                {videos.map((_, index) => (
+                  <div
+                    key={index}
+                    className={`progress-dot ${index === currentVideo ? 'active' : ''}`}
+                    onClick={() => setCurrentVideo(index)}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
+
           <div className="about-right">
             <h2 className="about-heading1">About Aaspire Design</h2>
             <p className="about-text">

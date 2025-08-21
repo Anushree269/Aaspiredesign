@@ -9,8 +9,8 @@ const Navbar = () => {
       {/* Notification Slide */}
       <div className="notification-banner">
         <span className="notification-text">
-          Phone Number: +91 75078 57008 &nbsp;&nbsp;|&nbsp;&nbsp; 
-          Email: aaspiredesign@gmail.com &nbsp;&nbsp;|&nbsp;&nbsp; 
+          Phone Number: +91 7755924414 &nbsp;&nbsp;|&nbsp;&nbsp; 
+          Email: aaspiredesign9@gmail.com &nbsp;&nbsp;|&nbsp;&nbsp; 
           Office Address: Unecha Estate, Above Bank of Baroda, Baner, Pune.
         </span>
       </div>

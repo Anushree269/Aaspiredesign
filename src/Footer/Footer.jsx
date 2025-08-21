@@ -15,7 +15,7 @@ const Footer = () => {
         <div className="footer-section">
           <h3 className="footer-title">Contact</h3>
           <p><FiPhone className="footer-icon" /> +91-7755924414</p>
-          <p><FiMail className="footer-icon" /> <a href="mailto:aaspiredesign9@gmail.com">aaspiredesign@gmail.com</a></p>
+          <p><FiMail className="footer-icon" /> <a href="mailto:aaspiredesign9@gmail.com">aaspiredesign9@gmail.com</a></p>
         </div>
 
         <div className="footer-section">

@@ -41,14 +41,21 @@
   animation: fadeZoom 1.2s ease forwards;
 }
 
-/* ✅ Services Container - Horizontal Auto Scroll */
+/* ✅ Slider Wrapper (controls visible area) */
+.slider-wrapper {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ✅ Services Container - Continuous Loop */
 .services-container {
   display: flex;
   flex-direction: row;
   gap: 2.5rem;
   flex-wrap: nowrap;
-  width: max-content; /* 👈 ensures no wrapping */
-  animation: slideLoop 25s linear infinite; /* 👈 smoother & slower loop */
+  width: max-content;
+  animation: slideLoop 14s linear infinite; /* 👈 slower continuous loop */
   will-change: transform;
 }
 
@@ -57,13 +64,13 @@
   display: flex;
   align-items: center;
   gap: 2rem;
-  width: 550px; /* 👈 controlled width */
+  width: 550px;
   padding: 1.5rem 2rem;
   border-radius: 16px;
   background-color: rgba(255, 255, 255, 0.85);
   transition: transform 0.3s ease;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-  flex-shrink: 0; /* 👈 prevents shrinking */
+  flex-shrink: 0;
 }
 
 .service-item:hover {
@@ -119,7 +126,7 @@
     transform: translateX(0%);
   }
   100% {
-    transform: translateX(-50%); /* 👈 loop half container */
+    transform: translateX(-30%); /* 👈 slides half because list is duplicated */
   }
 }
 
@@ -142,6 +149,10 @@
 }
 
 @media (max-width: 768px) {
+  .slider-wrapper {
+    overflow: visible;
+  }
+
   .services-container {
     flex-direction: column;
     animation: none; /* 👈 disable auto-scroll on small screens */

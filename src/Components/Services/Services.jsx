@@ -89,7 +89,9 @@ const Services = () => {
               <p>{service.description}</p>
             </div>
           </div>
+          
         ))}
+        
       </div>
     </section>
   );
