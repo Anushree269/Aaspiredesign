@@ -3,55 +3,125 @@ import './Commercial.css';
 import { Helmet } from 'react-helmet-async';
 import BgImage from '../../assets/livingroom.jpg';
 
-// Import images with detailed descriptions
-import Img1 from '../../assets/commercialprojects/salonproject/finalviewofsalon1withlogo.jpg';
-import Img2 from '../../assets/commercialprojects/salonproject/finalviewofsalon2withlogo.jpg';
-import Img3 from '../../assets/commercialprojects/salonproject/finalviewofsalon3withlogo.jpg';
-import Img4 from '../../assets/commercialprojects/salonproject/finalviewofsalon4withlogo.jpg';
-import Img5 from '../../assets/commercialprojects/salonproject/finalviewofsalon5withlogo.jpg';
-import Img6 from '../../assets/commercialprojects/salonproject/finalviewofsalon6withlogo.jpg';
-import Img7 from '../../assets/commercialprojects/salonproject/finalviewofsalon7withlogo.jpg';
-import Img8 from '../../assets/commercialprojects/salonproject/rerenderview1.jpg';
+// Import images for Salon Projects
+import SalonImg1 from '../../assets/commercialprojects/salonproject/finalviewofsalon1withlogo.jpg';
+import SalonImg2 from '../../assets/commercialprojects/salonproject/finalviewofsalon2withlogo.jpg';
+import SalonImg3 from '../../assets/commercialprojects/salonproject/finalviewofsalon3withlogo.jpg';
+import SalonImg4 from '../../assets/commercialprojects/salonproject/finalviewofsalon4withlogo.jpg';
+import SalonImg5 from '../../assets/commercialprojects/salonproject/finalviewofsalon5withlogo.jpg';
+import SalonImg6 from '../../assets/commercialprojects/salonproject/finalviewofsalon6withlogo.jpg';
+import SalonImg7 from '../../assets/commercialprojects/salonproject/finalviewofsalon7withlogo.jpg';
+import SalonImg8 from '../../assets/commercialprojects/salonproject/rerenderview1.jpg';
 
-const imageData = [
-  { 
-    src: Img1, 
-    alt: 'Salon reception area with elegant decor',
-  },
-  { 
-    src: Img2, 
-    alt: 'Professional hair styling station',
-  },
-  { 
-    src: Img3, 
-    alt: 'Comfortable waiting area',
-  },
-  { 
-    src: Img4, 
-    alt: 'Hair washing station',
-  },
-  { 
-    src: Img5, 
-    alt: 'Salon treatment room',
-  },
-  { 
-    src: Img6, 
-    alt: 'Product display area',
-  },
-  { 
-    src: Img7, 
-    alt: 'Nail care area',
-  },
-  { 
-    src: Img8, 
-    alt: 'Complete salon layout',
-  },
-];
+// Import images for Light Showroom Projects
+import LightImg1 from '../../assets/commercialprojects/lightshowroom/lightshowroom1.jpg';
+import LightImg2 from '../../assets/commercialprojects/lightshowroom/lightshowroom1.jpg';
+import LightImg3 from '../../assets/commercialprojects/lightshowroom/lightshowroom1.jpg';
+
+// Import images for Office Projects
+import OfficeImg1 from '../../assets/commercialprojects/officeproject/office1.jpg';
+import OfficeImg2 from '../../assets/commercialprojects/officeproject/office2.jpg';
+import OfficeImg3 from '../../assets/commercialprojects/officeproject/office3.jpg';
+
+// Define image data for each category
+const imageCategories = {
+  salon: [
+    { 
+      src: SalonImg1, 
+      alt: 'Salon reception area with elegant decor',
+      title: 'Salon Reception',
+      description: 'Elegant reception area with modern furniture and branding'
+    },
+    { 
+      src: SalonImg2, 
+      alt: 'Professional hair styling station',
+      title: 'Styling Station',
+      description: 'Professional hair styling station with premium equipment'
+    },
+    { 
+      src: SalonImg3, 
+      alt: 'Comfortable waiting area',
+      title: 'Waiting Area',
+      description: 'Comfortable waiting area with stylish seating'
+    },
+    { 
+      src: SalonImg4, 
+      alt: 'Hair washing station',
+      title: 'Wash Station',
+      description: 'Modern hair washing station with comfortable chairs'
+    },
+    { 
+      src: SalonImg5, 
+      alt: 'Salon treatment room',
+      title: 'Treatment Room',
+      description: 'Private treatment room for specialized services'
+    },
+    { 
+      src: SalonImg6, 
+      alt: 'Product display area',
+      title: 'Product Display',
+      description: 'Well-organized product display area'
+    },
+    { 
+      src: SalonImg7, 
+      alt: 'Nail care area',
+      title: 'Nail Care Station',
+      description: 'Dedicated area for nail care services'
+    },
+    { 
+      src: SalonImg8, 
+      alt: 'Complete salon layout',
+      title: 'Complete Layout',
+      description: 'Overview of the complete salon layout'
+    }
+  ],
+  showroom: [
+    { 
+      src: LightImg1, 
+      alt: 'Light showroom display area',
+      title: 'Showroom Display',
+      description: 'Modern light showroom with various displays'
+    },
+    { 
+      src: LightImg2, 
+      alt: 'Lighting product showcase',
+      title: 'Product Showcase',
+      description: 'Showcase of premium lighting products'
+    },
+    { 
+      src: LightImg3, 
+      alt: 'Light showroom interior',
+      title: 'Showroom Interior',
+      description: 'Interior view of the light showroom'
+    }
+  ],
+  office: [
+    { 
+      src: OfficeImg1, 
+      alt: 'Modern office workspace',
+      title: 'Workspace Design',
+      description: 'Modern office workspace with ergonomic furniture'
+    },
+    { 
+      src: OfficeImg2, 
+      alt: 'Office meeting room',
+      title: 'Meeting Room',
+      description: 'Professional meeting room with presentation equipment'
+    },
+    { 
+      src: OfficeImg3, 
+      alt: 'Office reception area',
+      title: 'Office Reception',
+      description: 'Welcoming office reception area'
+    }
+  ]
+};
 
 const Commercial = () => {
   const [currentIndex, setCurrentIndex] = useState(null);
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
+  const [activeTab, setActiveTab] = useState('salon');
   const sectionRef = useRef(null);
   const [inView, setInView] = useState(false);
 
@@ -112,11 +182,11 @@ const Commercial = () => {
   };
 
   const goToPrev = () => {
-    setCurrentIndex(prev => (prev === 0 ? imageData.length - 1 : prev - 1));
+    setCurrentIndex(prev => (prev === 0 ? imageCategories[activeTab].length - 1 : prev - 1));
   };
 
   const goToNext = () => {
-    setCurrentIndex(prev => (prev === imageData.length - 1 ? 0 : prev + 1));
+    setCurrentIndex(prev => (prev === imageCategories[activeTab].length - 1 ? 0 : prev + 1));
   };
 
   useEffect(() => {
@@ -137,9 +207,33 @@ const Commercial = () => {
 
       <h2 className="commercial-heading">Commercial Projects</h2>
 
+      {/* Tabs Navigation */}
+      <div className="tabs-container">
+        <div className="tabs">
+          <button 
+            className={`tab ${activeTab === 'salon' ? 'active' : ''}`}
+            onClick={() => setActiveTab('salon')}
+          >
+            Salon Projects
+          </button>
+          <button 
+            className={`tab ${activeTab === 'showroom' ? 'active' : ''}`}
+            onClick={() => setActiveTab('showroom')}
+          >
+            Light Showrooms
+          </button>
+          <button 
+            className={`tab ${activeTab === 'office' ? 'active' : ''}`}
+            onClick={() => setActiveTab('office')}
+          >
+            Office Spaces
+          </button>
+        </div>
+      </div>
+
       <div className="commercial-row">
         <div className="project-grid">
-          {imageData.map((img, index) => (
+          {imageCategories[activeTab].map((img, index) => (
             <div
               className="project-box fade-up"
               key={index}
@@ -183,12 +277,12 @@ const Commercial = () => {
             
             <div className="lightbox-content">
               <img 
-                src={imageData[currentIndex].src} 
-                alt={imageData[currentIndex].alt}
+                src={imageCategories[activeTab][currentIndex].src} 
+                alt={imageCategories[activeTab][currentIndex].alt}
               />
               <div className="lightbox-info">
-                <h3>{imageData[currentIndex].title}</h3>
-                <p>{imageData[currentIndex].description}</p>
+                <h3>{imageCategories[activeTab][currentIndex].title}</h3>
+                <p>{imageCategories[activeTab][currentIndex].description}</p>
               </div>
             </div>
             
@@ -215,7 +309,7 @@ const Commercial = () => {
             </button>
             
             <div className="image-counter">
-              {currentIndex + 1} / {imageData.length}
+              {currentIndex + 1} / {imageCategories[activeTab].length}
             </div>
           </div>
         </div>
