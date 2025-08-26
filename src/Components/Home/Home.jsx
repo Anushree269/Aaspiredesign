@@ -154,7 +154,7 @@ const Home = () => {
         <option value="above">Above</option>
         <option value="commercial">Commercial</option>
       </select>
-      <textarea name="message" placeholder="Your Message" rows="4"></textarea>
+      <textarea name="message" placeholder="Your Message" rows="2"></textarea>
       <button type="submit" disabled={isSubmitting}>
         {isSubmitting ? 'Sending...' : 'Submit'}
       </button>

@@ -40,7 +40,7 @@
 /* --------------------------------------------------
    3. Hero Section
 -------------------------------------------------- */
-.hero-section {
+/* .hero-section {
   position: relative;
   width: 100%;
   height: 100vh;
@@ -115,20 +115,20 @@
 .hero-tagline h1.active {
   opacity: 1;
   transform: translateY(0);
-}
+} */
 
 
 /* --------------------------------------------------
    4. Inquiry Form
 -------------------------------------------------- */
-.inquiry-form {
+/* .inquiry-form {
   position: absolute;
   top: 5%;
-  right: 5%;
+  right: 2%;
   width: 450px;
   max-width: 95%;
   background: #ffffff;
-  padding: 1.2rem 2rem;
+  padding: 1rem 1rem;
   border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
   z-index: 3;
@@ -146,7 +146,7 @@
 .inquiry-form h3 {
   text-align: center;
   font-size: 1.25rem;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.2rem;
   color: #022257;
   font-weight: 600;
 }
@@ -160,11 +160,11 @@
   border-radius: 6px;
   font-size: 0.88rem;
   transition: all 0.3s ease;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.2rem;
 }
 
 .inquiry-form textarea {
-  min-height: 60px;
+  min-height: 4px;
   resize: vertical;
 }
 
@@ -199,14 +199,14 @@
   font-size: 0.8rem;
   margin-top: 0.35rem;
   text-align: center;
-}
+} */
 
 /* --------------------------------------------------
    5. Popup Modal Form
 -------------------------------------------------- */
 .popup-overlay {
   position: fixed;
-  top: 0; /* Full-screen coverage */
+  top: 20px; /* Full-screen coverage */
   left: 0;
   width: 100%;
   height: 100%;
@@ -224,7 +224,7 @@
   border-radius: 12px;
   width: 30%;
   max-width: 420px; /* Prevents too-wide forms on large screens */
-  max-height: 80vh;
+  max-height: 85vh;
   overflow-y: auto;
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
   position: relative;
@@ -458,3 +458,333 @@
   }
 }
 
+
+/*=================== Mobile=============================== */
+/* Logo */
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 120%;
+  width: 100%;
+  background-size: cover;
+  background-position: center -180px;
+  filter: brightness(0.5);
+  z-index: 1;
+}
+
+.hero-content-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  height: 100%;
+  padding: 0 5%;
+  /* align-items: center; */
+  text-align: center;
+}
+
+.hero-decor {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  /* align-items: center; */
+}
+
+.rectangle-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-logo {
+
+  width: 490px;
+  height: auto;
+  object-fit: contain;
+  margin-top: 3px;
+  animation: fadeInDown 1s ease-out forwards;
+}
+
+.hero-tagline {
+  text-align: left;
+  margin-top: -10px;
+  margin-left: 20px;
+}
+
+.hero-tagline h1 {
+  margin-left: 40px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: rgb(143, 235, 89);
+  margin-bottom: 0.8rem;
+  max-width: 880px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease 0.6s;
+}
+
+
+.hero-tagline h1.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* Inquiry-form */
+
+.inquiry-form {
+  position: absolute;
+  top: 20%;              /* stays 20% from top */
+  right:0%;             /* middle of the screen */
+  transform: translateX(-50%); /* center horizontally */
+
+  width: 450px;
+  max-width: 95%;
+  background: #ffffff;
+  padding: 1rem 1rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  z-index: 3;
+  opacity: 0;
+  transition: all 0.8s ease 1.2s;
+  font-family: 'Lora', serif;
+}
+
+
+.inquiry-form.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.inquiry-form h3 {
+  text-align: center;
+  font-size: 1.25rem;
+  margin-bottom: 0.2rem;
+  color: #022257;
+  font-weight: 600;
+}
+
+.inquiry-form input,
+.inquiry-form textarea,
+.inquiry-form select {
+  width: 100%;
+  padding: 0.5rem 0.8rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  transition: all 0.3s ease;
+  margin-bottom: 0.2rem;
+}
+
+.inquiry-form textarea {
+  min-height: 4px;
+  resize: vertical;
+}
+
+.inquiry-form button {
+  width: 100%;
+  background-color: #022257;
+  color: #fff;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.92rem;
+  transition: all 0.3s ease;
+  height: 45px;
+}
+
+.inquiry-form button:hover {
+  background-color: #031a3d;
+  transform: translateY(-2px);
+}
+
+.form-success {
+  color: #2d8a39;
+  font-size: 0.8rem;
+  margin-top: 0.35rem;
+  text-align: center;
+}
+
+.form-error {
+  color: #e53e3e;
+  font-size: 0.8rem;
+  margin-top: 0.35rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+ 
+}
+
+@media (min-width: 1024px) {
+ .hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 120%;
+  width: 100%;
+  background-size: cover;
+  background-position: center -180px;
+  filter: brightness(0.5);
+  z-index: 1;
+}
+
+.hero-content-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  height: 100%;
+  padding: 0 5%;
+  align-items: center;
+}
+
+.hero-decor {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.rectangle-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-logo {
+  width: 490px;
+  height: auto;
+  object-fit: contain;
+  margin-top: -40px;
+  margin-left: 160px;
+  animation: fadeInDown 1s ease-out forwards;
+}
+
+.hero-tagline {
+  text-align: left;
+  margin-top: -10px;
+  margin-left: 20px;
+}
+
+.hero-tagline h1 {
+  margin-left: 40px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: rgb(143, 235, 89);
+  margin-bottom: 0.8rem;
+  max-width: 880px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease 0.6s;
+}
+
+
+.hero-tagline h1.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* Inquiry-form */
+.inquiry-form {
+  position: absolute;
+  top: 5%;
+  right: 2%;
+  width: 450px;
+  max-width: 95%;
+  background: #ffffff;
+  padding: 1rem 1rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  z-index: 3;
+  opacity: 0;
+  transform: translateX(80px);
+  transition: all 0.8s ease 1.2s;
+  font-family: 'Lora', serif;
+}
+
+.inquiry-form.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.inquiry-form h3 {
+  text-align: center;
+  font-size: 1.25rem;
+  margin-bottom: 0.2rem;
+  color: #022257;
+  font-weight: 600;
+}
+
+.inquiry-form input,
+.inquiry-form textarea,
+.inquiry-form select {
+  width: 100%;
+  padding: 0.5rem 0.8rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  transition: all 0.3s ease;
+  margin-bottom: 0.2rem;
+}
+
+.inquiry-form textarea {
+  min-height: 4px;
+  resize: vertical;
+}
+
+.inquiry-form button {
+  width: 100%;
+  background-color: #022257;
+  color: #fff;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.92rem;
+  transition: all 0.3s ease;
+  height: 45px;
+}
+
+.inquiry-form button:hover {
+  background-color: #031a3d;
+  transform: translateY(-2px);
+}
+
+.form-success {
+  color: #2d8a39;
+  font-size: 0.8rem;
+  margin-top: 0.35rem;
+  text-align: center;
+}
+
+.form-error {
+  color: #e53e3e;
+  font-size: 0.8rem;
+  margin-top: 0.35rem;
+  text-align: center;
+}
+}
