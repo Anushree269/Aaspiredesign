@@ -111,12 +111,10 @@
   transition: all 0.8s ease 0.6s;
 }
 
-
 .hero-tagline h1.active {
   opacity: 1;
   transform: translateY(0);
 }
-
 
 /* --------------------------------------------------
    4. Inquiry Form
@@ -206,7 +204,7 @@
 -------------------------------------------------- */
 .popup-overlay {
   position: fixed;
-  top: 0; /* Full-screen coverage */
+  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
@@ -214,7 +212,7 @@
   align-items: center;
   justify-content: center;
   z-index: 999;
-  background: rgba(0, 0, 0, 0.6); /* Dim background */
+  background: rgba(0, 0, 0, 0.6);
   animation: fadeIn 0.3s ease-out forwards;
 }
 
@@ -233,7 +231,6 @@
   text-align: center;
 }
 
-/* Close button */
 .popup-form.reduced .close-btn {
   position: absolute;
   top: 15px;
@@ -302,6 +299,7 @@
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(2, 34, 87, 0.3);
 }
+
 /* --------------------------------------------------
    6. Counter Section
 -------------------------------------------------- */
@@ -358,7 +356,7 @@
   padding: 0 20px;
   gap: 60px;
   align-items: center;
-  flex-wrap: wrap; /* ✅ Responsive */
+  flex-wrap: wrap;
 }
 
 .about-left {
@@ -373,12 +371,11 @@
   padding-left: 20px;
 }
 
-/* Video Container */
 .video-container {
   position: relative;
   width: 100%;
-  max-width: 350px;       /* ✅ Reel-style fixed width */
-  aspect-ratio: 9 / 16;   /* ✅ Reels/TikTok format */
+  max-width: 350px;
+  aspect-ratio: 9 / 16;
   border-radius: 20px;
   overflow: hidden;
   background: #000;
@@ -393,11 +390,10 @@
 .about-reel {
   width: 100%;
   height: 100%;
-  object-fit: cover;   /* ✅ Full screen look */
+  object-fit: cover;
   display: block;
 }
 
-/* Video Progress Indicator */
 .video-progress {
   position: absolute;
   bottom: 12px;
@@ -429,7 +425,6 @@
   transform: scale(1.3);
 }
 
-/* Content Styles */
 .about-heading1 {
   font-size: 2.5rem;
   color: #011739;
@@ -458,7 +453,6 @@
   text-align: justify;
 }
 
-/* Video Loading State */
 .about-video::before {
   content: '';
   position: absolute;
@@ -518,7 +512,6 @@
 
 /* ---------- Tablets (≤768px) ---------- */
 @media (max-width: 768px) {
-  /* Hero Section */
   .hero-section {
     min-height: 80vh;
     padding: 0;
@@ -566,7 +559,6 @@
     text-align: center;
   }
 
-  /* Inquiry Form */
   .inquiry-form {
     order: 3;
     position: relative;
@@ -584,7 +576,6 @@
     font-size: 1.3rem;
   }
 
-  /* Popup */
   .popup-form.reduced {
     width: 95%;
     max-width: 480px;
@@ -618,7 +609,6 @@
     font-size: 1.1rem;
   }
 
-  /* Counter */
   .counter-section {
     flex-direction: column;
     align-items: center;
@@ -632,7 +622,6 @@
     margin: 0;
   }
 
-  /* About */
   .about-container {
     flex-direction: column;
     gap: 2rem;
@@ -668,9 +657,8 @@
 
 /* ---------- Mobile Phones (≤480px) ---------- */
 @media (max-width: 480px) {
-  /* Hero */
   .hero-section {
-    min-height: 60vh;
+    min-height: 70vh;
   }
 
   .hero-content-container {
@@ -707,18 +695,17 @@
     margin: 0;
   }
 
-  /* Inquiry Form */
   .inquiry-form {
     order: 3;
-  position: relative;
-  top: 80px;
-  right: auto;
-  width: 100%;
-  padding: 1.5rem;
-  max-width: 380px;
-  margin: 0 auto;
-  transform: none;
-  opacity: 1;
+    position: relative;
+    top: 20px;
+    right: auto;
+    width: 100%;
+    padding: 1.5rem;
+    max-width: 380px;
+    margin: 0 auto;
+    transform: none;
+    opacity: 1;
   }
 
   .inquiry-form h3 {
@@ -740,9 +727,8 @@
     padding: 0.7rem;
   }
 
-  /* Popup */
   .popup-form.reduced {
-    width: 99%;
+    width: 95%;
     max-width: 450px;
     min-width: 320px;
     padding: 2rem 1.5rem;
@@ -782,7 +768,6 @@
     margin-top: 0.8rem;
   }
 
-  /* Counter */
   .counter-section {
     padding: 2rem 1rem;
   }
@@ -801,7 +786,6 @@
     font-size: 1rem;
   }
 
-  /* About */
   .about-section {
     padding: 3rem 0;
   }
@@ -821,3 +805,268 @@
     max-width: 280px;
   }
 }
+
+/* ---------- Extra Small (iPhone SE, 320px–375px) ---------- */
+@media (min-width: 320px) and (max-width: 375px) {
+
+    position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 120%;
+  width: 100%;
+  background-size: cover;
+  background-position: center -180px;
+  filter: brightness(0.5);
+  z-index: 1;
+}
+
+.hero-content-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  height: 100%;
+  padding: 0 5%;
+  align-items: center;
+}
+
+.hero-decor {
+  position: relative;
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.rectangle-banner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero-logo {
+  width: 290px;
+  height: auto;
+  object-fit: contain;
+  margin-top: -180px;
+  margin-left: 2px;
+  animation: fadeInDown 1s ease-out forwards;
+}
+
+.hero-tagline {
+  text-align: left;
+  margin-top: -10px;
+  margin-left: 20px;
+}
+
+.hero-tagline h1 {
+  margin-left: 40px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: rgb(143, 235, 89);
+  margin-bottom: 0.8rem;
+  max-width: 450px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s ease 0.6s;
+}
+
+.hero-tagline h1.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --------------------------------------------------
+   4. Inquiry Form
+-------------------------------------------------- */
+.inquiry-form {
+  position: absolute;
+  top: 30%;
+  right: 5%;
+  width: 360px;
+  max-width: 95%;
+  background: #ffffff;
+  padding: 1.2rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  z-index: 3;
+  opacity: 0;
+  transform: translateX(80px);
+  transition: all 0.8s ease 1.2s;
+  font-family: 'Lora', serif;
+}
+
+.inquiry-form.active {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.inquiry-form h3 {
+  text-align: center;
+  font-size: 1.25rem;
+  margin-bottom: 0.6rem;
+  color: #022257;
+  font-weight: 600;
+}
+
+.inquiry-form input,
+.inquiry-form textarea,
+.inquiry-form select {
+  width: 100%;
+  padding: 0.5rem 0.8rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 0.88rem;
+  transition: all 0.3s ease;
+  margin-bottom: 0.6rem;
+}
+
+.inquiry-form textarea {
+  min-height: 60px;
+  resize: vertical;
+}
+
+.inquiry-form button {
+  width: 100%;
+  background-color: #022257;
+  color: #fff;
+  border: none;
+  padding: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.92rem;
+  transition: all 0.3s ease;
+  height: 45px;
+}
+
+.inquiry-form button:hover {
+  background-color: #031a3d;
+  transform: translateY(-2px);
+}
+
+.form-success {
+  color: #2d8a39;
+  font-size: 0.8rem;
+  margin-top: 0.35rem;
+  text-align: center;
+}
+
+.form-error {
+  color: #e53e3e;
+  font-size: 0.8rem;
+  margin-top: 0.35rem;
+  text-align: center;
+}
+
+/* --------------------------------------------------
+   5. Popup Modal Form
+-------------------------------------------------- */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.6);
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.popup-form.reduced {
+  background: #fff;
+  padding: 2rem 2.5rem;
+  border-radius: 15px;
+  width: 45%;
+  max-width: 550px;
+  min-width: 400px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
+  position: relative;
+  animation: scaleIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1) forwards;
+  text-align: center;
+}
+
+.popup-form.reduced .close-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  border: none;
+  background: transparent;
+  color: #022257;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-form.reduced .close-btn:hover {
+  color: #d90429;
+}
+
+.popup-form.reduced h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #022257;
+  font-weight: 600;
+}
+
+.popup-form.reduced input,
+.popup-form.reduced textarea,
+.popup-form.reduced select {
+  margin-top: 1px;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.popup-form.reduced input:focus,
+.popup-form.reduced textarea:focus,
+.popup-form.reduced select:focus {
+  border-color: #022257;
+  outline: none;
+}
+
+.popup-form.reduced button {
+  width: 100%;
+  background-color: #022257;
+  color: #fff;
+  border: none;
+  padding: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.popup-form.reduced button:hover {
+  background-color: #031a3d;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(2, 34, 87, 0.3);
+}
+
+  
+
