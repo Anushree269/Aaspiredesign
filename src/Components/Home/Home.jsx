@@ -185,8 +185,7 @@ const Home = () => {
       </Helmet>
 
       {/* Hero Section */}
-      <section className="hero-section">
-        <div className="background-image" style={{ backgroundImage: `url(${Frontimage})` }}></div>
+      <section className="hero-section"  style={{ backgroundImage: `url(${Frontimage})` }}>
         <div className="hero-content-container">
           <div className="hero-decor">
             <div className="triangle-top-left"></div>
@@ -201,7 +200,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className={`inquiry-form ${formVisible ? 'active' : ''}`}>
+        <div className={`inquiry-form `}>
           <h3>Inquire Now</h3>
           {renderForm(formHeroRef, sendEmail)}
         </div>
