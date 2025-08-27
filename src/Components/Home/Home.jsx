@@ -185,6 +185,7 @@ const Home = () => {
       </Helmet>
 
       {/* Hero Section */}
+      
       <section className="hero-section"  style={{ backgroundImage: `url(${Frontimage})` }}>
         <div className="hero-content-container">
           <div className="hero-decor">
@@ -205,6 +206,7 @@ const Home = () => {
           {renderForm(formHeroRef, sendEmail)}
         </div>
       </section>
+      {/* ------------------ */}
 
       {showPopup && (
         <div className="popup-overlay">
