@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Helmet } from 'react-helmet-async';
 import './Home.css';
+import { IoClose } from "react-icons/io5";
 
 // Assets
 import Frontimage from '../../assets/homeimage.jpg';
@@ -211,9 +212,9 @@ const Home = () => {
       {showPopup && (
         <div className="popup-overlay">
           <div className="popup-form reduced">
-            <button className="close-btn" onClick={() => setShowPopup(false)}>
-              ×
-            </button>
+            <a className="close-btn" onClick={() => setShowPopup(false)}>
+              <IoClose/>
+            </a>
             <h3>Enquire Now</h3>
             {renderForm(formPopupRef, sendEmail)}
           </div>
