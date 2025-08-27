@@ -15,13 +15,25 @@ import SalonImg8 from '../../assets/commercialprojects/salonproject/rerenderview
 
 // Import images for Light Showroom Projects
 import LightImg1 from '../../assets/commercialprojects/lightshowroom/lightshowroom1.jpg';
-import LightImg2 from '../../assets/commercialprojects/lightshowroom/lightshowroom1.jpg';
-import LightImg3 from '../../assets/commercialprojects/lightshowroom/lightshowroom1.jpg';
+import LightImg2 from '../../assets/commercialprojects/lightshowroom/lightshowroom2.jpg';
+import LightImg3 from '../../assets/commercialprojects/lightshowroom/lightshowroom3.jpg';
+import LightImg4 from '../../assets/commercialprojects/lightshowroom/lightshowroom4.jpg';
+import LightImg5 from '../../assets/commercialprojects/lightshowroom/lightshowroom5.jpg';
+import LightImg6 from '../../assets/commercialprojects/lightshowroom/lightshowroom6.jpg';
+// Import images for Light Showroom Projects
 
-// Import images for Office Projects
-import OfficeImg1 from '../../assets/commercialprojects/officeproject/office1.jpg';
-import OfficeImg2 from '../../assets/commercialprojects/officeproject/office2.jpg';
-import OfficeImg3 from '../../assets/commercialprojects/officeproject/office3.jpg';
+import OfficeImg1 from '../../assets/commercialprojects/farmyardofficedesign/officelogo1.jpg';
+import OfficeImg2 from '../../assets/commercialprojects/farmyardofficedesign/officelogo2.jpg';
+import OfficeImg3 from '../../assets/commercialprojects/farmyardofficedesign/officelogo3.jpg';
+import OfficeImg4 from '../../assets/commercialprojects/farmyardofficedesign/officelogo4.jpg';
+import OfficeImg5 from '../../assets/commercialprojects/farmyardofficedesign/officelogo5.jpg';
+import OfficeImg6 from '../../assets/commercialprojects/farmyardofficedesign/officelogo6.jpg';
+import OfficeImg7 from '../../assets/commercialprojects/farmyardofficedesign/officelogo7.jpg';
+
+
+
+
+
 
 // Define image data for each category
 const imageCategories = {
@@ -30,89 +42,89 @@ const imageCategories = {
       src: SalonImg1, 
       alt: 'Salon reception area with elegant decor',
       title: 'Salon Reception',
-      description: 'Elegant reception area with modern furniture and branding'
     },
     { 
       src: SalonImg2, 
       alt: 'Professional hair styling station',
-      title: 'Styling Station',
-      description: 'Professional hair styling station with premium equipment'
     },
     { 
       src: SalonImg3, 
       alt: 'Comfortable waiting area',
-      title: 'Waiting Area',
-      description: 'Comfortable waiting area with stylish seating'
     },
     { 
       src: SalonImg4, 
       alt: 'Hair washing station',
-      title: 'Wash Station',
-      description: 'Modern hair washing station with comfortable chairs'
     },
     { 
       src: SalonImg5, 
       alt: 'Salon treatment room',
-      title: 'Treatment Room',
-      description: 'Private treatment room for specialized services'
     },
     { 
       src: SalonImg6, 
       alt: 'Product display area',
-      title: 'Product Display',
-      description: 'Well-organized product display area'
     },
     { 
       src: SalonImg7, 
       alt: 'Nail care area',
-      title: 'Nail Care Station',
-      description: 'Dedicated area for nail care services'
     },
     { 
       src: SalonImg8, 
       alt: 'Complete salon layout',
-      title: 'Complete Layout',
-      description: 'Overview of the complete salon layout'
     }
   ],
   showroom: [
     { 
       src: LightImg1, 
-      alt: 'Light showroom display area',
-      title: 'Showroom Display',
-      description: 'Modern light showroom with various displays'
-    },
+      alt: 'Light showroom display area',    },
     { 
       src: LightImg2, 
       alt: 'Lighting product showcase',
-      title: 'Product Showcase',
-      description: 'Showcase of premium lighting products'
     },
     { 
       src: LightImg3, 
       alt: 'Light showroom interior',
-      title: 'Showroom Interior',
-      description: 'Interior view of the light showroom'
+    },
+    {
+      src: LightImg4, 
+      alt: 'Light showroom interior',
+    },
+    {
+      src: LightImg5, 
+      alt: 'Light showroom interior',
+    },
+    {
+      src: LightImg6, 
+      alt: 'Light showroom interior',
     }
   ],
   office: [
     { 
       src: OfficeImg1, 
-      alt: 'Modern office workspace',
-      title: 'Workspace Design',
-      description: 'Modern office workspace with ergonomic furniture'
+      alt: 'Farm yard office display area'
     },
     { 
       src: OfficeImg2, 
-      alt: 'Office meeting room',
-      title: 'Meeting Room',
-      description: 'Professional meeting room with presentation equipment'
+      alt: 'Farm yard office workspace'
     },
     { 
       src: OfficeImg3, 
-      alt: 'Office reception area',
-      title: 'Office Reception',
-      description: 'Welcoming office reception area'
+      alt: 'Farm yard office interior'
+    },
+    {
+      src: OfficeImg4, 
+      alt: 'Farm yard office layout'
+    },
+    {
+      src: OfficeImg5, 
+      alt: 'Farm yard office design'
+    },
+    {
+      src: OfficeImg6, 
+      alt: 'Farm yard office complete view'
+    },
+    {
+      src: OfficeImg7, 
+      alt: 'Farm yard office complete view'
     }
   ]
 };
@@ -226,7 +238,7 @@ const Commercial = () => {
             className={`tab ${activeTab === 'office' ? 'active' : ''}`}
             onClick={() => setActiveTab('office')}
           >
-            Office Spaces
+             Farm Yard Office
           </button>
         </div>
       </div>

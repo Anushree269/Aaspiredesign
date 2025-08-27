@@ -2,6 +2,18 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
 
+:root {
+  /* Typography Scale */
+  --font-xs: clamp(0.3rem, 1.5vw, 0.6rem);
+  --font-sm: clamp(0.4rem, 2vw, 0.8rem);
+  --font-base: clamp(0.8rem, 2.5vw, 1rem);
+  --font-lg: clamp(1rem, 3vw, 1.2rem);
+  --font-xl: clamp(1.2rem, 3.5vw, 1.5rem);
+  --font-2xl: clamp(1.4rem, 4vw, 2rem);
+  --font-3xl: clamp(1.6rem, 4.5vw, 2.5rem);
+  --font-4xl: clamp(2rem, 5vw, 3rem);
+}
+
 
 .faq-section {
   position: relative;
@@ -106,7 +118,7 @@
 }
 
 .faq-right h3 {
-  font-size: 1.4rem;
+  font-size: var(--font-2xl);
   font-weight: 600;
   color: #111;
 }

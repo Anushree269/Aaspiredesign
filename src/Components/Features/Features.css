@@ -1,6 +1,18 @@
 /* Features Section Layout */
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
 
+:root {
+  /* Typography Scale */
+  --font-xs: clamp(0.3rem, 1.5vw, 0.6rem);
+  --font-sm: clamp(0.4rem, 2vw, 0.8rem);
+  --font-base: clamp(0.8rem, 2.5vw, 1rem);
+  --font-lg: clamp(1rem, 3vw, 1.2rem);
+  --font-xl: clamp(1.2rem, 3.5vw, 1.5rem);
+  --font-2xl: clamp(1.4rem, 4vw, 2rem);
+  --font-3xl: clamp(1.6rem, 4.5vw, 2.5rem);
+  --font-4xl: clamp(2rem, 5vw, 3rem);
+}
+
 .feature-section {
   width: 100vw;
   min-height: 100vh;
@@ -216,7 +228,7 @@
 }
 
 .expertise-box h3 {
-font-size: 1.75rem;  /* ~28px */
+  font-size: var(--font-2xl);
   font-weight: 600;
   line-height: 1.3;
   margin-bottom: 0.5em;
@@ -225,7 +237,7 @@ font-size: 1.75rem;  /* ~28px */
 }
 
 .expertise-box p {
-   font-size: 1rem;     /* 16px */
+  font-size: var(--font-lg);
   font-weight: 400;
   line-height: 1.6;
   margin-bottom: 1em;
@@ -285,7 +297,7 @@ font-size: 1.75rem;  /* ~28px */
   }
 
   .expertise-box h3 {
-    font-size: 1.1rem;
+    font-size: var(--font-2xl);
   }
 
   .expertise-box p {
@@ -379,7 +391,7 @@ font-size: 1.75rem;  /* ~28px */
   }
 
   .expertise-box h3 {
-    font-size: 1.3rem;
+    font-size: var(--font-2xl);
   }
 }
 
@@ -426,7 +438,7 @@ font-size: 1.75rem;  /* ~28px */
   }
 
   .expertise-box h3 {
-    font-size: 1.1rem;
+    font-size: var(--font-2xl);
   }
 
   .expertise-box p {
@@ -463,7 +475,7 @@ font-size: 1.75rem;  /* ~28px */
   }
 
   .expertise-box h3 {
-    font-size: 1rem;
+    font-size: var(--font-2xl);
   }
 
   .expertise-box p {
@@ -493,7 +505,7 @@ font-size: 1.75rem;  /* ~28px */
   }
 
   .expertise-box h3 {
-    font-size: 0.9rem;
+    font-size: var(--font-2xl);
   }
 
   .expertise-box p {
