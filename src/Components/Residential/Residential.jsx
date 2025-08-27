@@ -82,6 +82,22 @@ import ResImg76 from '../../assets/residentialprojects/vijaymaccha/view1.jpg';
 import ResImg77 from '../../assets/residentialprojects/vijaymaccha/view2.jpg';
 import ResImg78 from '../../assets/residentialprojects/vijaymaccha/view3.jpg';
 import ResImg79 from '../../assets/residentialprojects/vijaymaccha/view4.jpg';
+import ResImg80 from '../../assets/residentialprojects/duplex/duplex1.jpg';
+import ResImg81 from '../../assets/residentialprojects/duplex/duplex2.jpg';
+import ResImg82 from '../../assets/residentialprojects/duplex/duplex3.jpg';
+import ResImg83 from '../../assets/residentialprojects/duplex/duplex4.jpg';
+import ResImg84 from '../../assets/residentialprojects/duplex/duplex5.jpg';
+import ResImg85 from '../../assets/residentialprojects/duplex/duplex6.jpg';
+import ResImg86 from '../../assets/residentialprojects/duplex/duplex7.jpg';
+import ResImg87 from '../../assets/residentialprojects/duplex/duplex8.jpg';
+import ResImg88 from '../../assets/residentialprojects/duplex/duplex9.jpg';
+import ResImg89 from '../../assets/residentialprojects/duplex/duplex10.jpg';
+import ResImg90 from '../../assets/residentialprojects/duplex/duplex11.jpg';
+import ResImg91 from '../../assets/residentialprojects/duplex/duplex12.jpg';
+import ResImg92 from '../../assets/residentialprojects/duplex/duplex13.jpg';
+import ResImg93 from '../../assets/residentialprojects/duplex/duplex14.jpg';
+
+
 
 
 // Create an array of objects with image data
@@ -162,7 +178,23 @@ const allImages = [
   { src: ResImg76,  },
   { src: ResImg77,  },
   { src: ResImg78, },
-  { src: ResImg79,  }
+  { src: ResImg79,  },
+    { src: ResImg80,  },
+  { src: ResImg81,  },
+  { src: ResImg82,  },
+    { src: ResImg83,  },
+
+  { src: ResImg84,  },
+  { src: ResImg85,  },
+  { src: ResImg86,  },
+  { src: ResImg87,  },
+  { src: ResImg88,  },
+  { src: ResImg89,  },
+  { src: ResImg90,  },
+  { src: ResImg91,  },
+  { src: ResImg92,  },
+  { src: ResImg93,  },
+
 ];
 
 // Split image groups by requirement
@@ -172,7 +204,9 @@ const imageGroups = [
   allImages.slice(23, 39),   // Tab 3 - Naresh Jain
   allImages.slice(39, 64),   // Tab 4 - Rakesh Jain
   allImages.slice(64, 73),   // Tab 5 - Swapnil Patil
-  allImages.slice(73, 79)    // Tab 6 - Vijay Maccha
+  allImages.slice(73, 79),    // Tab 6 - Vijay Maccha
+  allImages.slice(80, 93)    // Tab 7 - Firm Yard (only if images exist)
+
 ];
 
 const Residential = () => {
@@ -266,7 +300,7 @@ const Residential = () => {
       <div className="tabs-container">
         <h2 className="section-title">Residential Projects</h2>
         <div className="tab-buttons">
-          {['Atul Shah', 'Bhavesh Sharma', 'Naresh Jain', 'Rakesh Jain', 'Swapnil Patil', 'Vijay Maccha'].map((label, i) => (
+          {['Atul Shah', 'Bhavesh Sharma', 'Naresh Jain', 'Rakesh Jain', 'Swapnil Patil', 'Vijay Maccha','Firm Yard'].map((label, i) => (
             <button
               key={i}
               className={activeTab === i ? 'active' : ''}
