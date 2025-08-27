@@ -234,17 +234,12 @@
 
 /* Close button moved to left */
 .popup-form.reduced .close-btn {
-  position: absolute;
-  top: 8px;
-  right: 150px;
-  align-items: end;
-  font-size: 1.4rem;
-  font-weight: bold;
-  border: none;
-  background: transparent;
-  color: #022257;
-  cursor: pointer;
-  transition: transform 0.2s ease, color 0.2s ease;
+ position: absolute;
+ font-size: 20px;
+ cursor: pointer;
+ padding: 2px;
+ top: 8px;
+ left: 30px;
 }
 
 .popup-form.reduced .close-btn:hover {
@@ -263,17 +258,7 @@
   margin-bottom: 0.5rem;
 }
 
-.popup-form.reduced button {
-  width: 100%;
-  color: #fff;
-  border: none;
-  padding: 0.7rem;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: all 0.3s ease;
-}
+
 /* --------------------------------------------------
    6. Counter Section
 -------------------------------------------------- */
