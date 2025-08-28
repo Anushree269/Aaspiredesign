@@ -28,7 +28,7 @@ const cardData = [
 
 const bgImages = [bg1, bg2, bg3];
 
-const WhyChooseUs = () => {
+const WhychooseUs = () => {
   const sectionRef = useRef(null);
   const [currentBgIndex, setCurrentBgIndex] = useState(0);
 
@@ -89,4 +89,4 @@ const WhyChooseUs = () => {
   );
 };
 
-export default WhyChooseUs;
+export default WhychooseUs;

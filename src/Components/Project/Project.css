@@ -210,6 +210,9 @@
 /* Responsive Design */
 /* Large devices (desktops, 1200px and up) */
 @media (min-width: 1200px) {
+  .project-page{
+    min-height: 60vh;
+  }
   .project-container {
     max-width: 1140px;
   }

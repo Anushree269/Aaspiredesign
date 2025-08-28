@@ -59,6 +59,7 @@
   border-radius: inherit;
 }
 
+<<<<<<< HEAD
 /* Base video styles */
 .preloader-video {
   width: 100%;
@@ -108,5 +109,38 @@
   .preloader-video {
     -webkit-transform: translateZ(0);
     transform: translateZ(0);
+=======
+/* === Mobile Responsive Design === */
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) and (min-width: 769px) {
+  .preloader-container.zooming-out {
+    animation-duration: 0.35s;
+  }
+}
+
+/* Mobile (481px - 768px) */
+@media (max-width: 768px) {
+  .preloader-container {
+    background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
+  }
+  
+  .preloader-container.zooming-out {
+    animation-duration: 0.4s;
+  }
+}
+
+/* Small Mobile (320px - 480px) */
+@media (max-width: 480px) {
+  .preloader-container.zooming-out {
+    animation-duration: 0.3s;
+  }
+}
+
+/* Landscape mobile orientation */
+@media (max-width: 768px) and (orientation: landscape) {
+  .preloader-container.zooming-out {
+    animation-duration: 0.25s;
+>>>>>>> tailwind
   }
 }

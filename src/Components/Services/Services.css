@@ -55,8 +55,17 @@
   gap: 2.5rem;
   flex-wrap: nowrap;
   width: max-content;
-  animation: slideLoop 14s linear infinite; /* 👈 slower continuous loop */
+  animation: slideLoop 14s linear infinite;
   will-change: transform;
+}
+
+/* Disable animation on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .services-container {
+    animation: none;
+    flex-direction: column;
+    width: 100%;
+  }
 }
 
 /* ✅ Each Service Card */
@@ -141,31 +150,159 @@
   }
 }
 
-/* ✅ Responsive */
-@media (max-width: 1024px) {
-  .service-item {
-    width: 450px;
-  }
-}
+/* === Mobile First Responsive Design === */
 
-@media (max-width: 768px) {
-  .slider-wrapper {
-    overflow: visible;
+/* Small Mobile (320px - 480px) */
+@media (max-width: 480px) {
+  .services-section {
+    padding: 2rem 1rem;
+  }
+
+  .services-heading {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
   }
 
   .services-container {
     flex-direction: column;
-    animation: none; /* 👈 disable auto-scroll on small screens */
+    animation: none;
     width: 100%;
+    gap: 1.5rem;
   }
 
   .service-item {
     flex-direction: column;
     width: 100%;
+    padding: 1.2rem;
     text-align: center;
+    gap: 1rem;
+  }
+
+  .outer-circle {
+    width: 100px;
+    height: 100px;
+    border-width: 3px;
+  }
+
+  .inner-circle {
+    width: 80px;
+    height: 80px;
   }
 
   .service-text {
     text-align: center;
+    max-width: 100%;
+  }
+
+  .service-text h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .service-text p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+}
+
+/* Mobile (481px - 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .services-section {
+    padding: 3rem 1.5rem;
+  }
+
+  .services-heading {
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .services-container {
+    flex-direction: column;
+    animation: none;
+    width: 100%;
+    gap: 2rem;
+  }
+
+  .service-item {
+    flex-direction: column;
+    width: 100%;
+    padding: 1.5rem;
+    text-align: center;
+    gap: 1.5rem;
+  }
+
+  .outer-circle {
+    width: 120px;
+    height: 120px;
+  }
+
+  .inner-circle {
+    width: 100px;
+    height: 100px;
+  }
+
+  .service-text {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .service-text h3 {
+    font-size: 1.2rem;
+  }
+
+  .service-text p {
+    font-size: 0.95rem;
+  }
+}
+
+/* Tablet (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .services-section {
+    padding: 3.5rem 2rem;
+  }
+
+  .services-heading {
+    font-size: 2.2rem;
+  }
+
+  .services-container {
+    flex-direction: column;
+    animation: none;
+    width: 100%;
+    gap: 2rem;
+  }
+
+  .service-item {
+    flex-direction: row;
+    width: 100%;
+    padding: 1.5rem 2rem;
+    text-align: left;
+    gap: 2rem;
+  }
+
+  .outer-circle {
+    width: 130px;
+    height: 130px;
+  }
+
+  .inner-circle {
+    width: 110px;
+    height: 110px;
+  }
+
+  .service-text {
+    text-align: left;
+    max-width: 70%;
+  }
+}
+
+/* Large Desktop (1025px+) */
+@media (min-width: 1025px) {
+  .services-container {
+    animation: slideLoop 16s linear infinite;
+  }
+
+  .service-item {
+    width: 550px;
   }
 }

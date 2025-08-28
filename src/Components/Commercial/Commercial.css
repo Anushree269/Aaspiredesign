@@ -35,6 +35,7 @@
   z-index: 1;
 }
 
+<<<<<<< HEAD
 .tabs-container {
   display: flex;
   justify-content: center;   /* Center horizontally */
@@ -44,10 +45,18 @@
   flex-wrap: wrap;
   width: 100%;
   text-align: center;
+=======
+/* Tabs Styles */
+.tabs-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+>>>>>>> tailwind
   position: relative;
   z-index: 1;
 }
 
+<<<<<<< HEAD
 .tab-btn {
   padding: 0.8rem 2.2rem;      /* Slightly bigger */
   font-size: 1.05rem;
@@ -74,6 +83,40 @@
 /* --------------------
    Project Grid
 -------------------- */
+=======
+.tabs {
+  display: flex;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50px;
+  padding: 5px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.tab {
+  padding: 12px 24px;
+  border: none;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 50px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.tab:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.tab.active {
+  background: #fff;
+  color: #333;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+>>>>>>> tailwind
 .commercial-row {
   max-width: 1400px;
   margin: 0 auto;
@@ -96,6 +139,8 @@
   display: flex;
   flex-direction: column;
   height: 100%;
+  background: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .project-box:hover {
@@ -119,9 +164,40 @@
   transform: scale(1.05);
 }
 
+<<<<<<< HEAD
 /* --------------------
    Modal Styles
 -------------------- */
+=======
+.image-info {
+  padding: 1.5rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.image-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+  color: #222;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.image-description {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Modal styles */
+>>>>>>> tailwind
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -159,6 +235,30 @@
   object-fit: contain;
 }
 
+<<<<<<< HEAD
+=======
+.lightbox-info {
+  padding: 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+  background: white;
+  border-radius: 0 0 8px 8px;
+}
+
+.lightbox-info h3 {
+  margin-top: 0;
+  color: #222;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.lightbox-info p {
+  color: #555;
+  line-height: 1.6;
+  font-family: 'Montserrat', sans-serif;
+}
+
+>>>>>>> tailwind
 .nav-btn, .close-btn {
   position: absolute;
   background: rgba(0, 0, 0, 0.5);
@@ -194,6 +294,7 @@
   padding: 0.5rem 1rem;
   border-radius: 20px;
   font-size: 0.9rem;
+  font-family: 'Montserrat', sans-serif;
 }
 
 /* --------------------
@@ -227,14 +328,104 @@
 
 /* 768px and below */
 @media (max-width: 768px) {
+<<<<<<< HEAD
   .tabs-container { gap: 1rem; }
   .tab-btn { padding: 0.5rem 1.2rem; font-size: 0.9rem; }
+=======
+  .project-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.2rem;
+  }
+  
+  .image-container {
+    height: 200px;
+  }
+  
+  .image-info {
+    padding: 1rem;
+  }
+  
+  .image-title {
+    font-size: 1rem;
+  }
+  
+  .image-description {
+    font-size: 0.85rem;
+    -webkit-line-clamp: 2;
+  }
+
+  .modal-content {
+    flex-direction: column;
+    width: 95%;
+  }
+
+  .lightbox-content img {
+    max-height: 60vh;
+  }
+  
+  /* Tabs responsive */
+  .tabs {
+    flex-direction: column;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .tab {
+    border-radius: 8px;
+    margin: 2px 0;
+    width: 100%;
+  }
+>>>>>>> tailwind
 }
 
 /* 576px and below */
 @media (max-width: 576px) {
+<<<<<<< HEAD
   .tabs-container { gap: 0.8rem; }
   .tab-btn { padding: 0.4rem 1rem; font-size: 0.85rem; }
+=======
+  .commercial-projects-section {
+    padding: 2rem 1rem;
+  }
+
+  .commercial-heading {
+    font-size: clamp(1.4rem, 6vw, 1.6rem);
+  }
+
+  .project-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .image-container {
+    height: 160px;
+  }
+
+  .image-title {
+    font-size: 0.9rem;
+  }
+
+  .image-description {
+    font-size: 0.8rem;
+  }
+
+  .nav-btn,
+  .close-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 1.4rem;
+  }
+
+  .image-counter {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.7rem;
+  }
+  
+  .tabs-container {
+    margin-bottom: 1.5rem;
+  }
+>>>>>>> tailwind
 }
 
 /* 400px and below */
@@ -243,5 +434,9 @@
     flex-direction: column;
     align-items: center; /* keep centered */
     gap: 0.6rem;
+  }
+  
+  .tabs {
+    max-width: 100%;
   }
 }

@@ -220,30 +220,64 @@
 
 .popup-form.reduced {
   background: #fff;
+<<<<<<< HEAD
   padding: 1.2rem 1.5rem;
   border-radius: 12px;
   width: 75%;
   max-width: 420px; /* Prevents too-wide forms on large screens */
   height: 30vh;
+=======
+  padding: 2rem 2.5rem;
+  border-radius: 15px;
+  width: 45%;
+  max-width: 550px;
+  min-width: 400px;
+  max-height: 85vh;
+>>>>>>> tailwind
   overflow-y: auto;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
   position: relative;
   animation: scaleIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1) forwards;
   text-align: center;
 }
 
-/* Close button moved to left */
+/* Close button */
 .popup-form.reduced .close-btn {
+<<<<<<< HEAD
  position: absolute;
  font-size: 30px;
  cursor: pointer;
  padding: 2px;
  top: 8px;
  left: 30px;
+=======
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 1.8rem;
+  font-weight: bold;
+  border: none;
+  background: transparent;
+  color: #022257;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+>>>>>>> tailwind
 }
 
 .popup-form.reduced .close-btn:hover {
   color: #d90429;
+}
+
+.popup-form.reduced h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: #022257;
+  font-weight: 600;
 }
 
 .popup-form.reduced input,
@@ -251,6 +285,7 @@
 .popup-form.reduced select {
   margin-top: 7px;
   width: 100%;
+<<<<<<< HEAD
   padding: 0.45rem;
   border: 1px solid #e0e0e0;
   border-radius: 8px;
@@ -259,6 +294,42 @@
 }
 
 
+=======
+  padding: 0.8rem 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 10px;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.popup-form.reduced input:focus,
+.popup-form.reduced textarea:focus,
+.popup-form.reduced select:focus {
+  border-color: #022257;
+  outline: none;
+}
+
+.popup-form.reduced button {
+  width: 100%;
+  background-color: #022257;
+  color: #fff;
+  border: none;
+  padding: 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.popup-form.reduced button:hover {
+  background-color: #031a3d;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(2, 34, 87, 0.3);
+}
+>>>>>>> tailwind
 /* --------------------------------------------------
    6. Counter Section
 -------------------------------------------------- */
@@ -443,6 +514,7 @@
   }
 }
 
+<<<<<<< HEAD
 
 /*=================== Mobile=============================== */
 /* Logo */
@@ -613,4 +685,340 @@
   .hero-tagline h1 {
     font-size: 1.3rem;
   }
+=======
+/* --------------------------------------------------
+   8. Responsive Design
+-------------------------------------------------- */
+
+/* ---------- Large Tablets (≤1024px) ---------- */
+@media (max-width: 1024px) {
+  .hero-logo {
+    width: 380px;
+    margin-left: 80px;
+  }
+
+  .hero-tagline h1 {
+    font-size: 2rem;
+    max-width: 650px;
+  }
+
+  .inquiry-form {
+    width: 380px;
+    padding: 1rem 1.5rem;
+  }
+
+  .about-container {
+    gap: 40px;
+  }
+
+  .about-heading1 {
+    font-size: 2rem;
+  }
+}
+
+/* ---------- Tablets (≤768px) ---------- */
+@media (max-width: 768px) {
+  /* Hero Section */
+  .hero-section {
+    min-height: 80vh;
+    padding: 0;
+  }
+
+  .background-image {
+    background-position: center top;
+    height: 100%;
+  }
+
+  .hero-content-container {
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+    padding: 2rem 1rem;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .hero-decor {
+    order: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .hero-logo {
+    width: 280px;
+    order: 1;
+  }
+
+  .hero-tagline {
+    order: 2;
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-tagline h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    line-height: 1.3;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  /* Inquiry Form */
+  .inquiry-form {
+    order: 3;
+    position: relative;
+    top: auto;
+    right: auto;
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    transform: none;
+    opacity: 1;
+    padding: 1.8rem;
+  }
+
+  .inquiry-form h3 {
+    font-size: 1.3rem;
+  }
+
+  /* Popup */
+  .popup-form.reduced {
+    width: 95%;
+    max-width: 480px;
+    min-width: 350px;
+    padding: 2rem;
+  }
+
+  .popup-form.reduced h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .popup-form.reduced .close-btn {
+    right: 15px;
+    top: 12px;
+    font-size: 1.6rem;
+    width: 32px;
+    height: 32px;
+  }
+
+  .popup-form.reduced input,
+  .popup-form.reduced textarea,
+  .popup-form.reduced select {
+    padding: 0.8rem 1rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .popup-form.reduced button {
+    padding: 1rem;
+    font-size: 1.1rem;
+  }
+
+  /* Counter */
+  .counter-section {
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 1rem;
+    gap: 1.5rem;
+  }
+
+  .counter-box {
+    width: 100%;
+    max-width: 300px;
+    margin: 0;
+  }
+
+  /* About */
+  .about-container {
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+    padding: 0 1rem;
+  }
+
+  .about-right {
+    padding-left: 0;
+    order: 1;
+  }
+
+  .about-left {
+    order: 2;
+  }
+
+  .about-heading1 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .about-text {
+    font-size: 1rem;
+    text-align: left;
+    line-height: 1.7;
+  }
+
+  .video-container {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
+
+/* ---------- Mobile Phones (≤480px) ---------- */
+@media (max-width: 480px) {
+  /* Hero */
+  .hero-section {
+    min-height: 60vh;
+  }
+
+  .hero-content-container {
+    padding: 1.5rem 1rem;
+    gap: 2rem;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-decor {
+    order: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .hero-logo {
+    width: 220px;
+    order: 1;
+  }
+
+  .hero-tagline {
+    order: 2;
+    width: 100%;
+  }
+
+  .hero-tagline h1 {
+    font-size: 1.4rem;
+    max-width: 100%;
+    line-height: 1.4;
+    text-align: center;
+    margin: 0;
+  }
+
+  /* Inquiry Form */
+  .inquiry-form {
+    order: 3;
+  position: relative;
+  top: 80px;
+  right: auto;
+  width: 100%;
+  padding: 1.5rem;
+  max-width: 380px;
+  margin: 0 auto;
+  transform: none;
+  opacity: 1;
+  }
+
+  .inquiry-form h3 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+  }
+
+  .inquiry-form input,
+  .inquiry-form textarea,
+  .inquiry-form select {
+    font-size: 0.9rem;
+    padding: 0.6rem 0.8rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .inquiry-form button {
+    font-size: 0.9rem;
+    height: 45px;
+    padding: 0.7rem;
+  }
+
+  /* Popup */
+  .popup-form.reduced {
+    width: 99%;
+    max-width: 450px;
+    min-width: 320px;
+    padding: 2rem 1.5rem;
+  }
+
+  .popup-form.reduced h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .popup-form.reduced .close-btn {
+    top: 10px;
+    right: 12px;
+    font-size: 1.5rem;
+    width: 38px;
+    height: 35px;
+    border-radius: 50%;
+    background: rgba(2, 34, 87, 0.1);
+  }
+
+  .popup-form.reduced .close-btn:hover {
+    background: rgba(2, 34, 87, 0.2);
+    transform: scale(1.1);
+  }
+
+  .popup-form.reduced input,
+  .popup-form.reduced textarea,
+  .popup-form.reduced select {
+    padding: 0.9rem 1rem;
+    font-size: 1.3rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .popup-form.reduced button {
+    padding: 1.1rem;
+    font-size: 1.1rem;
+    margin-top: 0.8rem;
+  }
+
+  /* Counter */
+  .counter-section {
+    padding: 2rem 1rem;
+  }
+
+  .counter-box {
+    width: 100%;
+    margin: 0.5rem 0;
+    padding: 1.2rem;
+  }
+
+  .counter-box h2 {
+    font-size: 1.8rem;
+  }
+
+  .counter-box p {
+    font-size: 1rem;
+  }
+
+  /* About */
+  .about-section {
+    padding: 3rem 0;
+  }
+
+  .about-heading1 {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+
+  .about-text {
+    font-size: 0.95rem;
+    text-align: left;
+    padding: 0 1rem;
+  }
+
+  .video-container {
+    max-width: 280px;
+  }
+>>>>>>> tailwind
 }
