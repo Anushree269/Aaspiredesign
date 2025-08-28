@@ -5,27 +5,19 @@ import { BrowserRouter } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import VideoPreloader from './Components/VideoPreloader/VideoPreloader';
 import MobileVideoPreloader from './Components/MobileVideoPreloader/MobileVideoPreloader';
-<<<<<<< HEAD
 import "./index.css";  
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-    <HelmetProvider>
-      <BrowserRouter>
-        <MobileVideoPreloader>
-          <VideoPreloader>
-            <App />
-          </VideoPreloader>
-        </MobileVideoPreloader>
-      </BrowserRouter>
-    </HelmetProvider>
-=======
 
+// Wrapper to decide between Mobile or Desktop preloader
 const AppWrapper = () => {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => {
-      const mobile = window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      const mobile =
+        window.innerWidth <= 768 ||
+        /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent
+        );
       setIsMobile(mobile);
     };
 
@@ -51,6 +43,5 @@ const AppWrapper = () => {
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <AppWrapper />
->>>>>>> tailwind
   </React.StrictMode>
 );
