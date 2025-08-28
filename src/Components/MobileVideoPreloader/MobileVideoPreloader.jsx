@@ -1,26 +1,15 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './MobileVideoPreloader.css';
 
-const MobileVideoPreloader = ({ children }) => {
+const VideoPreloader = ({ children }) => {
   const [animationState, setAnimationState] = useState('fullscreen');
-  const [showPreloader, setShowPreloader] = useState(false);
+  const [showPreloader, setShowPreloader] = useState(true);
   const videoRef = useRef(null);
 
-  // Mobile-specific video source
-  const mobileVideoSource = "/Videos/Aaspire-logo-Animation-Mobile.mp4";
-
-  // Check if device is mobile
-  useEffect(() => {
-    const isMobile = window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    
-    if (isMobile) {
-      setShowPreloader(true);
-    }
-  }, []);
+  // Video source (works for all devices)
+  const videoSource = "/Videos/Aaspire-logo-Animation-Mobile.mp4";
 
   useEffect(() => {
-    if (!showPreloader) return;
-
     const video = videoRef.current;
     if (!video) return;
 
@@ -32,10 +21,10 @@ const MobileVideoPreloader = ({ children }) => {
       }, 300);
     };
 
-    // Fallback timer - force end after 3 seconds
+    // Fallback timer - if video doesn’t play, auto hide
     const fallbackTimer = setTimeout(() => {
       handleVideoEnd();
-    }, 3000);
+    }, 4000);
 
     const handleCanPlay = () => {
       clearTimeout(fallbackTimer);
@@ -49,11 +38,11 @@ const MobileVideoPreloader = ({ children }) => {
     video.addEventListener('canplay', handleCanPlay);
     video.addEventListener('error', handleError);
 
-    // Try to play the video manually if autoplay fails
+    // Try manual play if autoplay fails
     const playPromise = video.play();
     if (playPromise !== undefined) {
       playPromise.catch(() => {
-        console.log('Mobile video autoplay failed, using fallback timer');
+        console.log('Autoplay failed, using fallback timer');
       });
     }
 
@@ -63,26 +52,25 @@ const MobileVideoPreloader = ({ children }) => {
       video.removeEventListener('error', handleError);
       clearTimeout(fallbackTimer);
     };
-  }, [showPreloader]);
+  }, []);
 
-  // Don't show preloader if not mobile or when complete
+  // Don’t show if complete
   if (!showPreloader || animationState === 'complete') {
     return children;
   }
 
   return (
     <>
-      <div className={`mobile-preloader-container ${animationState}`}>
+      <div className={`preloader-container ${animationState}`}>
         <video
           ref={videoRef}
-          className="mobile-preloader-video"
+          className="preloader-video"
           autoPlay
           muted
           playsInline
-          preload="metadata"
-          webkit-playsinline="true"
+          preload="auto"
         >
-          <source src={mobileVideoSource} type="video/mp4" />
+          <source src={videoSource} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
@@ -91,4 +79,4 @@ const MobileVideoPreloader = ({ children }) => {
   );
 };
 
-export default MobileVideoPreloader;
+export default VideoPreloader;
