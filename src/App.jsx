@@ -9,6 +9,7 @@ import Services from "./Components/Services/Services";
 import WhyChooseUs from "./Components/Whychooseus/Whychooseus";
 import Faq from "./Components/Faq/Faq";
 import "./index.css";
+import "./responsive.css";
 
 const App = () => {
   return (
