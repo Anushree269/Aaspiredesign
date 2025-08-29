@@ -1,18 +1,6 @@
 /* Features Section Layout */
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
 
-:root {
-  /* Typography Scale */
-  --font-xs: clamp(0.3rem, 1.5vw, 0.6rem);
-  --font-sm: clamp(0.4rem, 2vw, 0.8rem);
-  --font-base: clamp(0.8rem, 2.5vw, 1rem);
-  --font-lg: clamp(1rem, 3vw, 1.2rem);
-  --font-xl: clamp(1.2rem, 3.5vw, 1.5rem);
-  --font-2xl: clamp(1.4rem, 4vw, 2rem);
-  --font-3xl: clamp(1.6rem, 4.5vw, 2.5rem);
-  --font-4xl: clamp(2rem, 5vw, 3rem);
-}
-
 .feature-section {
   width: 100vw;
   min-height: 100vh;
@@ -228,7 +216,7 @@
 }
 
 .expertise-box h3 {
-  font-size: var(--font-2xl);
+font-size: 1.75rem;  /* ~28px */
   font-weight: 600;
   line-height: 1.3;
   margin-bottom: 0.5em;
@@ -237,7 +225,7 @@
 }
 
 .expertise-box p {
-  font-size: var(--font-lg);
+   font-size: 1rem;     /* 16px */
   font-weight: 400;
   line-height: 1.6;
   margin-bottom: 1em;
@@ -297,218 +285,10 @@
   }
 
   .expertise-box h3 {
-    font-size: var(--font-2xl);
-  }
-
-  .expertise-box p {
-    font-size: 0.95rem;
-  }
-}
-/* ===============================
-   Responsive Design for All Devices
-================================ */
-
-/* ---------- Large Screens (≥1440px) ---------- */
-@media (min-width: 1440px) {
-  
-  .features-heading {
-    font-size: 2.5rem; /* Larger heading */
-    margin-left: 15rem; /* Keep heading aligned */
-  }
-  .feature-container {
-    max-width: 1000px;
-  }
-  .feature-circle {
-    width: 120px;
-    height: 120px;
-    font-size: 1rem;
-  }
-}
-
-/* ---------- Laptops / Desktops (≤1200px) ---------- */
-@media (max-width: 1200px) {
-  .features-heading {
-    margin-left: 10rem;
-    font-size: 2.2rem;
-  }
-  .feature-container {
-    max-width: 900px;
-  }
-  .feature-circle {
-    width: 90px;
-    height: 90px;
-    font-size: 0.85rem;
-  }
-}
-
-/* ---------- Tablets (≤992px) ---------- */
-@media (max-width: 992px) {
-  .feature-section {
-    flex-direction: column;
-    text-align: center;
-    padding: 3rem 1.5rem;
-  }
-
-  .feature-tabs-column {
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    margin: 0 auto 2rem auto;
-    gap: 0.8rem;
-  }
-
-  .features-heading {
-    margin: 2rem 0 1rem 0;
-    font-size: 1.9rem;
-    text-align: center;
-  }
-
-  .feature-container {
-    width: 100%;
-    padding: 1.5rem;
-  }
-
-  .feature-item {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-
-  .feature-circle {
-    margin: 0 0 1rem 0;
-    width: 80px;
-    height: 80px;
-    font-size: 0.8rem;
-  }
-
-  .feature-rectangle {
-    width: 100%;
-    font-size: 0.95rem;
-  }
-
-  .expertise-grid {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  }
-
-  .expertise-box h3 {
-    font-size: var(--font-2xl);
-  }
-}
-
-/* ---------- Mobile Phones (≤768px) ---------- */
-@media (max-width: 768px) {
-  .feature-section {
-    padding: 2rem 1rem;
-    background-position: top center;
-  }
-
-  .features-heading {
-    font-size: 1.6rem;
-    margin: 1.5rem 0;
-  }
-
-  .feature-tabs-column {
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
-  }
-
-  .tab-button {
-    padding: 0.7rem 1rem;
-    font-size: 0.85rem;
-  }
-
-  .feature-circle {
-    width: 70px;
-    height: 70px;
-    font-size: 0.75rem;
-  }
-
-  .feature-rectangle {
-    font-size: 0.9rem;
-    padding: 0.8rem 1rem;
-  }
-
-  .expertise-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .expertise-box {
-    padding: 1rem;
-  }
-
-  .expertise-box h3 {
-    font-size: var(--font-2xl);
-  }
-
-  .expertise-box p {
-    font-size: 0.9rem;
-  }
-}
-
-/* ---------- Small Phones (≤480px) ---------- */
-@media (max-width: 480px) {
-  .feature-section {
-    padding: 1.5rem 0.8rem;
-  }
-
-  .features-heading {
-    font-size: 1.3rem;
-    margin: 1rem 0;
-  }
-
-  .tab-button {
-    padding: 0.5rem 0.8rem;
-    font-size: 0.8rem;
-  }
-
-  .feature-circle {
-    width: 60px;
-    height: 60px;
-    font-size: 0.65rem;
-    margin-bottom: 0.8rem;
-  }
-
-  .feature-rectangle {
-    font-size: 0.85rem;
-    padding: 0.6rem 0.8rem;
-  }
-
-  .expertise-box h3 {
-    font-size: var(--font-2xl);
-  }
-
-  .expertise-box p {
-    font-size: 0.85rem;
-  }
-}
-
-/* ---------- Extra Small Phones (≤360px) ---------- */
-@media (max-width: 360px) {
-  .features-heading {
     font-size: 1.1rem;
   }
 
-  .tab-button {
-    font-size: 0.7rem;
-    padding: 0.4rem 0.6rem;
-  }
-
-  .feature-circle {
-    width: 50px;
-    height: 50px;
-    font-size: 0.55rem;
-  }
-
-  .feature-rectangle {
-    font-size: 0.8rem;
-  }
-
-  .expertise-box h3 {
-    font-size: var(--font-2xl);
-  }
-
   .expertise-box p {
-    font-size: 0.8rem;
+    font-size: 0.95rem;
   }
 }

@@ -1,3 +1,8 @@
+/* ========================================
+   VIDEO PRELOADER - RESPONSIVE DESIGN
+   ======================================== */
+
+/* Base Preloader Container */
 .preloader-container {
   position: fixed;
   top: 0;
@@ -9,82 +14,345 @@
   justify-content: center;
   align-items: center;
   z-index: 9999;
-  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Fullscreen video - simplified */
-.preloader-container.fullscreen .preloader-video {
+/* Video Element */
+.preloader-video {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
-/* Faster zoom-out animation */
+/* Fullscreen State */
+.preloader-container.fullscreen {
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Zooming Out State */
 .preloader-container.zooming-out {
-  animation: quickZoomOut 0.3s forwards cubic-bezier(0.4, 0, 0.2, 1);
   width: 80px;
-  height: 70px;
-  border-radius: 6px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+  animation: quickZoomOut 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
-/* Ultra-fast keyframes */
+/* Zoom Out Animation */
 @keyframes quickZoomOut {
   0% {
-    transform: scale(1);
-    opacity: 1;
+    width: 100vw;
+    height: 100vh;
     border-radius: 0;
   }
-  50% {
-    transform: scale(0.5) translate(-15px, -10px);
-    opacity: 0.7;
-    border-radius: 4px;
+  100% {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+  }
+}
+
+/* ========================================
+   RESPONSIVE BREAKPOINTS
+   ======================================== */
+
+/* Large Desktop (1200px and up) */
+@media (min-width: 1200px) {
+  .preloader-container.zooming-out {
+    width: 100px;
+    height: 100px;
+  }
+
+  @keyframes quickZoomOut {
+    0% {
+      width: 100vw;
+      height: 100vh;
+      border-radius: 0;
+    }
+    100% {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+    }
+  }
+}
+
+/* Desktop (992px to 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .preloader-container.zooming-out {
+    width: 90px;
+    height: 90px;
+  }
+
+  @keyframes quickZoomOut {
+    0% {
+      width: 100vw;
+      height: 100vh;
+      border-radius: 0;
+    }
+    100% {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+    }
+  }
+}
+
+/* Tablet (768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .preloader-container.zooming-out {
+    width: 80px;
+    height: 80px;
+  }
+
+  @keyframes quickZoomOut {
+    0% {
+      width: 100vw;
+      height: 100vh;
+      border-radius: 0;
+    }
+    100% {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+    }
+  }
+}
+
+/* Mobile Large (576px to 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+  .preloader-container.zooming-out {
+    width: 70px;
+    height: 70px;
+  }
+
+  @keyframes quickZoomOut {
+    0% {
+      width: 100vw;
+      height: 100vh;
+      border-radius: 0;
+    }
+    100% {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+    }
+  }
+}
+
+/* Mobile Small (400px to 575px) */
+@media (min-width: 400px) and (max-width: 575px) {
+  .preloader-container.zooming-out {
+    width: 60px;
+    height: 60px;
+  }
+
+  @keyframes quickZoomOut {
+    0% {
+      width: 100vw;
+      height: 100vh;
+      border-radius: 0;
+    }
+    100% {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+  }
+}
+
+/* Mobile Extra Small (up to 399px) */
+@media (max-width: 399px) {
+  .preloader-container.zooming-out {
+    width: 50px;
+    height: 50px;
+  }
+
+  @keyframes quickZoomOut {
+    0% {
+      width: 100vw;
+      height: 100vh;
+      border-radius: 0;
+    }
+    100% {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+  }
+}
+
+/* ========================================
+   MOBILE SPECIFIC OPTIMIZATIONS (768px and below)
+   ======================================== */
+@media (max-width: 768px) {
+  .preloader-container.zooming-out {
+    width: 60px;
+    height: 60px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+  }
+
+  @keyframes quickZoomOut {
+    0% {
+      width: 100vw;
+      height: 100vh;
+      border-radius: 0;
+    }
+    100% {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+  }
+
+  .preloader-video {
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+/* ========================================
+   LANDSCAPE ORIENTATION OPTIMIZATION
+   ======================================== */
+@media (max-height: 500px) and (orientation: landscape) {
+  .preloader-container.zooming-out {
+    width: 60px;
+    height: 60px;
+  }
+
+  @keyframes quickZoomOut {
+    0% {
+      width: 100vw;
+      height: 100vh;
+      border-radius: 0;
+    }
+    100% {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+  }
+}
+
+/* ========================================
+   HIGH DPI DISPLAYS
+   ======================================== */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .preloader-video {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* ========================================
+   REDUCED MOTION SUPPORT
+   ======================================== */
+@media (prefers-reduced-motion: reduce) {
+  .preloader-container.zooming-out {
+    animation: none;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+  }
+
+  .preloader-container {
+    transition: none;
+  }
+}
+
+/* ========================================
+   TOUCH DEVICE OPTIMIZATIONS
+   ======================================== */
+@media (hover: none) and (pointer: coarse) {
+  .preloader-container.zooming-out {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* ========================================
+   PERFORMANCE OPTIMIZATIONS
+   ======================================== */
+.preloader-container {
+  will-change: width, height, border-radius;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.preloader-video {
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+.preloader-container[aria-hidden="true"] {
+  display: none;
+}
+
+/* ========================================
+   LOADING STATES
+   ======================================== */
+.preloader-container.loading::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  margin: -20px 0 0 -20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top: 3px solid #fff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  z-index: 1;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
   }
   100% {
-    transform: scale(0.3) translate(-25px, -15px);
-    opacity: 0;
-    border-radius: 6px;
+    transform: rotate(360deg);
   }
 }
 
-/* Optimized video during zoom */
-.preloader-container.zooming-out .preloader-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: inherit;
+/* ========================================
+   ERROR STATE
+   ======================================== */
+.preloader-container.error {
+  background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
 }
 
-/* === Mobile Responsive Design === */
-
-/* Tablet (768px - 1024px) */
-@media (max-width: 1024px) and (min-width: 769px) {
-  .preloader-container.zooming-out {
-    animation-duration: 0.35s;
-  }
+.preloader-container.error::before {
+  content: "⚠️";
+  font-size: 3rem;
+  margin-bottom: 1rem;
 }
 
-/* Mobile (481px - 768px) */
-@media (max-width: 768px) {
+.preloader-container.error::after {
+  content: "Video failed to load. Please refresh the page.";
+  font-size: 1rem;
+  max-width: 300px;
+  line-height: 1.5;
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+@media print {
   .preloader-container {
-    background: linear-gradient(135deg, #000 0%, #1a1a1a 100%);
-  }
-  
-  .preloader-container.zooming-out {
-    animation-duration: 0.4s;
-  }
-}
-
-/* Small Mobile (320px - 480px) */
-@media (max-width: 480px) {
-  .preloader-container.zooming-out {
-    animation-duration: 0.3s;
-  }
-}
-
-/* Landscape mobile orientation */
-@media (max-width: 768px) and (orientation: landscape) {
-  .preloader-container.zooming-out {
-    animation-duration: 0.25s;
+    display: none !important;
   }
 }

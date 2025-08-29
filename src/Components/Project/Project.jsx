@@ -287,7 +287,7 @@ const Project = () => {
         <div className="project-container">
           <div className="project-header">
             <h1 className="project-title">Our Projects</h1>
-            <p className="project-para">
+            <p className="project-intro">
               At Aaspire Design, we specialize in creating sophisticated and functional interior spaces that reflect a deep attention to detail and refined luxury. Combining artistic vision with technical precision, our designs embody both elegance and purpose. Led by Dhwani Sanghavi and Parag Shelar— Director of Aaspire Design and mentor at INSD Baner, Pune — we are committed to delivering spaces that inspire, elevate, and endure.
             </p>
           </div>

@@ -252,45 +252,45 @@ const Home = () => {
           backgroundPosition: 'center',
         }}
       >
-        <div className="about-background-overlay"></div>
-        
-        <div className="about-left">
-          <div className="video-wrapper">
-            <video
-              ref={videoRef}
-              key={currentVideo}
-              autoPlay
-              muted
-              playsInline
-              className="about-video"
-            >
-              <source src={videos[currentVideo].src} type={videos[currentVideo].type} />
-              Your browser does not support the video tag.
-            </video>
+        <div className="about-container">
+          <div className="about-left">
+            <div className="video-container">
+              <video
+                ref={videoRef}
+                key={currentVideo}
+                autoPlay
+                muted
+                playsInline
+                className="about-reel"
+              >
+                <source src={videos[currentVideo].src} type={videos[currentVideo].type} />
+                Your browser does not support the video tag.
+              </video>
 
-            <div className="video-progress">
-              {videos.map((_, index) => (
-                <div
-                  key={index}
-                  className={`progress-dot ${index === currentVideo ? 'active' : ''}`}
-                  onClick={() => setCurrentVideo(index)}
-                />
-              ))}
+              <div className="video-progress">
+                {videos.map((_, index) => (
+                  <div
+                    key={index}
+                    className={`progress-dot ${index === currentVideo ? 'active' : ''}`}
+                    onClick={() => setCurrentVideo(index)}
+                  />
+                ))}
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="about-right">
-          <h2 className="about-heading1">About Aaspire Design</h2>
-          <p className="about-text">
-            Aaspire Design is a multidisciplinary design studio and consulting firm based in Baner, Pune,
-            offering expert services in interior design. We specialize in creating modern, customized residential
-            and commercial spaces through turnkey solutions, smart space planning, and innovative design that reflects
-            your personality and lifestyle.
-            <br /><br />
-            Our experienced team believes in understanding your needs deeply to deliver affordable, high-quality design
-            solutions — on time and within budget.
-          </p>
+          <div className="about-right">
+            <h2 className="about-heading1">About Aaspire Design</h2>
+            <p className="about-text">
+              Aaspire Design is a multidisciplinary design studio and consulting firm based in Baner, Pune,
+              offering expert services in interior design. We specialize in creating modern, customized residential
+              and commercial spaces through turnkey solutions, smart space planning, and innovative design that reflects
+              your personality and lifestyle.
+              <br /><br />
+              Our experienced team believes in understanding your needs deeply to deliver affordable, high-quality design
+              solutions — on time and within budget.
+            </p>
+          </div>
         </div>
       </section>
 

@@ -23,7 +23,7 @@ import ResImg15 from '../../assets/residentialprojects/atulshah/mbedview8withlog
 import ResImg17 from '../../assets/residentialprojects/bhavessharma/finallivingroomview2withlogo.jpg';
 import ResImg18 from '../../assets/residentialprojects/bhavessharma/finalview1ofkitchenof2bhkwithlogo.jpg';
 import ResImg19 from '../../assets/residentialprojects/bhavessharma/finalview2ofkitchenof2bhkwithlogo.jpg';
-import ResImg20 from '../../assets/residentialprojects/bhavessharma/finalview3ofmasterbedroom1withlogo.jpg';
+import ResImg20 from '../../assets/residentialprojects/bhavessharma/finalview3ofmasterbedroom1withlog.jpg';
 import ResImg21 from '../../assets/residentialprojects/bhavessharma/finalview4ofmasterbedroom1withlogo.jpg'; // Fixed typo
 import ResImg22 from '../../assets/residentialprojects/bhavessharma/inallivingroomview1withlogo.jpg';
 import ResImg23 from '../../assets/residentialprojects/bhavessharma/inalview4ofmasterbedroom2withlogo.jpg';
@@ -365,4 +365,4 @@ const Residential = () => {
   );
 };
 
-export default Residential;
+export default Residential;

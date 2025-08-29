@@ -1,78 +1,149 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+/* ========================================
+   AASPIRE DESIGN - MAIN STYLES
+   ======================================== */
 
-/* Root Theme Variables */
-:root {
-  font-family: 'Poppins', system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+/* ========================================
+   IMPORTS
+   ======================================== */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+@import "./responsive.css";
 
-  color: #031430;
-  background-color: #963434;
+/* ========================================
+   CSS RESET & BASE STYLES
+   ======================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+body {
+  font-family: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #333;
+  background-color: #fff;
+  overflow-x: hidden;
 }
 
-/* Links */
-a {
-  font-weight: 500;
-  color: #0066cc;
-  text-decoration: none;
-}
-a:hover {
-  color: #004b99;
-}
-
-/* Body */
-body {
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-  background-color: #f6e9da;
-  color: #031430;
-}
-
-/* Headings */
-h1, h2, h3, h4, h5, h6 {
-  margin: 0;
+/* ========================================
+   TYPOGRAPHY
+   ======================================== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 0.5em;
 }
 
-/* Buttons */
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
+p {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #1e40af;
+}
+
+/* ========================================
+   LAYOUT & CONTAINERS
+   ======================================== */
+.website-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  margin-top: 110px; /* Account for navbar + notification banner */
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #000;
+  color: white;
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 10000;
+  transition: top 0.3s ease;
   font-weight: 500;
-  font-family: inherit;
-  background-color: #d4af37;
-  color: #fff;
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-button:hover {
-  background-color: #c49e2f;
-}
-button:focus,
-button:focus-visible {
-  outline: 3px dashed #c49e2f;
 }
 
-/* Remove Dark Mode Fallback */
-@media (prefers-color-scheme: light) {
-  :root {
-    background-color: #f9f9f9;
-    color: #031430;
+.skip-link:focus {
+  top: 6px;
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/* ========================================
+   PERFORMANCE OPTIMIZATIONS
+   ======================================== */
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+@media print {
+  .skip-link,
+  .navbar,
+  .notification-banner {
+    display: none !important;
   }
 
-  button {
-    background-color: #d4af37;
-  }
-
-  a:hover {
-    color: #004b99;
+  .main-content {
+    margin-top: 0;
   }
 }
