@@ -73,6 +73,7 @@
    HERO SECTION
    ======================================== */
 .hero-section {
+  top: 0;
   position: relative;
   width: 100%;
   height: 100vh;
@@ -153,7 +154,7 @@
    ======================================== */
 .inquiry-form {
   position: absolute;
-  top: 5%;
+  top: 14%;
   right: 5%;
   width: 450px;
   max-width: 95%;
@@ -509,9 +510,9 @@
     position: relative;
     top: auto;
     right: auto;
-    width: 100%;
+    width: 90%;
     max-width: 100%;
-    margin: 0.5rem auto;
+    margin: 0.4rem auto;
     padding: 0.8rem 1rem;
   }
 
@@ -524,7 +525,7 @@
   .inquiry-form select {
     font-size: 16px;
     padding: 0.4rem 0.6rem;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.1rem;
   }
 
   .inquiry-form button {
@@ -594,12 +595,13 @@
   .popup-form.reduced {
     width: 98%;
     max-width: 300px;
+    right: 180px;
     padding: 0.5rem 0.8rem;
   }
 
   .popup-form.reduced .close-btn {
-    right: 60px;
-    top: 3px;
+    right: 120px;
+    top: 0px;
     font-size: 1rem;
   }
 
@@ -1045,18 +1047,20 @@
 /* Desktop (992px to 1199px) */
 @media (min-width: 992px) and (max-width: 1199px) {
   .hero-logo {
-    width: 420px;
-    margin-left: 120px;
+    margin-top:20px;
+    width: 320px;
+    margin-left: 100px;
   }
 
   .hero-tagline h1 {
-    font-size: 2.2rem;
-    margin-left: 30px;
+    font-size: 1.7rem;
+    margin-left: 20px;
   }
 
   .inquiry-form {
+    top: 190px;
     width: 400px;
-    right: 4%;
+    right: 3%;
   }
 
   .about-container {
