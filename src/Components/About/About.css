@@ -25,11 +25,13 @@ body {
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  background-size: cover;
-  background-position: center;
+
+  background-size: cover;      /* fill container, crops overflow */
+  background-position: top;    /* crop from top */
   background-repeat: no-repeat;
   overflow: hidden;
 }
+
 
 
 
@@ -47,6 +49,7 @@ body {
 
 /* 🔹 Video styles */
 .about-video {
+  
   width: 100%;       /* Full width inside left column */
   height: 800px;     /* Adjust height */
   border-radius: 15px;
@@ -93,7 +96,7 @@ body {
 
   .about-video,
   .about-image-slide {
-    height: 250px;
+    height: 550px;
   }
 }
 
@@ -111,7 +114,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 120%;
   background: rgba(255, 255, 255, 0.4);
   z-index: 1;
 }

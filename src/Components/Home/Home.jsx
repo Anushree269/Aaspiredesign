@@ -14,7 +14,7 @@ import reel3 from '../../assets/reel/dhwanireel3.mp4';
 import reel4 from '../../assets/reel/dhwanireel4.mp4';
 
 // About Section Background
-import AboutBg from '../../assets/interior-design-1.jpg';
+import AboutBg from '../../assets/interior-design3.jpg';
 
 // Icons
 import { FaUserGraduate, FaLaptopCode, FaChalkboardTeacher, FaBriefcase } from 'react-icons/fa';

@@ -1,6 +1,39 @@
 /* Commercial.css */
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
 
+/* === Tabs Styling === */
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  padding: 0.7rem 1.5rem;
+  border: none;
+  background: #f0f0f0;
+  color: #333;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+  background: #e0e0e0;
+}
+
+.tab-btn.active {
+  background: #011739;
+  color: #fff;
+  font-weight: 600;
+  box-shadow: 0 4px 10px rgba(1, 23, 57, 0.2);
+}
+
+/* === Section Styling === */
 .commercial-projects-section {
   padding: 4rem 2rem;
   background-size: cover;
@@ -8,8 +41,8 @@
   background-attachment: fixed;
   position: relative;
   color: #333;
-    font-family: 'Lora', serif;
-
+  font-family: 'Lora', serif;
+  z-index: 1; /* content above overlay */
 }
 
 .commercial-projects-section::before {
@@ -19,7 +52,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 0;
+  z-index: -1; /* push behind content */
 }
 
 .commercial-heading {
@@ -30,14 +63,14 @@
   margin-bottom: 0.5em;
   color:#011739;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .commercial-row {
   max-width: 1400px;
   margin: 0 auto;
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .project-grid {
@@ -45,6 +78,20 @@
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2rem;
   padding: 1rem;
+  position: relative;
+  z-index: 2;
+  animation: fadeIn 0.6s ease; /* 👈 fade animation on tab switch */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .project-box {
@@ -245,6 +292,11 @@
 
 /* 768px and below - Tablets portrait & large phones */
 @media (max-width: 768px) {
+  .tabs {
+    flex-direction: column;
+    align-items: center;
+  }
+  
   .project-grid {
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 1.2rem;

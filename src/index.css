@@ -66,14 +66,12 @@ a:hover {
    LAYOUT & CONTAINERS
    ======================================== */
 .website-container {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
 
 .main-content {
   flex: 1;
-  margin-top: 110px; /* Account for navbar + notification banner */
 }
 
 /* ========================================
@@ -81,8 +79,6 @@ a:hover {
    ======================================== */
 .skip-link {
   position: absolute;
-  top: -40px;
-  left: 6px;
   background: #000;
   color: white;
   padding: 8px 16px;
@@ -105,7 +101,6 @@ a:hover {
   width: 1px;
   height: 1px;
   padding: 0;
-  margin: -1px;
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
@@ -129,7 +124,6 @@ a:hover {
    ======================================== */
 img,
 video {
-  max-width: 100%;
   height: auto;
 }
 
