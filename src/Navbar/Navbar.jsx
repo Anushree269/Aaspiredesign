@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 import logo from "../assets/Aaspirepng.png";
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -45,15 +47,18 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Toggle Button */}
-        <button
-          className={`mobile-menu-toggle ${isMobileMenuOpen ? "active" : ""}`}
-          onClick={toggleMobileMenu}
-          aria-label="Toggle navigation menu"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+<button
+  className="mobile-menu-toggle"
+  onClick={toggleMobileMenu}
+  aria-label="Toggle navigation menu"
+>
+  {isMobileMenuOpen ? (
+    <i className="fa-solid fa-xmark"></i>   // ❌ close icon
+  ) : (
+    <i className="fa-solid fa-bars"></i>    // ☰ hamburger icon
+  )}
+</button>
+
 
         {/* Navigation Links */}
         <ul className={`nav-links ${isMobileMenuOpen ? "mobile-open" : ""}`}>

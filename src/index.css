@@ -80,25 +80,21 @@ a:hover {
 
 .main-content {
   flex: 1;
-  margin-top: 150px; /* Account for navbar + notification banner */
 }
 
 /* Mobile responsive margin adjustments */
 @media (max-width: 767px) {
   .main-content {
-    margin-top: 130px; /* Reduced for mobile */
   }
 }
 
 @media (max-width: 575px) {
   .main-content {
-    margin-top: 120px; /* Further reduced for small mobile */
   }
 }
 
 @media (max-width: 399px) {
   .main-content {
-    margin-top: 110px; /* Minimal for extra small mobile */
   }
 }
 
