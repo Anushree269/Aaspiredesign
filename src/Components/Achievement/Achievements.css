@@ -1,22 +1,27 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap");
 
 .achievement-section {
-  height: 50vh;
+  height: 70vh;
   position: relative;
-  padding: 10rem 2rem;
+  padding: 6rem 2rem;
   overflow: hidden;
-    font-family: 'Lora', serif;
-
+  font-family: "Lora", serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .achievement-bg {
   position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 200%;
+  top: -50px;
+  left: 0;
+  width: 100%;
+  height: calc(100% + 100px);
   background-size: cover;
-  background-position: center;
+  background-position: center center;
+  background-repeat: no-repeat;
   z-index: 0;
+  filter: brightness(0.7);
 }
 
 .achievement-heading,
@@ -28,7 +33,7 @@
 .achievement-heading {
   text-align: center;
   font-size: 2.5rem;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: "Cormorant Garamond", serif;
   color: #01275f;
   margin-bottom: 2.5rem;
   font-weight: bold;
@@ -44,26 +49,38 @@
 .achievement-marquee-wrapper {
   overflow: hidden;
   width: 100%;
+  position: relative;
+  z-index: 2;
+  height: 200px;
+  display: flex;
+  align-items: center;
 }
 
 .achievement-marquee {
   display: flex;
   gap: 2rem;
   width: max-content;
-  animation: scrollLeft 20s linear infinite;
+  animation: scrollLeft 30s linear infinite;
+  will-change: transform;
+  align-items: center;
 }
 
 /* === Card === */
 .achievement-card {
-  background: #ffffff;
+  background: rgba(255, 255, 255, 0.95);
   border-radius: 16px;
   padding: 2rem;
-  height: 30%;
-  min-width: 280px;
+  min-width: 300px;
+  height: 120px;
   backdrop-filter: blur(10px);
   text-align: center;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .achievement-card:hover {
@@ -73,8 +90,10 @@
 .achievement-card p {
   font-size: 1.1rem;
   color: #222;
-  font-weight: 500;
+  font-weight: 600;
   margin: 0;
+  line-height: 1.4;
+  text-align: center;
 }
 
 /* === Slide Animation === */
@@ -101,15 +120,63 @@
 
 /* === Responsive === */
 @media (max-width: 768px) {
+  .achievement-section {
+    height: 60vh;
+    padding: 4rem 1rem;
+  }
+
   .achievement-heading {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .achievement-marquee-wrapper {
+    height: 150px;
+  }
+
+  .achievement-card {
+    min-width: 250px;
+    height: 100px;
+    padding: 1.5rem;
   }
 
   .achievement-card p {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 
+  .achievement-marquee {
+    gap: 1.5rem;
+    animation: scrollLeft 25s linear infinite;
+  }
+}
+
+@media (max-width: 480px) {
   .achievement-section {
-    padding: 3rem 1.2rem;
+    height: 50vh;
+    padding: 3rem 0.8rem;
+  }
+
+  .achievement-heading {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .achievement-marquee-wrapper {
+    height: 120px;
+  }
+
+  .achievement-card {
+    min-width: 220px;
+    height: 80px;
+    padding: 1rem;
+  }
+
+  .achievement-card p {
+    font-size: 0.8rem;
+  }
+
+  .achievement-marquee {
+    gap: 1rem;
+    animation: scrollLeft 20s linear infinite;
   }
 }

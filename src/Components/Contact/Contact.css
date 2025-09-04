@@ -4,11 +4,11 @@
   font-family: 'Lora', serif;
   display: flex;
   flex-direction: column;
-  padding: 2rem 1rem;
+  padding: 1rem 1rem;
   gap: 2rem;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 80vh;
   background-image: url('../../assets/contactimage.jpg');
   background-size: cover;
   background-position: center;
@@ -27,17 +27,17 @@
   z-index: 0;
 }
 
-.contact-left, 
-.contact-right {
+ .contact-left,
+ .contact-right {
   position: relative;
   z-index: 1;
   width: 100%;
   max-width: 500px;
   background-color: rgba(255, 255, 255, 0.85);
-  padding: 1.5rem;
+  padding: 1rem;
   border-radius: 15px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  margin-top: 1rem;
+  margin-top: 0.2rem;
 }
 
 .contact-left h2 {
@@ -208,8 +208,8 @@
 
   .contact-left,
   .contact-right {
-    padding: 2rem;
-    margin-top: 2rem;
+    padding: 1.2rem;
+    margin-top: 0.5rem;
   }
 
   .contact-left h2 {
@@ -233,7 +233,7 @@
 
   .contact-left,
   .contact-right {
-    margin-top: 170px;
+    margin-top: 40px;
     flex: 1;
     max-width: none;
   }

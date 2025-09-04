@@ -851,6 +851,46 @@ p {
 }
 
 /* ========================================
+   MOBILE SPECIFIC IMPROVEMENTS
+   ======================================== */
+@media (max-width: 768px) {
+  /* Prevent horizontal scroll */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* Ensure all containers fit within viewport */
+  .container,
+  .row,
+  .col {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Improve touch targets */
+  button,
+  a,
+  input[type="button"],
+  input[type="submit"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Better spacing for mobile */
+  .p-3,
+  .p-4,
+  .p-5 {
+    padding: var(--space-sm) !important;
+  }
+
+  .m-3,
+  .m-4,
+  .m-5 {
+    margin: var(--space-sm) !important;
+  }
+}
+
+/* ========================================
    RESPONSIVE BUTTON UTILITIES
    ======================================== */
 .btn {

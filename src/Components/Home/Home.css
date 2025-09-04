@@ -73,23 +73,25 @@
    HERO SECTION
    ======================================== */
 .hero-section {
-  top: 0;
   position: relative;
   width: 100%;
-  height: 100vh;
-  min-height: 600px;
+  height: calc(100vh - 60px);
+  min-height: 250px;
   overflow: hidden;
+  margin-top: 0;
+  padding-top: 0;
 }
 
 .background-image {
   position: absolute;
   top: 0;
   left: 0;
-  height: 120%;
+  height: 100%;
   width: 100%;
   background-size: cover;
-  background-position: center -180px;
-  filter: brightness(0.5);
+  background-position: center center;
+  background-repeat: no-repeat;
+  filter: brightness(0.6);
   z-index: 1;
 }
 
@@ -135,7 +137,7 @@
   margin-left: 20px;
   font-size: clamp(1.5rem, 5vw, 2.5rem);
   font-weight: 700;
-  line-height: 1.0;
+  line-height: 1;
   color: rgb(143, 235, 89);
   margin-bottom: 0.8rem;
   max-width: 800px;
@@ -154,19 +156,20 @@
    ======================================== */
 .inquiry-form {
   position: absolute;
-  top: 23%;
-  right: 0%;
-  width: 450px;
-  max-width: 95%;
+  top: 15%;
+  right: 3%;
+  width: 400px;
+  max-width: 90%;
   background: #ffffff;
-  padding: 1.2rem 2rem;
+  padding: 1.5rem 2rem;
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   z-index: 3;
   opacity: 0;
   transform: translateX(80px);
   transition: all 0.8s ease 1.2s;
   font-family: "Lora", serif;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .inquiry-form.active {
@@ -176,47 +179,57 @@
 
 .inquiry-form h3 {
   text-align: center;
-  font-size: clamp(1rem, 3vw, 1.25rem);
-  margin-bottom: 0.6rem;
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  margin-bottom: 1.5rem;
   color: #022257;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .inquiry-form input,
 .inquiry-form textarea,
 .inquiry-form select {
   width: 100%;
-  padding: 0.5rem 0.8rem;
-  border: 1px solid #e2e8f0;
-  border-radius: 6px;
-  font-size: 0.88rem;
+  padding: 0.8rem 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 0.95rem;
   transition: all 0.3s ease;
-  margin-bottom: 0.12rem;
+  margin-bottom: 1rem;
+  min-height: 48px;
+}
+
+.inquiry-form input:focus,
+.inquiry-form textarea:focus,
+.inquiry-form select:focus {
+  outline: none;
+  border-color: #022257;
+  box-shadow: 0 0 0 3px rgba(2, 34, 87, 0.1);
 }
 
 .inquiry-form textarea {
-  min-height: 60px;
+  min-height: 80px;
   resize: vertical;
 }
 
 .inquiry-form button {
   width: 100%;
-  background-color: #022257;
+  background: linear-gradient(135deg, #022257, #1e40af);
   color: #fff;
   border: none;
-  padding: 0.5rem;
-  border-radius: 6px;
+  padding: 1rem;
+  border-radius: 12px;
   cursor: pointer;
   font-weight: 600;
-  font-size: 0.92rem;
+  font-size: 1rem;
   transition: all 0.3s ease;
-  height: 45px;
-  min-height: 44px; /* Touch target size */
+  min-height: 50px;
+  box-shadow: 0 4px 15px rgba(2, 34, 87, 0.3);
 }
 
 .inquiry-form button:hover {
-  background-color: #031a3d;
+  background: linear-gradient(135deg, #1e40af, #022257);
   transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(2, 34, 87, 0.4);
 }
 
 .form-success {
@@ -252,62 +265,86 @@
 
 .popup-form.reduced {
   background: #fff;
-  padding: 1.2rem 1.5rem;
+  padding: 1.5rem 2rem;
   border-radius: 12px;
   width: 30%;
-  max-width: 420px;
+  max-width: 400px;
   max-height: 80vh;
   overflow-y: auto;
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
   position: relative;
   animation: scaleIn 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1) forwards;
   text-align: center;
+  border: 1px solid #e2e8f0;
 }
 
 .popup-form.reduced .close-btn {
   position: absolute;
-  top: 8px;
-  right: 150px;
-  align-items: end;
-  font-size: 1.4rem;
+  top: 15px;
+  right: 15px;
+  font-size: 1.8rem;
   font-weight: bold;
   border: none;
   background: transparent;
-  color: #022257;
+  color: #666;
   cursor: pointer;
   transition: transform 0.2s ease, color 0.2s ease;
   min-height: 44px;
   min-width: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
 }
 
 .popup-form.reduced .close-btn:hover {
   color: #d90429;
+  background: rgba(217, 4, 41, 0.1);
+  transform: scale(1.1);
 }
 
 .popup-form.reduced input,
 .popup-form.reduced textarea,
 .popup-form.reduced select {
-  margin-top: 1px;
   width: 100%;
-  padding: 0.35rem;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
-  min-height: 44px;
+  padding: 0.8rem 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  min-height: 48px;
+  transition: all 0.3s ease;
+  font-family: "Lora", serif;
+}
+
+.popup-form.reduced input:focus,
+.popup-form.reduced textarea:focus,
+.popup-form.reduced select:focus {
+  outline: none;
+  border-color: #022257;
+  box-shadow: 0 0 0 3px rgba(2, 34, 87, 0.1);
 }
 
 .popup-form.reduced button {
   width: 100%;
+  background: linear-gradient(135deg, #022257, #1e40af);
   color: #fff;
   border: none;
-  padding: 0.7rem;
-  border-radius: 8px;
+  padding: 1rem;
+  border-radius: 12px;
   cursor: pointer;
   font-weight: 600;
-  font-size: 0.95rem;
+  font-size: 1rem;
   transition: all 0.3s ease;
-  min-height: 44px;
+  min-height: 50px;
+  font-family: "Lora", serif;
+  box-shadow: 0 4px 15px rgba(2, 34, 87, 0.3);
+}
+
+.popup-form.reduced button:hover {
+  background: linear-gradient(135deg, #1e40af, #022257);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(2, 34, 87, 0.4);
 }
 
 /* ========================================
@@ -472,16 +509,18 @@
 /* Extra Small Mobile (up to 399px) */
 @media (max-width: 399px) {
   .hero-section {
-    min-height: 400px;
-    padding: 1rem 0;
+    min-height: 200px;
+    height: calc(100vh - 60px);
+    padding: 0.2rem 0;
   }
 
   .hero-content-container {
     padding: 0 0.5rem;
     height: auto;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     text-align: center;
+    padding-top: 0.2rem;
   }
 
   .hero-decor {
@@ -490,9 +529,9 @@
   }
 
   .hero-logo {
-    width: 180px;
+    width: 160px;
     margin: 0 auto;
-    margin-top: 60px;
+    margin-top: 10px;
   }
 
   .hero-tagline {
@@ -512,8 +551,9 @@
     right: auto;
     width: 90%;
     max-width: 100%;
-    margin: 0.4rem auto;
-    padding: 0.8rem 1rem;
+    margin: 0.3rem auto;
+    padding: 0.6rem;
+    margin-bottom: 0.5rem;
   }
 
   .inquiry-form h3 {
@@ -524,8 +564,8 @@
   .inquiry-form textarea,
   .inquiry-form select {
     font-size: 16px;
-    padding: 0.4rem 0.6rem;
-    margin-bottom: 0.1rem;
+    padding: 0.3rem 0.5rem;
+    margin-bottom: 0.05rem;
   }
 
   .inquiry-form button {
@@ -627,16 +667,18 @@
 /* Small Mobile (400px to 575px) */
 @media (min-width: 400px) and (max-width: 575px) {
   .hero-section {
-    min-height: 450px;
-    padding: 1.5rem 0;
+    min-height: 220px;
+    height: calc(100vh - 70px);
+    padding: 0.3rem 0;
   }
 
   .hero-content-container {
     padding: 0 0.8rem;
     height: auto;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     text-align: center;
+    padding-top: 0.2rem;
   }
 
   .hero-decor {
@@ -645,9 +687,9 @@
   }
 
   .hero-logo {
-    width: 220px;
+    width: 200px;
     margin: 0 auto;
-    margin-top: 60px;
+    margin-top: 15px;
   }
 
   .hero-tagline {
@@ -667,8 +709,9 @@
     right: auto;
     width: 90%;
     max-width: 90%;
-    margin: 1rem auto;
-    padding: 1rem 1.2rem;
+    margin: 0.5rem auto;
+    padding: 0.8rem;
+    margin-bottom: 0.8rem;
   }
 
   .inquiry-form h3 {
@@ -679,8 +722,8 @@
   .inquiry-form textarea,
   .inquiry-form select {
     font-size: 16px;
-    padding: 0.4rem 0.7rem;
-    margin-bottom: 0.5rem;
+    padding: 0.3rem 0.6rem;
+    margin-bottom: 0.3rem;
   }
 
   .inquiry-form button {
@@ -783,16 +826,18 @@
 /* Mobile Large (576px to 767px) */
 @media (min-width: 576px) and (max-width: 767px) {
   .hero-section {
-    min-height: 500px;
-    padding: 2rem 0;
+    min-height: 250px;
+    height: calc(100vh - 80px);
+    padding: 0.5rem 0;
   }
 
   .hero-content-container {
     padding: 0 1rem;
     height: auto;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     text-align: center;
+    padding-top: 0.2rem;
   }
 
   .hero-decor {
@@ -801,9 +846,9 @@
   }
 
   .hero-logo {
-    width: 280px;
+    width: 250px;
     margin: 0 auto;
-    margin-top: 60px;
+    margin-top: 20px;
   }
 
   .hero-tagline {
@@ -823,8 +868,9 @@
     right: auto;
     width: 100%;
     max-width: 500px;
-    margin: 1rem auto;
-    padding: 1rem 1.5rem;
+    margin: 0.8rem auto;
+    padding: 1rem;
+    margin-bottom: 1.2rem;
   }
 
   .inquiry-form h3 {
@@ -835,8 +881,8 @@
   .inquiry-form textarea,
   .inquiry-form select {
     font-size: 16px;
-    padding: 0.4rem 0.7rem;
-    margin-bottom: 0.5rem;
+    padding: 0.3rem 0.6rem;
+    margin-bottom: 0.3rem;
   }
 
   .inquiry-form button {
@@ -937,16 +983,17 @@
 /* Tablet (768px to 991px) */
 @media (min-width: 768px) and (max-width: 991px) {
   .hero-section {
-    min-height: 550px;
-    padding: 2.5rem 0;
+    min-height: 300px;
+    padding: 1rem 0;
   }
 
   .hero-content-container {
     padding: 0 3%;
     height: auto;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     text-align: center;
+    padding-top: 0.2rem;
   }
 
   .hero-decor {
@@ -955,9 +1002,9 @@
   }
 
   .hero-logo {
-    width: 350px;
-   margin-left: 60px; /* ✅ corrected from 100px */
-    margin-top: 60px;
+    width: 320px;
+    margin-left: 60px;
+    margin-top: 20px;
   }
 
   .hero-tagline {
@@ -977,8 +1024,9 @@
     right: auto;
     width: 100%;
     max-width: 500px;
-    margin: 1.5rem auto;
-    padding: 1.2rem 2rem;
+    margin: 1rem auto;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1.5rem;
   }
 
   .background-image {
@@ -1049,7 +1097,7 @@
 /* Desktop (992px to 1199px) */
 @media (min-width: 992px) and (max-width: 1199px) {
   .hero-logo {
-    margin-top:20px;
+    margin-top: 20px;
     width: 320px;
     margin-left: 100px;
   }
@@ -1094,8 +1142,7 @@
 @media (min-width: 1200px) {
   .hero-logo {
     width: 550px;
-        margin-left: 60px; /* ✅ corrected from 200px */
-
+    margin-left: 60px; /* ✅ corrected from 200px */
   }
 
   .hero-tagline h1 {
