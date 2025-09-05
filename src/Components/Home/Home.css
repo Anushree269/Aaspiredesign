@@ -152,16 +152,16 @@
 }
 
 /* ========================================
-   INQUIRY FORM
+   INQUIRY FORM - HEIGHT REDUCED
    ======================================== */
 .inquiry-form {
   position: absolute;
-  top: 15%;
+  top: 2%;
   right: 3%;
   width: 400px;
   max-width: 90%;
   background: #ffffff;
-  padding: 1.5rem 2rem;
+  padding: 1.2rem 1.8rem; /* Reduced padding */
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   z-index: 3;
@@ -180,7 +180,7 @@
 .inquiry-form h3 {
   text-align: center;
   font-size: clamp(1.1rem, 3vw, 1.4rem);
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem; /* Reduced margin */
   color: #022257;
   font-weight: 700;
 }
@@ -189,13 +189,13 @@
 .inquiry-form textarea,
 .inquiry-form select {
   width: 100%;
-  padding: 0.8rem 1rem;
+  padding: 0.7rem 0.9rem; /* Reduced padding */
   border: 2px solid #e2e8f0;
   border-radius: 10px;
-  font-size: 0.95rem;
+  font-size: 0.9rem; /* Slightly smaller font */
   transition: all 0.3s ease;
-  margin-bottom: 1rem;
-  min-height: 48px;
+  margin-bottom: 0.4rem; /* Reduced margin */
+  min-height: 18px; /* Reduced min-height */
 }
 
 .inquiry-form input:focus,
@@ -207,7 +207,7 @@
 }
 
 .inquiry-form textarea {
-  min-height: 80px;
+  min-height: 45px; /* Reduced min-height */
   resize: vertical;
 }
 
@@ -216,13 +216,13 @@
   background: linear-gradient(135deg, #022257, #1e40af);
   color: #fff;
   border: none;
-  padding: 1rem;
+  padding: 0.9rem; /* Reduced padding */
   border-radius: 12px;
   cursor: pointer;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.95rem; /* Slightly smaller font */
   transition: all 0.3s ease;
-  min-height: 50px;
+  min-height: 45px; /* Reduced min-height */
   box-shadow: 0 4px 15px rgba(2, 34, 87, 0.3);
 }
 
@@ -235,14 +235,14 @@
 .form-success {
   color: #2d8a39;
   font-size: 0.8rem;
-  margin-top: 0.35rem;
+  margin-top: 0.3rem; /* Reduced margin */
   text-align: center;
 }
 
 .form-error {
   color: #e53e3e;
   font-size: 0.8rem;
-  margin-top: 0.35rem;
+  margin-top: 0.3rem; /* Reduced margin */
   text-align: center;
 }
 
@@ -251,7 +251,7 @@
    ======================================== */
 .popup-overlay {
   position: fixed;
-  top: 0;
+  top: 70px;
   left: 0;
   width: 100%;
   height: 100%;
@@ -259,13 +259,12 @@
   align-items: center;
   justify-content: center;
   z-index: 999;
-  background: rgba(0, 0, 0, 0.6);
   animation: fadeIn 0.3s ease-out forwards;
 }
 
 .popup-form {
   background: #fff;
-  padding: 2rem;
+  padding: 1.8rem; /* Reduced padding */
   border-radius: 12px;
   width: 90%;
   max-width: 450px;
@@ -305,12 +304,12 @@
 .popup-form textarea,
 .popup-form select {
   width: 100%;
-  padding: 0.8rem 1rem;
+  padding: 0.7rem 0.9rem; /* Reduced padding */
   border: 2px solid #e2e8f0;
   border-radius: 10px;
-  font-size: 0.95rem;
-  margin-bottom: 1rem;
-  min-height: 48px;
+  font-size: 0.9rem; /* Slightly smaller font */
+  margin-bottom: 0.9rem; /* Reduced margin */
+  min-height: 45px; /* Reduced min-height */
   transition: all 0.3s ease;
   font-family: "Lora", serif;
 }
@@ -328,20 +327,19 @@
   background: linear-gradient(135deg, #022257, #1e40af);
   color: #fff;
   border: none;
-  padding: 1rem;
+  padding: 0.9rem; /* Reduced padding */
   border-radius: 12px;
   cursor: pointer;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.95rem; /* Slightly smaller font */
   transition: all 0.3s ease;
-  min-height: 50px;
+  min-height: 45px; /* Reduced min-height */
   font-family: "Lora", serif;
 }
 
 .popup-form button:hover {
   background: linear-gradient(135deg, #1e40af, #022257);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(2, 34, 87, 0.4);
 }
 
 /* ========================================
@@ -549,12 +547,13 @@
     width: 90%;
     max-width: 100%;
     margin: 0.3rem auto;
-    padding: 0.6rem;
+    padding: 0.5rem; /* Reduced padding */
     margin-bottom: 0.5rem;
   }
 
   .inquiry-form h3 {
     font-size: 0.9rem;
+    margin-bottom: 0.8rem; /* Reduced margin */
   }
 
   .inquiry-form input,
@@ -563,11 +562,18 @@
     font-size: 16px;
     padding: 0.3rem 0.5rem;
     margin-bottom: 0.05rem;
+    min-height: 16px; /* Reduced min-height */
+  }
+
+  .inquiry-form textarea {
+    min-height: 40px; /* Reduced min-height */
   }
 
   .inquiry-form button {
-    height: 44px;
+    height: 40px; /* Reduced height */
     font-size: 0.9rem;
+    padding: 0.8rem; /* Reduced padding */
+    min-height: 40px; /* Reduced min-height */
   }
 
   .counter-section {
@@ -632,7 +638,7 @@
   /* Popup form adjustments for small screens */
   .popup-form {
     margin-top: 40px;
-    padding: 1.5rem;
+    padding: 1.2rem; /* Reduced padding */
     width: 85%;
     max-width: 320px;
   }
@@ -645,18 +651,20 @@
 
   .popup-form h3 {
     font-size: 1.1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem; /* Reduced margin */
   }
 
   .popup-form input,
   .popup-form textarea,
   .popup-form select {
-    padding: 0.7rem;
-    margin-bottom: 0.8rem;
+    padding: 0.6rem; /* Reduced padding */
+    margin-bottom: 0.7rem; /* Reduced margin */
+    min-height: 42px; /* Reduced min-height */
   }
 
   .popup-form button {
-    padding: 0.8rem;
+    padding: 0.7rem; /* Reduced padding */
+    min-height: 42px; /* Reduced min-height */
   }
 }
 
@@ -706,12 +714,13 @@
     width: 90%;
     max-width: 90%;
     margin: 0.5rem auto;
-    padding: 0.8rem;
+    padding: 0.7rem; /* Reduced padding */
     margin-bottom: 0.8rem;
   }
 
   .inquiry-form h3 {
     font-size: 1rem;
+    margin-bottom: 1rem; /* Reduced margin */
   }
 
   .inquiry-form input,
@@ -720,11 +729,18 @@
     font-size: 16px;
     padding: 0.3rem 0.6rem;
     margin-bottom: 0.3rem;
+    min-height: 17px; /* Reduced min-height */
+  }
+
+  .inquiry-form textarea {
+    min-height: 42px; /* Reduced min-height */
   }
 
   .inquiry-form button {
-    height: 44px;
+    height: 42px; /* Reduced height */
     font-size: 0.9rem;
+    padding: 0.8rem; /* Reduced padding */
+    min-height: 42px; /* Reduced min-height */
   }
 
   .counter-section {
@@ -788,7 +804,7 @@
 
   /* Popup form adjustments */
   .popup-form {
-    padding: 1.8rem;
+    padding: 1.5rem; /* Reduced padding */
     width: 85%;
     max-width: 350px;
   }
@@ -845,24 +861,25 @@
     width: 100%;
     max-width: 500px;
     margin: 0.8rem auto;
-    padding: 1rem;
+    padding: 0.9rem; /* Reduced padding */
     margin-bottom: 1.2rem;
   }
 
   .inquiry-form h3 {
     font-size: 1.1rem;
+    margin-bottom: 1.2rem; /* Reduced margin */
   }
 
   .inquiry-form input,
   .inquiry-form textarea,
   .inquiry-form select {
     width: 100%;
-    padding: 0.8rem 1rem;
+    padding: 0.7rem 0.9rem; /* Reduced padding */
     border: 2px solid #e2e8f0;
     border-radius: 10px;
-    font-size: 0.95rem;
-    margin-bottom: 1rem;
-    min-height: 48px;
+    font-size: 0.9rem; /* Slightly smaller font */
+    margin-bottom: 0.9rem; /* Reduced margin */
+    min-height: 45px; /* Reduced min-height */
     transition: all 0.3s ease;
     font-family: "Lora", serif;
   }
@@ -876,7 +893,7 @@
   }
 
   .inquiry-form textarea {
-    min-height: 80px;
+    min-height: 70px; /* Reduced min-height */
     resize: vertical;
   }
 
@@ -885,13 +902,13 @@
     background: linear-gradient(135deg, #022257, #1e40af);
     color: #fff;
     border: none;
-    padding: 1rem;
+    padding: 0.9rem; /* Reduced padding */
     border-radius: 12px;
     cursor: pointer;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.95rem; /* Slightly smaller font */
     transition: all 0.3s ease;
-    min-height: 50px;
+    min-height: 45px; /* Reduced min-height */
     box-shadow: 0 4px 15px rgba(2, 34, 87, 0.3);
   }
 
@@ -1052,7 +1069,7 @@
 
   /* Popup form adjustments */
   .popup-form {
-    padding: 2.2rem;
+    padding: 1.8rem; /* Reduced padding */
     width: 70%;
     max-width: 450px;
   }
@@ -1076,12 +1093,12 @@
 
   .inquiry-form {
     position: absolute;
-    top: 190px;
+    top: 2%;
     right: 3%;
-    width: 400px;
-    max-width: 400px;
+    width: 380px; /* Slightly reduced width */
+    max-width: 380px; /* Slightly reduced max-width */
     background: #ffffff;
-    padding: 1.5rem 2rem;
+    padding: 1.2rem 1.8rem; /* Reduced padding */
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     z-index: 3;
@@ -1100,7 +1117,7 @@
   .inquiry-form h3 {
     text-align: center;
     font-size: 1.1rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem; /* Reduced margin */
     color: #022257;
     font-weight: 700;
   }
@@ -1109,12 +1126,12 @@
   .inquiry-form textarea,
   .inquiry-form select {
     width: 100%;
-    padding: 0.8rem 1rem;
+    padding: 0.7rem 0.9rem; /* Reduced padding */
     border: 2px solid #e2e8f0;
     border-radius: 10px;
-    font-size: 0.95rem;
-    margin-bottom: 1rem;
-    min-height: 48px;
+    font-size: 0.9rem; /* Slightly smaller font */
+    margin-bottom: 0.4rem; /* Reduced margin */
+    min-height: 18px; /* Reduced min-height */
     transition: all 0.3s ease;
     font-family: "Lora", serif;
   }
@@ -1128,7 +1145,7 @@
   }
 
   .inquiry-form textarea {
-    min-height: 80px;
+    min-height: 45px; /* Reduced min-height */
     resize: vertical;
   }
 
@@ -1137,13 +1154,13 @@
     background: linear-gradient(135deg, #022257, #1e40af);
     color: #fff;
     border: none;
-    padding: 1rem;
+    padding: 0.9rem; /* Reduced padding */
     border-radius: 12px;
     cursor: pointer;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.95rem; /* Slightly smaller font */
     transition: all 0.3s ease;
-    min-height: 50px;
+    min-height: 45px; /* Reduced min-height */
     box-shadow: 0 4px 15px rgba(2, 34, 87, 0.3);
   }
 
@@ -1304,7 +1321,7 @@
 
   /* Popup form adjustments */
   .popup-form {
-    padding: 2.5rem;
+    padding: 2rem; /* Reduced padding */
     width: 50%;
     max-width: 450px;
   }
@@ -1328,12 +1345,12 @@
 
   .inquiry-form {
     position: absolute;
-    top: 15%;
+    top: 2%;
     right: 8%;
-    width: 500px;
-    max-width: 500px;
+    width: 450px; /* Slightly reduced width */
+    max-width: 450px; /* Slightly reduced max-width */
     background: #ffffff;
-    padding: 1.5rem 2rem;
+    padding: 1.2rem 1.8rem; /* Reduced padding */
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
     z-index: 3;
@@ -1352,7 +1369,7 @@
   .inquiry-form h3 {
     text-align: center;
     font-size: 1.4rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.2rem; /* Reduced margin */
     color: #022257;
     font-weight: 700;
   }
@@ -1361,12 +1378,12 @@
   .inquiry-form textarea,
   .inquiry-form select {
     width: 100%;
-    padding: 0.8rem 1rem;
+    padding: 0.7rem 0.9rem; /* Reduced padding */
     border: 2px solid #e2e8f0;
     border-radius: 10px;
-    font-size: 0.95rem;
-    margin-bottom: 1rem;
-    min-height: 48px;
+    font-size: 0.9rem; /* Slightly smaller font */
+    margin-bottom: 0.4rem; /* Reduced margin */
+    min-height: 18px; /* Reduced min-height */
     transition: all 0.3s ease;
     font-family: "Lora", serif;
   }
@@ -1380,7 +1397,7 @@
   }
 
   .inquiry-form textarea {
-    min-height: 80px;
+    min-height: 45px; /* Reduced min-height */
     resize: vertical;
   }
 
@@ -1389,13 +1406,13 @@
     background: linear-gradient(135deg, #022257, #1e40af);
     color: #fff;
     border: none;
-    padding: 1rem;
+    padding: 0.9rem; /* Reduced padding */
     border-radius: 12px;
     cursor: pointer;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 0.95rem; /* Slightly smaller font */
     transition: all 0.3s ease;
-    min-height: 50px;
+    min-height: 45px; /* Reduced min-height */
     box-shadow: 0 4px 15px rgba(2, 34, 87, 0.3);
   }
 
@@ -1556,7 +1573,7 @@
 
   /* Popup form adjustments */
   .popup-form {
-    padding: 2.5rem;
+    padding: 2.2rem; /* Reduced padding */
     width: 40%;
     max-width: 500px;
   }
@@ -1596,8 +1613,9 @@
     top: 50%;
     right: 2%;
     transform: translateY(-50%);
-    width: 300px;
+    width: 280px; /* Slightly reduced width */
     margin: 0;
+    padding: 1rem 1.5rem; /* Reduced padding */
   }
 
   /* Popup form adjustments for landscape */
