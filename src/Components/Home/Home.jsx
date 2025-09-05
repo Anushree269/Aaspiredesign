@@ -167,6 +167,8 @@ const Home = () => {
     <div className="home">
       <Helmet>
         <title>Aaspire Design |  Interior Designer  Studio in Pune</title>
+         <Helmet>
+        <title>Aaspire Design |  Interior Designer  Studio in Pune</title>
        <meta
   name="description"
   content="Aaspire Design is a interior designer studio in Pune, creating innovative, functional, and elegant spaces for residential and commercial projects."
@@ -175,7 +177,7 @@ const Home = () => {
   name="keywords"
   content="interior designer studio Pune, Aaspire Design, home interiors Pune, commercial interior designers Pune, best interior studio Pune"
 />
-<meta property="og:title" content="Aaspire Design | Interior Designer Studio in Pune" />
+<meta property="og:title" content="Aaspire Design | Interior Designers Studio in Pune" />
 <meta
   property="og:description"
   content="Transform your spaces with Aaspire Design, Pune premier interior designers studio. We specialize in modern, luxurious, and functional interiors."
