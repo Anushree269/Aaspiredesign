@@ -40,18 +40,7 @@ export const Contact = () => {
 
   return (
     <div className="contact-container">
-      <Helmet>
-        <title>Contact Aaspire Design | Interior Design Institute in Baner, Pune</title>
-        <meta 
-          name="description" 
-          content="Get in touch with Aaspire Design for interior design courses and services in Baner, Pune. Visit our office, call, or email us for inquiries."
-        />
-        <meta name="keywords" content="contact interior design Pune, Aaspire Design contact, design institute Baner, interior design courses contact" />
-        <meta property="og:title" content="Contact Aaspire Design | Interior Design Institute in Baner, Pune" />
-        <meta property="og:description" content="Contact information for Aaspire Design in Baner, Pune. Reach out for interior design courses and services." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.aaspiredesign.com/contact" />
-      </Helmet>
+    
 
       <div className="contact-left">
         <h2>CONTACT US</h2>

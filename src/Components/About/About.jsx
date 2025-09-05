@@ -37,18 +37,7 @@ const About = () => {
 
   return (
     <>
-      <Helmet>
-        <title>About Aaspire Design | Premier Interior Design Institute in Baner, Pune</title>
-        <meta 
-          name="description" 
-          content="Learn about Aaspire Design - the leading interior and fashion design institute in Baner, Pune. Discover our founders, philosophy, and design services." 
-        />
-        <meta name="keywords" content="interior design institute Pune, fashion design course Baner, Aaspire Design about, design college Pune, best design institute" />
-        <meta property="og:title" content="About Aaspire Design | Premier Interior Design Institute in Baner, Pune" />
-        <meta property="og:description" content="Learn about Aaspire Design - the leading interior and fashion design institute in Baner, Pune." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.aaspiredesign.com/about" />
-      </Helmet>
+      
 
       {/* === About Section === */}
       <section

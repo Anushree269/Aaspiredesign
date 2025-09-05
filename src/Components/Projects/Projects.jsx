@@ -53,18 +53,7 @@ const Projects = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Our Projects | Aaspire Design - Interior Design Portfolio in Pune</title>
-        <meta 
-          name="description" 
-          content="Explore our commercial and residential interior design projects in Pune. See our portfolio of salon designs, home interiors, and innovative space solutions." 
-        />
-        <meta name="keywords" content="interior design projects Pune, commercial interior design, residential interiors, salon design portfolio, Aaspire Design projects" />
-        <meta property="og:title" content="Our Projects | Aaspire Design - Interior Design Portfolio in Pune" />
-        <meta property="og:description" content="View our portfolio of commercial and residential interior design projects in Pune." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.aaspiredesign.com/projects" />
-      </Helmet>
+      
 
       <section
         className="projects-section"

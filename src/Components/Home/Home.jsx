@@ -166,22 +166,23 @@ const Home = () => {
   return (
     <div className="home">
       <Helmet>
-        <title>Aaspire Design | Premier Interior Design Institute in Pune</title>
-        <meta
-          name="description"
-          content="Aaspire Design offers professional interior design courses in Pune. Join our institute for expert training in fashion, graphic, and interior design with placement assistance."
-        />
-        <meta
-          name="keywords"
-          content="interior design course, fashion design institute, graphic design college, Pune design courses, Aaspire Design Baner"
-        />
-        <meta property="og:title" content="Aaspire Design | Premier Interior Design Institute in Pune" />
-        <meta
-          property="og:description"
-          content="Professional interior design courses in Pune with placement assistance. Learn from industry experts at Aaspire Design."
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.aaspiredesign.com" />
+        <title>Aaspire Design |  Interior Designer  Studio in Pune</title>
+       <meta
+  name="description"
+  content="Aaspire Design is a interior designer studio in Pune, creating innovative, functional, and elegant spaces for residential and commercial projects."
+/>
+<meta
+  name="keywords"
+  content="interior designer studio Pune, Aaspire Design, home interiors Pune, commercial interior designers Pune, best interior studio Pune"
+/>
+<meta property="og:title" content="Aaspire Design | Interior Designer Studio in Pune" />
+<meta
+  property="og:description"
+  content="Transform your spaces with Aaspire Design, Pune premier interior designers studio. We specialize in modern, luxurious, and functional interiors."
+/>
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://www.aaspiredesign.com" />
+        
       </Helmet>
 
       {/* Hero Section */}
