@@ -50,6 +50,37 @@ const Home = () => {
     { src: reel1, type: 'video/mp4' }
   ];
 
+  // Structured data for SEO (JSON-LD)
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "InteriorDesigner",
+    "name": "Aaspire Design",
+    "url": "https://aaspiredesign.com",
+    "logo": "https://aaspiredesign.com/static/media/Aaspirepng.png", // Update this path to your actual logo URL
+    "description": "Aaspire Design is a interior designer studio in Pune, creating innovative, functional, and elegant spaces for residential and commercial projects.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Your Street Address", // Update with your actual address
+      "addressLocality": "Pune",
+      "addressRegion": "Maharashtra",
+      "postalCode": "Your Postal Code", // Update with your actual postal code
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "18.5204", // Update with your actual coordinates
+      "longitude": "73.8567" // Update with your actual coordinates
+    },
+    "openingHours": "Mo-Sa 09:00-18:00",
+    "telephone": "+91-YOUR-PHONE-NUMBER", // Update with your actual phone number
+    "priceRange": "₹₹",
+    "sameAs": [
+      "https://www.facebook.com/yourpage", // Update with your actual social media links
+      "https://www.instagram.com/yourprofile",
+      "https://www.linkedin.com/company/yourcompany"
+    ]
+  };
+
   const sendEmail = (e, formRef) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -166,24 +197,38 @@ const Home = () => {
   return (
     <div className="home">
       <Helmet>
-        <title>Aaspire Design |  Interior Designer  Studio in Pune</title>
-        <title>Aaspire Design |  Interior Designer  Studio in Pune</title>
-       <meta
-  name="description"
-  content="Aaspire Design is a interior designer studio in Pune, creating innovative, functional, and elegant spaces for residential and commercial projects."
-/>
-<meta
-  name="keywords"
-  content="interior designer studio Pune, Aaspire Design, home interiors Pune, commercial interior designers Pune, best interior studio Pune"
-/>
-<meta property="og:title" content="Aaspire Design | Interior Designers  Studio in Pune" />
-<meta
-  property="og:description"
-  content="Transform your spaces with Aaspire Design, Pune premier interior designers studio. We specialize in modern, luxurious, and functional interiors."
-/>
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://www.aaspiredesign.com" />
+        <title>Aaspire Design | Interior Designer Studio in Pune</title>
+        <meta
+          name="description"
+          content="Aaspire Design is a interior designer studio in Pune, creating innovative, functional, and elegant spaces for residential and commercial projects."
+        />
+        <meta
+          name="keywords"
+          content="interior designer studio Pune, Aaspire Design, home interiors Pune, commercial interior designers Pune, best interior studio Pune"
+        />
+        <meta property="og:title" content="Aaspire Design | Interior Designers Studio in Pune" />
+        <meta
+          property="og:description"
+          content="Transform your spaces with Aaspire Design, Pune premier interior designers studio. We specialize in modern, luxurious, and functional interiors."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.aaspiredesign.com" />
+        <meta property="og:image" content="https://aaspiredesign.com/static/media/Aaspirepng.png" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Aaspire Design | Interior Designers Studio in Pune" />
+        <meta
+          name="twitter:description"
+          content="Transform your spaces with Aaspire Design, Pune premier interior designers studio."
+        />
+        <meta name="twitter:image" content="https://aaspiredesign.com/static/media/Aaspirepng.png" />
         
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify(jsonLd)}
+        </script>
+        
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://www.aaspiredesign.com" />
       </Helmet>
 
       {/* Hero Section */}

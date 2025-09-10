@@ -35,9 +35,86 @@ const About = () => {
     console.error('Failed to load image:', e.target.src);
   };
 
+  // Structured data for SEO
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "InteriorDesigner",
+    "name": "Aaspire Design",
+    "url": "https://aaspiredesign.com/about",
+    "logo": "https://aaspiredesign.com/static/media/Aaspirepng.png",
+    "description": "Aaspire Design is a premier interior design studio in Baner, Pune offering residential and commercial interior design services.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Your Street Address",
+      "addressLocality": "Pune",
+      "addressRegion": "Maharashtra",
+      "postalCode": "Your Postal Code",
+      "addressCountry": "IN"
+    },
+    "founders": [
+      {
+        "@type": "Person",
+        "name": "Dhwani Sanghavi",
+        "jobTitle": "Principal Interior Designer"
+      },
+      {
+        "@type": "Person",
+        "name": "Parag Shelar",
+        "jobTitle": "Principal Interior Designer"
+      }
+    ],
+    "foundingDate": "2014",
+    "numberOfEmployees": {
+      "@type": "QuantitativeValue",
+      "value": "10+"
+    },
+    "serviceArea": {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": "18.5600",
+        "longitude": "73.7800"
+      },
+      "geoRadius": "50000"
+    }
+  };
+
   return (
     <>
-      
+      <Helmet>
+        <title>About Aaspire Design | Premier Interior Design Studio in Pune</title>
+        <meta 
+          name="description" 
+          content="Learn about Aaspire Design, Pune's leading interior design studio founded in 2014. Meet our founders Dhwani Sanghavi and Parag Shelar and discover our design philosophy." 
+        />
+        <meta 
+          name="keywords" 
+          content="about Aaspire Design, interior designers Pune, about us, Dhwani Sanghavi, Parag Shelar, interior design studio Pune" 
+        />
+        <meta property="og:title" content="About Aaspire Design | Premier Interior Design Studio in Pune" />
+        <meta 
+          property="og:description" 
+          content="Discover the story behind Aaspire Design, Pune's trusted interior design studio with over 100 satisfied clients since 2014." 
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.aaspiredesign.com/about" />
+        <meta property="og:image" content="https://aaspiredesign.com/static/media/dhwanisanghavi.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Aaspire Design | Premier Interior Design Studio in Pune" />
+        <meta 
+          name="twitter:description" 
+          content="Learn about Aaspire Design, Pune's leading interior design studio founded in 2014." 
+        />
+        <meta name="twitter:image" content="https://aaspiredesign.com/static/media/dhwanisanghavi.jpg" />
+        
+        {/* Structured Data */}
+        <script type="application/ld+json">
+          {JSON.stringify(jsonLd)}
+        </script>
+        
+        {/* Canonical URL */}
+        <link rel="canonical" href="https://www.aaspiredesign.com/about" />
+      </Helmet>
 
       {/* === About Section === */}
       <section
@@ -103,7 +180,7 @@ const About = () => {
             <div className="founder-img">
               <img 
                 src={Founder1} 
-                alt="Dhwani Sanghavi" 
+                alt="Dhwani Sanghavi - Principal Interior Designer at Aaspire Design Pune" 
                 onError={handleImageError}
               />
             </div>
@@ -127,7 +204,7 @@ const About = () => {
             <div className="founder-img">
               <img 
                 src={Founder2} 
-                alt="Parag Shelar" 
+                alt="Parag Shelar - Principal Interior Designer at Aaspire Design Pune" 
                 onError={handleImageError}
               />
             </div>

@@ -215,14 +215,3 @@ video {
 /* ========================================
    PRINT STYLES
    ======================================== */
-@media print {
-  .skip-link,
-  .navbar,
-  .notification-banner {
-    display: none !important;
-  }
-
-  .main-content {
-    margin-top: 0;
-  }
-}
