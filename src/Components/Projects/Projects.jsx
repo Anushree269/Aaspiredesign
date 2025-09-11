@@ -12,7 +12,6 @@ import Residential1 from '../../assets/residentialprojects/bhavessharma/finalvie
 import Residential2 from '../../assets/residentialprojects/swapnilpatil/view2withlogo.jpg';
 
 import Footer from '../../Footer/Footer';
-
 // Lazy load components
 const Commercial = lazy(() => import('../Commercial/Commercial'));
 const Residential = lazy(() => import('../Residential/Residential'));
@@ -27,13 +26,13 @@ const Projects = () => {
   const sectionRef = useRef(null);
   const bgImages = [ProjectBg1, ProjectBg2, ProjectBg3];
 
-  // Structured data for SEO
+  // Structured Data for SEO
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "ItemList",
     "name": "Interior Design Projects by Aaspire Design",
     "description": "Explore our portfolio of commercial and residential interior design projects in Pune",
-    "url": "https://aaspiredesign.com/projects",
+    "url": "https://www.aaspiredesign.com/projects",
     "numberOfItems": 4,
     "itemListElement": [
       {
@@ -43,7 +42,7 @@ const Projects = () => {
           "@type": "CreativeWork",
           "name": "Salon Project",
           "description": "Commercial interior design for a salon in Pune",
-          "image": "https://aaspiredesign.com/static/media/commercialprojects/salonproject/finalviewofsalon2withlogo.jpg"
+          "image": Commercial1
         }
       },
       {
@@ -53,7 +52,7 @@ const Projects = () => {
           "@type": "CreativeWork",
           "name": "Salon Project Alternate View",
           "description": "Another view of our commercial salon interior design",
-          "image": "https://aaspiredesign.com/static/media/commercialprojects/salonproject/finalviewofsalon1withlogo.jpg"
+          "image": Commercial2
         }
       },
       {
@@ -63,7 +62,7 @@ const Projects = () => {
           "@type": "CreativeWork",
           "name": "Bhavess Sharma Residential Project",
           "description": "2 BHK kitchen design for a residential project in Pune",
-          "image": "https://aaspiredesign.com/static/media/residentialprojects/bhavessharma/finalview1ofkitchenof2bhkwithlogo.jpg"
+          "image": Residential1
         }
       },
       {
@@ -73,12 +72,13 @@ const Projects = () => {
           "@type": "CreativeWork",
           "name": "Swapnil Patil Residential Project",
           "description": "Residential interior design project for a home in Pune",
-          "image": "https://aaspiredesign.com/static/media/residentialprojects/swapnilpatil/view2withlogo.jpg"
+          "image": Residential2
         }
       }
     ]
   };
 
+  // Background image slider
   useEffect(() => {
     const interval = setInterval(() => {
       setBgIndex((prev) => (prev + 1) % bgImages.length);
@@ -86,6 +86,7 @@ const Projects = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // Intersection Observer for animations
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -115,29 +116,23 @@ const Projects = () => {
           name="keywords" 
           content="interior design projects Pune, commercial interior design, residential interior design, salon design Pune, home interior projects, Aaspire Design portfolio" 
         />
+        <link rel="canonical" href="https://www.aaspiredesign.com/projects" />
+
+        {/* Open Graph / Twitter */}
         <meta property="og:title" content="Our Projects | Interior Design Portfolio - Aaspire Design Pune" />
-        <meta 
-          property="og:description" 
-          content="Browse our interior design portfolio featuring commercial and residential projects in Pune. Transform your space with Aaspire Design." 
-        />
+        <meta property="og:description" content="Browse our interior design portfolio featuring commercial and residential projects in Pune. Transform your space with Aaspire Design." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.aaspiredesign.com/projects" />
-        <meta property="og:image" content="https://aaspiredesign.com/static/media/commercialprojects/salonproject/finalviewofsalon2withlogo.jpg" />
+        <meta property="og:image" content={Commercial1} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Our Projects | Interior Design Portfolio - Aaspire Design Pune" />
-        <meta 
-          name="twitter:description" 
-          content="Explore Aaspire Design's portfolio of commercial and residential interior design projects in Pune." 
-        />
-        <meta name="twitter:image" content="https://aaspiredesign.com/static/media/commercialprojects/salonproject/finalviewofsalon2withlogo.jpg" />
-        
+        <meta name="twitter:description" content="Explore Aaspire Design's portfolio of commercial and residential interior design projects in Pune." />
+        <meta name="twitter:image" content={Commercial1} />
+
         {/* Structured Data */}
         <script type="application/ld+json">
           {JSON.stringify(jsonLd)}
         </script>
-        
-        {/* Canonical URL */}
-        <link rel="canonical" href="https://www.aaspiredesign.com/projects" />
       </Helmet>
 
       <section
@@ -166,10 +161,8 @@ const Projects = () => {
 
             <p className="project-description">
               {selectedTab === 'commercial'
-                ? `Commercial interior design involves creating functional and visually appealing spaces for business purposes such as offices, restaurants, or retail stores. The focus is on branding, efficiency, and customer experience. 
-                   Commercial interior design focuses on functional and brand-driven spaces like Bungalow, Rowhouses, Duplex, while residential interior design creates comfortable and personalized homes. At Aaspire Design, we blend interior designer to deliver creative solutions. Led by Dhwani Sanghavi and Parag Shelar, Director and mentor at INSD Baner, Pune, we craft spaces that are both stylish and purposeful.`
-                : `We specialize in creating residential interiors that combine functionality with aesthetics, ensuring every home reflects the personality and lifestyle of its residents. From modern apartments to luxurious villas, our designs focus on smart space planning, elegant material selection, and harmonious color palettes that bring warmth and comfort to living spaces. We also integrate landscaping solutions to seamlessly connect indoor and outdoor environments, adding a refreshing natural touch. Our goal is to transform houses into personalized havens 
-                   that balance style, comfort, and timeless appeal.`}
+                ? `Commercial interior design focuses on functional and brand-driven spaces like offices, salons, and retail stores. At Aaspire Design, we craft spaces that blend aesthetics and functionality, guided by Dhwani Sanghavi and Parag Shelar.`
+                : `Residential interior design combines style, comfort, and personalization. We transform homes into havens with elegant materials, smart planning, and harmonious color palettes, ensuring every space reflects the residents' lifestyle.`}
             </p>
           </div>
 
@@ -183,26 +176,30 @@ const Projects = () => {
                 <img
                   src={img}
                   alt={`${selectedTab === 'commercial' ? 'Commercial' : 'Residential'} Project ${index + 1} by Aaspire Design Pune`}
+                  loading="lazy"
                 />
               </div>
             ))}
           </div>
         </div>
 
-        {/* Lightbox View */}
+        {/* Lightbox */}
         {lightboxImg && (
           <div className="lightbox" onClick={() => setLightboxImg(null)}>
-            <img src={lightboxImg} alt="Full View Project by Aaspire Design" className="lightbox-image" />
+            <img
+              src={lightboxImg}
+              alt="Full View Project by Aaspire Design"
+              className="lightbox-image"
+            />
           </div>
         )}
       </section>
 
-      {/* Lazy loaded sections */}
+      {/* Lazy-loaded project details */}
       <Suspense fallback={<div className="loading-msg">Loading project details...</div>}>
         {selectedTab === 'commercial' ? <Commercial /> : <Residential />}
       </Suspense>
 
-      {/* Footer */}
       <Footer />
     </>
   );

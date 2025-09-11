@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import './Faq.css';
 import FAQBg from '../../assets/interior-design2.jpg';
 import { FaPlus, FaMinus } from 'react-icons/fa';
@@ -10,14 +11,14 @@ const faqData = [
   },
   {
     question: 'How does the design process work?',
-    answer: 'It helps track customer satisfaction and improve business outcomes with data-driven decisions.',
+    answer: 'Our design process begins with consultation, followed by concept development, 3D visualization, material selection, and finally, on-site execution with regular updates.',
   },
   {
-    question: ' How much do interior design services cost?',
+    question: 'How much do interior design services cost?',
     answer: 'Costs vary based on project size, scope, and materials. After an initial consultation, we provide a detailed quotation tailored to your needs and budget.',
   },
   {
-    question: ' Do you handle turnkey interior projects?',
+    question: 'Do you handle turnkey interior projects?',
     answer: 'Yes, we offer complete turnkey solutions—from concept to execution—so you don’t have to worry about anything.',
   },
 ];
@@ -31,15 +32,45 @@ const Faq = () => {
 
   return (
     <section className="faq-section">
-      {/* Blurred Background Image */}
+      {/* ✅ SEO Meta */}
+      <Helmet>
+        <title>FAQ | Aaspire Design - Interior Designers in Pune</title>
+        <meta
+          name="description"
+          content="Find answers to frequently asked questions about Aaspire Design’s interior design services in Pune, including pricing, process, and turnkey project details."
+        />
+        <link rel="canonical" href="https://www.aaspiredesign.com/faq" />
+
+        {/* Open Graph */}
+        <meta property="og:title" content="FAQ | Aaspire Design - Interior Designers in Pune" />
+        <meta
+          property="og:description"
+          content="Got questions about our interior design services? Explore FAQs about pricing, process, and our turnkey solutions."
+        />
+        <meta property="og:image" content="https://www.aaspiredesign.com/favicon.png" />
+        <meta property="og:url" content="https://www.aaspiredesign.com/faq" />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="FAQ | Aaspire Design - Interior Designers in Pune" />
+        <meta
+          name="twitter:description"
+          content="Aaspire Design answers your frequently asked questions about our interior design services in Pune."
+        />
+        <meta name="twitter:image" content="https://www.aaspiredesign.com/favicon.png" />
+      </Helmet>
+
+      {/* ✅ Background */}
       <div
         className="faq-bg"
         style={{ backgroundImage: `url(${FAQBg})` }}
       ></div>
 
       <div className="faq-wrapper">
+        {/* ✅ Left Side - FAQ List */}
         <div className="faq-left">
-          <h2 className="faq-heading">FREQUENTLY ASK QUESTION</h2>
+          <h2 className="faq-heading">FREQUENTLY ASKED QUESTIONS</h2>
           <div className="faq-list">
             {faqData.map((item, index) => (
               <div className="faq-box" key={index}>
@@ -59,10 +90,11 @@ const Faq = () => {
           </div>
         </div>
 
+        {/* ✅ Right Side - Ask a Question */}
         <div className="faq-right">
-          <h4>Any Question?</h4>
-          <p>You can ask anything you want to know about Feedback.</p>
-          <input type="text" placeholder="Enter Here" className="faq-input" />
+          <h4>Any Questions?</h4>
+          <p>You can ask anything you want to know about our interior design services.</p>
+          <input type="text" placeholder="Enter your question" className="faq-input" />
           <button className="faq-button">Send</button>
         </div>
       </div>

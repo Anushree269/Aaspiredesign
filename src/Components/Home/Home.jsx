@@ -7,7 +7,7 @@ import Frontimage from '../../assets/homeimage.jpg';
 import Logo from '../../assets/Aaspirepng.png';
 import emailjs from '@emailjs/browser';
 
-// ✅ Import videos correctly from src/assets/reel
+// Videos
 import reel1 from '../../assets/reel/dhwanireel1.mp4';
 import reel2 from '../../assets/reel/dhwanireel2.mp4';
 import reel3 from '../../assets/reel/dhwanireel3.mp4';
@@ -42,7 +42,6 @@ const Home = () => {
   const [showPopup, setShowPopup] = useState(false);
   const [currentVideo, setCurrentVideo] = useState(0);
 
-  // ✅ Use imported videos
   const videos = [
     { src: reel4, type: 'video/mp4' },
     { src: reel3, type: 'video/mp4' },
@@ -50,37 +49,38 @@ const Home = () => {
     { src: reel1, type: 'video/mp4' }
   ];
 
-  // Structured data for SEO (JSON-LD)
+  // ✅ Structured Data (JSON-LD)
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "InteriorDesigner",
     "name": "Aaspire Design",
-    "url": "https://aaspiredesign.com",
-    "logo": "https://aaspiredesign.com/static/media/Aaspirepng.png", // Update this path to your actual logo URL
-    "description": "Aaspire Design is a interior designer studio in Pune, creating innovative, functional, and elegant spaces for residential and commercial projects.",
+    "url": "https://www.aaspiredesign.com",
+    "logo": "https://www.aaspiredesign.com/logo.png", // ✅ use one clean logo URL
+    "description": "Aaspire Design is an interior designers studio in Pune, creating innovative, functional, and elegant spaces for residential and commercial projects.",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Your Street Address", // Update with your actual address
+      "streetAddress": "Your Street Address",
       "addressLocality": "Pune",
       "addressRegion": "Maharashtra",
-      "postalCode": "Your Postal Code", // Update with your actual postal code
+      "postalCode": "Your Postal Code",
       "addressCountry": "IN"
     },
     "geo": {
       "@type": "GeoCoordinates",
-      "latitude": "18.5204", // Update with your actual coordinates
-      "longitude": "73.8567" // Update with your actual coordinates
+      "latitude": "18.5204",
+      "longitude": "73.8567"
     },
     "openingHours": "Mo-Sa 09:00-18:00",
-    "telephone": "+91-YOUR-PHONE-NUMBER", // Update with your actual phone number
+    "telephone": "+91-YOUR-PHONE-NUMBER",
     "priceRange": "₹₹",
     "sameAs": [
-      "https://www.facebook.com/yourpage", // Update with your actual social media links
+      "https://www.facebook.com/yourpage",
       "https://www.instagram.com/yourprofile",
       "https://www.linkedin.com/company/yourcompany"
     ]
   };
 
+  // ✅ Email Sending
   const sendEmail = (e, formRef) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -104,7 +104,7 @@ const Home = () => {
       .finally(() => setIsSubmitting(false));
   };
 
-  // Counter animation
+  // ✅ Counter animation
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -133,7 +133,7 @@ const Home = () => {
     return () => observer.disconnect();
   }, []);
 
-  // Video auto-cycle
+  // ✅ Video cycle
   useEffect(() => {
     const videoElement = videoRef.current;
     if (!videoElement) return;
@@ -197,37 +197,41 @@ const Home = () => {
   return (
     <div className="home">
       <Helmet>
-        <title>Aaspire Design | Interior Designer Studio in Pune</title>
+        {/* ✅ Main SEO Meta */}
+        <title>Aaspire Design | Interior Designers Studio in Pune</title>
         <meta
           name="description"
-          content="Aaspire Design is a interior designer studio in Pune, creating innovative, functional, and elegant spaces for residential and commercial projects."
+          content="Aaspire Design is an interior designers studio in Pune, offering creative, functional, and elegant design solutions for residential and commercial spaces."
         />
         <meta
           name="keywords"
-          content="interior designer studio Pune, Aaspire Design, home interiors Pune, commercial interior designers Pune, best interior studio Pune"
+          content="interior designers studio Pune, Aaspire Design, Baner interior designers, home interiors Pune, commercial interior design Pune, best interior designers studio Pune"
         />
+        <meta name="author" content="Aaspire Design" />
+
+        {/* ✅ Open Graph */}
         <meta property="og:title" content="Aaspire Design | Interior Designers Studio in Pune" />
         <meta
           property="og:description"
-          content="Transform your spaces with Aaspire Design, Pune premier interior designers studio. We specialize in modern, luxurious, and functional interiors."
+          content="Creative interior design studio in Pune. Aaspire Design specializes in residential and commercial interior projects that blend functionality with elegance."
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.aaspiredesign.com" />
-        <meta property="og:image" content="https://aaspiredesign.com/static/media/Aaspirepng.png" />
+        <meta property="og:image" content="https://www.aaspiredesign.com/favicon.png" />
+
+        {/* ✅ Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Aaspire Design | Interior Designers Studio in Pune" />
         <meta
           name="twitter:description"
-          content="Transform your spaces with Aaspire Design, Pune premier interior designers studio."
+          content="Interior designers studio in Pune offering creative and functional design solutions for homes and businesses."
         />
-        <meta name="twitter:image" content="https://aaspiredesign.com/static/media/Aaspirepng.png" />
-        
-        {/* Structured Data */}
-        <script type="application/ld+json">
-          {JSON.stringify(jsonLd)}
-        </script>
-        
-        {/* Canonical URL */}
+        <meta name="twitter:image" content="https://www.aaspiredesign.com/favicon.png" />
+
+        {/* ✅ Structured Data */}
+        <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
+
+        {/* ✅ Canonical */}
         <link rel="canonical" href="https://www.aaspiredesign.com" />
       </Helmet>
 
@@ -289,7 +293,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* About Section with Background + Video */}
+      {/* About Section */}
       <section
         className="about-section"
         id="about"

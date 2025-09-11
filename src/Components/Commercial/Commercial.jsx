@@ -58,7 +58,7 @@ const tabData = {
 };
 
 const Commercial = () => {
-  const [activeTab, setActiveTab] = useState("Salon");
+  const [activeTab, setActiveTab] = useState('Salon');
   const [currentIndex, setCurrentIndex] = useState(null);
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
@@ -70,8 +70,8 @@ const Commercial = () => {
   // Animate section on scroll
   useEffect(() => {
     const observer = new IntersectionObserver(
-      entries => {
-        entries.forEach(entry => {
+      (entries) => {
+        entries.forEach((entry) => {
           if (entry.isIntersecting) setInView(true);
         });
       },
@@ -84,9 +84,9 @@ const Commercial = () => {
   // Keyboard navigation
   const handleKeyDown = (e) => {
     if (currentIndex !== null) {
-      if (e.key === "ArrowLeft") goToPrev();
-      else if (e.key === "ArrowRight") goToNext();
-      else if (e.key === "Escape") closeImage();
+      if (e.key === 'ArrowLeft') goToPrev();
+      else if (e.key === 'ArrowRight') goToNext();
+      else if (e.key === 'Escape') closeImage();
     }
   };
 
@@ -105,111 +105,152 @@ const Commercial = () => {
 
   const openImage = (index) => {
     setCurrentIndex(index);
-    document.body.style.overflow = "hidden";
+    document.body.style.overflow = 'hidden';
   };
   const closeImage = () => {
     setCurrentIndex(null);
-    document.body.style.overflow = "auto";
+    document.body.style.overflow = 'auto';
   };
 
   const goToPrev = () => {
-    setCurrentIndex(prev => (prev === 0 ? images.length - 1 : prev - 1));
+    setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
   };
   const goToNext = () => {
-    setCurrentIndex(prev => (prev === images.length - 1 ? 0 : prev + 1));
+    setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
   };
 
   useEffect(() => {
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
   }, [currentIndex]);
 
   return (
-    <section
-      ref={sectionRef}
-      className={`commercial-projects-section ${inView ? "in-view" : ""}`}
-      style={{ backgroundImage: `url(${BgImage})` }}
-    >
+    <>
+      {/* ✅ SEO Meta Tags */}
       <Helmet>
         <title>Commercial Projects | Aaspire Design</title>
-        <meta 
-          name="description" 
-          content="Explore our commercial interior design projects organized into categories like Salon, Office, and Lightshowroom." 
+        <meta
+          name="description"
+          content="Explore Aaspire Design's commercial interior design projects in Pune, including modern salon interiors, elegant office spaces, and innovative light showrooms."
         />
+        <meta
+          name="keywords"
+          content="Aaspire Design commercial interiors, Pune interior designers, salon interior design, office interior Pune, light showroom design"
+        />
+        <meta
+          property="og:title"
+          content="Commercial Projects | Aaspire Design"
+        />
+        <meta
+          property="og:description"
+          content="Discover our commercial projects including salon designs, office interiors, and light showrooms that reflect innovation and functionality."
+        />
+        <meta
+          property="og:image"
+          content="https://www.aaspiredesign.com/favicon.png"
+        />
+        <meta
+          property="og:url"
+          content="https://www.aaspiredesign.com/commercial"
+        />
+        <meta property="og:type" content="website" />
       </Helmet>
 
-      <h2 className="commercial-heading">Commercial Projects</h2>
+      <section
+        ref={sectionRef}
+        className={`commercial-projects-section ${inView ? 'in-view' : ''}`}
+        style={{ backgroundImage: `url(${BgImage})` }}
+      >
+        <h2 className="commercial-heading">Commercial Projects</h2>
 
-      {/* Tabs */}
-      <div className="tabs">
-        {Object.keys(tabData).map(tab => (
-          <button
-            key={tab}
-            className={`tab-btn ${activeTab === tab ? "active" : ""}`}
-            onClick={() => { setActiveTab(tab); setCurrentIndex(null); }}
-            aria-label={`View ${tab} projects`}
-          >
-            {tab}
-          </button>
-        ))}
-      </div>
-
-      {/* Image grid */}
-      <div className="commercial-row">
-        <div className="project-grid">
-          {images.map((img, index) => (
-            <div
-              className="project-box fade-up"
-              key={index}
-              onClick={() => openImage(index)}
+        {/* Tabs */}
+        <div className="tabs">
+          {Object.keys(tabData).map((tab) => (
+            <button
+              key={tab}
+              className={`tab-btn ${activeTab === tab ? 'active' : ''}`}
+              onClick={() => {
+                setActiveTab(tab);
+                setCurrentIndex(null);
+              }}
+              aria-label={`View ${tab} projects`}
             >
-              <div className="image-container">
-                <img src={img.src} alt={img.alt} loading="lazy" />
-              </div>
-            </div>
+              {tab}
+            </button>
           ))}
         </div>
-      </div>
 
-      {/* Lightbox modal */}
-      {currentIndex !== null && (
-        <div className="modal-overlay" onClick={closeImage}>
-          <div 
-            className="modal-content"
-            onClick={(e) => e.stopPropagation()}
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
-          >
-            <button 
-              className="nav-btn prev-btn" 
-              onClick={(e) => { e.stopPropagation(); goToPrev(); }}
-              aria-label="Previous image"
-            >
-              ‹
-            </button>
-            <div className="lightbox-content">
-              <img src={images[currentIndex].src} alt={images[currentIndex].alt} />
-            </div>
-            <button 
-              className="nav-btn next-btn" 
-              onClick={(e) => { e.stopPropagation(); goToNext(); }}
-              aria-label="Next image"
-            >
-              ›
-            </button>
-            <button 
-              className="close-btn" 
-              onClick={(e) => { e.stopPropagation(); closeImage(); }}
-              aria-label="Close gallery"
-            >
-              ×
-            </button>
-            <div className="image-counter">{currentIndex + 1} / {images.length}</div>
+        {/* Image grid */}
+        <div className="commercial-row">
+          <div className="project-grid">
+            {images.map((img, index) => (
+              <div
+                className="project-box fade-up"
+                key={index}
+                onClick={() => openImage(index)}
+              >
+                <div className="image-container">
+                  <img src={img.src} alt={img.alt} loading="lazy" />
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      )}
-    </section>
+
+        {/* Lightbox modal */}
+        {currentIndex !== null && (
+          <div className="modal-overlay" onClick={closeImage}>
+            <div
+              className="modal-content"
+              onClick={(e) => e.stopPropagation()}
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+            >
+              <button
+                className="nav-btn prev-btn"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  goToPrev();
+                }}
+                aria-label="Previous image"
+              >
+                ‹
+              </button>
+              <div className="lightbox-content">
+                <img
+                  src={images[currentIndex].src}
+                  alt={images[currentIndex].alt}
+                />
+              </div>
+              <button
+                className="nav-btn next-btn"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  goToNext();
+                }}
+                aria-label="Next image"
+              >
+                ›
+              </button>
+              <button
+                className="close-btn"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  closeImage();
+                }}
+                aria-label="Close gallery"
+              >
+                ×
+              </button>
+              <div className="image-counter">
+                {currentIndex + 1} / {images.length}
+              </div>
+            </div>
+          </div>
+        )}
+      </section>
+    </>
   );
 };
 

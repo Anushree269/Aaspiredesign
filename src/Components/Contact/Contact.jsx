@@ -19,9 +19,7 @@ export const Contact = () => {
     const publicKey = "rcahUZlNH_RnuMycm";
 
     emailjs
-      .sendForm(serviceId, templateId, form.current, {
-        publicKey: publicKey,
-      })
+      .sendForm(serviceId, templateId, form.current, { publicKey })
       .then(
         () => {
           console.log('SUCCESS!');
@@ -40,11 +38,40 @@ export const Contact = () => {
 
   return (
     <div className="contact-container">
-    
+      {/* ✅ SEO Meta Tags */}
+      <Helmet>
+        <title>Contact Us | Aaspire Design - Interior Designers in Pune</title>
+        <meta 
+          name="description" 
+          content="Get in touch with Aaspire Design - Interior Designers Studio in Pune. Reach us for residential & commercial projects. Contact via email, phone, or visit our Baner office." 
+        />
+        <link rel="canonical" href="https://www.aaspiredesign.com/contact" />
 
+        {/* Open Graph (Facebook, LinkedIn) */}
+        <meta property="og:title" content="Contact Us | Aaspire Design - Interior Designers in Pune" />
+        <meta 
+          property="og:description" 
+          content="Aaspire Design is an interior design studio in Pune. Contact us for innovative and elegant design solutions." 
+        />
+        <meta property="og:image" content="https://www.aaspiredesign.com/favicon.png" />
+        <meta property="og:url" content="https://www.aaspiredesign.com/contact" />
+        <meta property="og:type" content="website" />
+
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact Us | Aaspire Design - Interior Designers in Pune" />
+        <meta 
+          name="twitter:description" 
+          content="Reach out to Aaspire Design in Pune for residential and commercial interior projects. Let's design your dream space together." 
+        />
+        <meta name="twitter:image" content="https://www.aaspiredesign.com/favicon.png" />
+      </Helmet>
+
+      {/* ✅ Left Side - Contact Form */}
       <div className="contact-left">
         <h2>CONTACT US</h2>
         <div className="line"></div>
+
         <form ref={form} onSubmit={sendEmail} className="contact-form">
           <div className="form-group">
             <label htmlFor="name">Name</label>
@@ -113,8 +140,10 @@ export const Contact = () => {
         </form>
       </div>
 
+      {/* ✅ Right Side - Info */}
       <div className="contact-right">
         <h3>Info</h3>
+
         <div className="info-item">
           <FiMapPin className="icon" />
           <div>
@@ -140,14 +169,22 @@ export const Contact = () => {
         </div>
 
         <div className="info-item social-section">
-          <div>
-            <p className="title">Follow us</p>
-          </div>
+          <p className="title">Follow us</p>
           <div className="social-icons">
-            <a href="https://www.instagram.com/aaspire_design?igsh=dXYzM3cwcHdxaGpl" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <a 
+              href="https://www.instagram.com/aaspire_design?igsh=dXYzM3cwcHdxaGpl" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              aria-label="Instagram"
+            >
               <FiInstagram className="icon" />
             </a>
-            <a href="https://www.linkedin.com/in/dhwani-sanghavi-835a75255?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <a 
+              href="https://www.linkedin.com/in/dhwani-sanghavi-835a75255" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              aria-label="LinkedIn"
+            >
               <FiLinkedin className="icon" />
             </a>
           </div>

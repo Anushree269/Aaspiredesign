@@ -1,47 +1,48 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import './Features.css';
 import { FaEye, FaBuilding, FaTools, FaUserCheck } from "react-icons/fa";
-import { Helmet } from 'react-helmet-async';
 
-// Import images for background slideshow
+// Background images
 import bg1 from '../../assets/viewroomimage.jpg';
 import bg2 from '../../assets/livingroom.jpg';
 import bg3 from '../../assets/3droom.jpg';
 
+// Features and Expertise Data
 const features = [
   {
     title: 'OUR VISION',
-    description: 'Creating Designs in an innovative way , & getting into detail',
+    description: 'Creating designs in an innovative way, focusing on details and functionality.',
   },
   {
     title: 'MISSION STATEMENT',
-    description: 'AASPIRE DESIGN Studio is committed to provide proffesional service to its client with service excellence & delivering the BEST',
+    description: 'AASPIRE DESIGN Studio is committed to providing professional service with excellence, delivering the BEST.',
   },
   {
     title: 'OUR VALUE',
-    description: 'Best of both : Passion for creative experirnce Customer centric approch . Exquisite Designs.',
+    description: 'Passion for creative experience, customer-centric approach, and exquisite designs.',
   },
 ];
 
 const expertise = [
   {
     title: 'CREATIVE EYE',
-    description: 'Our Creative eye and attention to details will be first and foremost , Trend identification plays a very important role at AASPIRE DESIGN',
+    description: 'Attention to detail and trend identification plays a crucial role at AASPIRE DESIGN.',
     icon: <FaEye />
   },
   {
     title: 'SPACES',
-    description: 'From work spaces and learning spaces to living spaces and retail and commercial spaces ,our multidisciplinary approach and long standing expertise in large scale',
+    description: 'From living spaces to commercial spaces, our multidisciplinary approach ensures exceptional results.',
     icon: <FaBuilding />
   },
   {
     title: 'DESIGN & EXECUTION',
-    description: 'Creating sources & design development Interior design product design services & space planning project execution',
+    description: 'Interior design, product design, space planning, and project execution with excellence.',
     icon: <FaTools />
   },
   {
-    title: 'FULFILLING CLIENTS NEED',
-    description: 'Functionality, Elegance ,Cost control , and lateral thinking are the main guidelines through which we aim to develop unique interior spaces',
+    title: 'FULFILLING CLIENTS NEEDS',
+    description: 'Functionality, elegance, cost control, and creative thinking guide our unique interior solutions.',
     icon: <FaUserCheck />
   }
 ];
@@ -49,21 +50,18 @@ const expertise = [
 const bgImages = [bg1, bg2, bg3];
 
 const Features = () => {
-  const [activeTab, setActiveTab] = useState('expertise'); // default set to expertise
+  const [activeTab, setActiveTab] = useState('expertise');
   const sectionRef = useRef(null);
   const [bgIndex, setBgIndex] = useState(0);
 
-  // Animate on scroll
+  // Scroll animation
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           const element = entry.target;
-          if (entry.isIntersecting) {
-            element.classList.add('animate');
-          } else {
-            element.classList.remove('animate');
-          }
+          if (entry.isIntersecting) element.classList.add('animate');
+          else element.classList.remove('animate');
         });
       },
       { threshold: 0.3 }
@@ -72,15 +70,15 @@ const Features = () => {
     const targets = sectionRef.current.querySelectorAll(
       '.features-heading, .feature-item, .feature-circle, .feature-rectangle, .expertise-box'
     );
-    targets.forEach((el) => observer.observe(el));
-    return () => targets.forEach((el) => observer.unobserve(el));
+    targets.forEach(el => observer.observe(el));
+    return () => targets.forEach(el => observer.unobserve(el));
   }, [activeTab]);
 
-  // Background slideshow logic
+  // Background slideshow
   useEffect(() => {
     const interval = setInterval(() => {
-      setBgIndex((prevIndex) => (prevIndex + 1) % bgImages.length);
-    }, 5000); // Change every 5 seconds
+      setBgIndex(prev => (prev + 1) % bgImages.length);
+    }, 5000);
     return () => clearInterval(interval);
   }, []);
 
@@ -93,19 +91,29 @@ const Features = () => {
         transition: 'background-image 1.2s ease-in-out',
       }}
     >
+      {/* SEO Meta */}
+      <Helmet>
+        <title>Features & Expertise | Aaspire Design</title>
+        <meta
+          name="description"
+          content="Discover Aaspire Design's expertise and features, including creative interior design, space planning, turnkey execution, and client-focused solutions."
+        />
+        <link rel="canonical" href="https://www.aaspiredesign.com/features" />
+      </Helmet>
+
+      {/* Tab Buttons */}
       <div className="feature-tabs-column">
-        {/* Swapped the button order */}
         <button
           className={`tab-button ${activeTab === 'expertise' ? 'active' : ''}`}
           onClick={() => setActiveTab('expertise')}
         >
-          <span className="plus-icon">➕</span> Expertise
+          ➕ Expertise
         </button>
         <button
           className={`tab-button ${activeTab === 'features' ? 'active' : ''}`}
           onClick={() => setActiveTab('features')}
         >
-          <span className="plus-icon">➕</span> Features
+          ➕ Features
         </button>
       </div>
 
