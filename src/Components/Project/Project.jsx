@@ -251,24 +251,26 @@ const Project = () => {
   const bgImages = [bg1, bg2];
   const [bgIndex, setBgIndex] = useState(0);
   const [activeCategory, setActiveCategory] = useState(null);
+  const [selectedImage, setSelectedImage] = useState({
+    src: defaultOverlayimg,
+  });
   const [expandedProject, setExpandedProject] = useState(null);
-  const [selectedImage, setSelectedImage] = useState({ src: defaultOverlayImg });
 
-  // Rotate background images
+  // Background image rotation effect
   useEffect(() => {
     const interval = setInterval(() => {
-      setBgIndex(prev => (prev + 1) % bgImages.length);
+      setBgIndex((prevIndex) => (prevIndex + 1) % bgImages.length);
     }, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [bgImages.length]);
 
-  const toggleCategory = (categoryKey) => {
-    setActiveCategory(activeCategory === categoryKey ? null : categoryKey);
-    setExpandedProject(null); // Close any open project
+  const handleCategoryToggle = (category) => {
+    setActiveCategory(activeCategory === category ? null : category);
+    setExpandedProject(null);
   };
 
-  const toggleProject = (index) => {
-    setExpandedProject(expandedProject === index ? null : index);
+  const handleProjectToggle = (projectIndex) => {
+    setExpandedProject(expandedProject === projectIndex ? null : projectIndex);
   };
 
   const handleImageClick = (image) => {
@@ -276,60 +278,78 @@ const Project = () => {
   };
 
   return (
-    <div
+    <div 
       className="project-page"
       style={{ backgroundImage: `url(${bgImages[bgIndex]})` }}
       aria-label="Our Projects Gallery"
     >
       <div className="project-overlay">
         <div className="project-container">
-          <header className="project-header">
-            <h1>Our Projects</h1>
-            <p>
-              At Aaspire Design, we specialize in creating sophisticated interior spaces that reflect attention to detail and refined luxury.
-              Led by Dhwani Sanghavi and Parag Shelar, we deliver spaces that inspire, elevate, and endure.
+          <div className="project-header">
+            <h1 className="project-title">Our Projects</h1>
+            <p className="project-intro">
+              At Aaspire Design, we specialize in creating sophisticated and functional interior spaces that reflect a deep attention to detail and refined luxury. Combining artistic vision with technical precision, our designs embody both elegance and purpose. Led by Dhwani Sanghavi and Parag Shelar— Director of Aaspire Design and mentor at INSD Baner, Pune — we are committed to delivering spaces that inspire, elevate, and endure.
             </p>
-          </header>
+          </div>
 
           <div className="project-content">
             <div className="project-gallery">
-              {Object.entries(PROJECT_CATEGORIES).map(([key, category]) => (
-                <section key={key} className={`category-section ${activeCategory === key ? 'active' : ''}`}>
+              {Object.entries(PROJECT_CATEGORIES).map(([categoryKey, category]) => (
+                <div 
+                  key={categoryKey}
+                  className={`category-section ${activeCategory === categoryKey ? 'active' : ''}`}
+                >
                   <button
                     className="category-toggle"
-                    onClick={() => toggleCategory(key)}
-                    aria-expanded={activeCategory === key}
-                    aria-controls={`${key}-projects`}
+                    onClick={() => handleCategoryToggle(categoryKey)}
+                    aria-expanded={activeCategory === categoryKey}
+                    aria-controls={`${categoryKey}-projects`}
                   >
-                    {category.title} <span>{activeCategory === key ? '▼' : '►'}</span>
+                    {category.title}
+                    <span className="toggle-icon">
+                      {activeCategory === categoryKey ? '▼' : '►'}
+                    </span>
                   </button>
 
-                  {activeCategory === key && (
-                    <div id={`${key}-projects`} className="projects-list">
-                      {category.projects.map((project, index) => (
-                        <div key={index} className="project-item">
+                  {activeCategory === categoryKey && (
+                    <div 
+                      id={`${categoryKey}-projects`}
+                      className="projects-list"
+                    >
+                      {category.projects.map((project, projectIndex) => (
+                        <div 
+                          key={projectIndex}
+                          className="project-item"
+                        >
                           <button
                             className="project-toggle"
-                            onClick={() => toggleProject(index)}
-                            aria-expanded={expandedProject === index}
+                            onClick={() => handleProjectToggle(projectIndex)}
+                            aria-expanded={expandedProject === projectIndex}
                           >
-                            {project.title} <span>{expandedProject === index ? '▼' : '►'}</span>
+                            {project.title}
+                            <span className="toggle-icon">
+                              {expandedProject === projectIndex ? '▼' : '►'}
+                            </span>
                           </button>
 
-                          {expandedProject === index && (
+                          {expandedProject === projectIndex && (
                             <div className="image-grid">
-                              {project.images.map((image, imgIndex) => (
-                                <div
-                                  key={imgIndex}
+                              {project.images.map((image, imageIndex) => (
+                                <div 
+                                  key={imageIndex}
                                   className="image-thumbnail"
                                   onClick={() => handleImageClick(image)}
                                   role="button"
                                   tabIndex="0"
-                                  aria-label={`View ${image.alt}`}
+                                  aria-label={`View ${image.title}`}
                                 >
-                                  <img src={image.src} alt={image.alt} loading="lazy" />
+                                  <img 
+                                    src={image.src} 
+                                    alt={image.alt}
+                                    loading="lazy"
+                                  />
                                   <div className="image-overlay">
-                                    <span>View</span>
+                                    <span className="view-text">View</span>
                                   </div>
                                 </div>
                               ))}
@@ -339,17 +359,23 @@ const Project = () => {
                       ))}
                     </div>
                   )}
-                </section>
+                </div>
               ))}
             </div>
 
-            <aside className="project-preview">
+            <div className="project-preview">
               <div className="preview-image-container">
-                <img src={selectedImage.src} alt={selectedImage.alt || 'Project Preview'} className="preview-image" />
+                <img 
+                  src={selectedImage.src} 
+                  alt={selectedImage.alt || selectedImage.title}
+                  className="preview-image"
+                />
               </div>
-              {selectedImage.title && <h3>{selectedImage.title}</h3>}
-              {selectedImage.details && <p>{selectedImage.details}</p>}
-            </aside>
+              <div className="preview-details">
+                <h3 className="preview-title">{selectedImage.title}</h3>
+                <p className="preview-description">{selectedImage.details}</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
