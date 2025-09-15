@@ -27,57 +27,6 @@ const Projects = () => {
   const sectionRef = useRef(null);
   const bgImages = [ProjectBg1, ProjectBg2, ProjectBg3];
 
-  // Structured data for SEO
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "name": "Interior Design Projects by Aaspire Design",
-    "description": "Explore our portfolio of commercial and residential interior design projects in Pune",
-    "url": "https://aaspiredesign.com/projects",
-    "numberOfItems": 4,
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "item": {
-          "@type": "CreativeWork",
-          "name": "Salon Project",
-          "description": "Commercial interior design for a salon in Pune",
-          "image": "https://aaspiredesign.com/static/media/commercialprojects/salonproject/finalviewofsalon2withlogo.jpg"
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "item": {
-          "@type": "CreativeWork",
-          "name": "Salon Project Alternate View",
-          "description": "Another view of our commercial salon interior design",
-          "image": "https://aaspiredesign.com/static/media/commercialprojects/salonproject/finalviewofsalon1withlogo.jpg"
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 3,
-        "item": {
-          "@type": "CreativeWork",
-          "name": "Bhavess Sharma Residential Project",
-          "description": "2 BHK kitchen design for a residential project in Pune",
-          "image": "https://aaspiredesign.com/static/media/residentialprojects/bhavessharma/finalview1ofkitchenof2bhkwithlogo.jpg"
-        }
-      },
-      {
-        "@type": "ListItem",
-        "position": 4,
-        "item": {
-          "@type": "CreativeWork",
-          "name": "Swapnil Patil Residential Project",
-          "description": "Residential interior design project for a home in Pune",
-          "image": "https://aaspiredesign.com/static/media/residentialprojects/swapnilpatil/view2withlogo.jpg"
-        }
-      }
-    ]
-  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -106,39 +55,36 @@ const Projects = () => {
   return (
     <>
       <Helmet>
-        <title>Our Projects | Interior Design Portfolio - Aaspire Design Pune</title>
-        <meta 
-          name="description" 
-          content="Explore Aaspire Design's portfolio of commercial and residential interior design projects in Pune. See our work for salons, homes, and more." 
-        />
-        <meta 
-          name="keywords" 
-          content="interior design projects Pune, commercial interior design, residential interior design, salon design Pune, home interior projects, Aaspire Design portfolio" 
-        />
-        <meta property="og:title" content="Our Projects | Interior Design Portfolio - Aaspire Design Pune" />
-        <meta 
-          property="og:description" 
-          content="Browse our interior design portfolio featuring commercial and residential projects in Pune. Transform your space with Aaspire Design." 
-        />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.aaspiredesign.com/projects" />
-        <meta property="og:image" content="https://aaspiredesign.com/static/media/commercialprojects/salonproject/finalviewofsalon2withlogo.jpg" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Our Projects | Interior Design Portfolio - Aaspire Design Pune" />
-        <meta 
-          name="twitter:description" 
-          content="Explore Aaspire Design's portfolio of commercial and residential interior design projects in Pune." 
-        />
-        <meta name="twitter:image" content="https://aaspiredesign.com/static/media/commercialprojects/salonproject/finalviewofsalon2withlogo.jpg" />
-        
-        {/* Structured Data */}
-        <script type="application/ld+json">
-          {JSON.stringify(jsonLd)}
-        </script>
-        
-        {/* Canonical URL */}
-        <link rel="canonical" href="https://www.aaspiredesign.com/projects" />
-      </Helmet>
+  <title>Our Projects | Interior Design Portfolio - Aaspire Design Pune</title>
+  <meta 
+    name="description" 
+    content="Explore Aaspire Design's portfolio of commercial and residential interior design projects in Pune. See our work for salons, homes, and more." 
+  />
+  <meta 
+    name="keywords" 
+    content="interior design projects Pune, commercial interior design, residential interior design, salon design Pune, home interior projects, Aaspire Design portfolio" 
+  />
+  <meta property="og:title" content="Our Projects | Interior Design Portfolio - Aaspire Design Pune" />
+  <meta 
+    property="og:description" 
+    content="Browse our interior design portfolio featuring commercial and residential projects in Pune. Transform your space with Aaspire Design." 
+  />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.aaspiredesign.com/projects" />
+
+  {/* ✅ Use imported image */}
+  <meta property="og:image" content={Commercial1} />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Our Projects | Interior Design Portfolio - Aaspire Design Pune" />
+  <meta 
+    name="twitter:description" 
+    content="Explore Aaspire Design's portfolio of commercial and residential interior design projects in Pune." 
+  />
+  <meta name="twitter:image" content={Commercial1} />
+
+  {/* Canonical URL */}
+  <link rel="canonical" href="https://www.aaspiredesign.com/projects" />
+</Helmet>
 
       <section
         className="projects-section"

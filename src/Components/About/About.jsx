@@ -41,7 +41,7 @@ const About = () => {
     "@type": "InteriorDesigner",
     "name": "Aaspire Design",
     "url": "https://aaspiredesign.com/about",
-    "logo": "https://aaspiredesign.com/static/media/Aaspirepng.png",
+    "logo": "https://aaspiredesign.com/favicon.png",
     "description": "Aaspire Design is a premier interior design studio in Baner, Pune offering residential and commercial interior design services.",
     "address": {
       "@type": "PostalAddress",

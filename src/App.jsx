@@ -1,5 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
+
 import Navbar from "./Navbar/Navbar";
 import Home from "./Components/Home/Home";
 import About from "./Components/About/About";
@@ -14,10 +16,18 @@ import "./responsive.css";
 const App = () => {
   return (
     <div className="website-container">
-      {/* Skip to main content link for accessibility */}
-      <a href="#main-content" className="skip-link">
-        Skip to main content
-      </a>
+      {/* Global Meta Tags */}
+      <Helmet>
+        <title>Aaspire Design – Interior Design Studio in Baner, Pune</title>
+        <meta
+          name="description"
+          content="Aaspire Design is a creative interior design studio in Baner, Pune. We specialize in residential and commercial projects with modern design solutions."
+        />
+        <link rel="canonical" href="https://www.aaspiredesign.com/" />
+        <link rel="icon" href="/favicon.png" />
+      </Helmet>
+
+      
 
       <Navbar />
       <main id="main-content" className="main-content">
