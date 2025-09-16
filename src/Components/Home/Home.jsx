@@ -300,31 +300,39 @@ const Home = () => {
         }}
       >
         <div className="about-container">
-          <div className="about-left">
-            <div className="video-container">
-              <video
-                ref={videoRef}
-                key={currentVideo}
-                autoPlay
-                muted
-                playsInline
-                className="about-reel"
-              >
-                <source src={videos[currentVideo].src} type={videos[currentVideo].type} />
-                Your browser does not support the video tag.
-              </video>
+         <div className="about-left">
+  <div className="video-container">
+    {/* Video */}
+    <video
+      ref={videoRef}
+      key={currentVideo}
+      autoPlay
+      muted
+      playsInline
+      className="about-reel"
+    >
+      <source src={videos[currentVideo].src} type={videos[currentVideo].type} />
+      Your browser does not support the video tag.
+    </video>
 
-              <div className="video-progress">
-                {videos.map((_, index) => (
-                  <div
-                    key={index}
-                    className={`progress-dot ${index === currentVideo ? 'active' : ''}`}
-                    onClick={() => setCurrentVideo(index)}
-                  />
-                ))}
-              </div>
-            </div>
-          </div>
+    {/* Left Arrow */}
+    <button 
+      className="nav-arrow left" 
+      onClick={() => setCurrentVideo((prev) => (prev > 0 ? prev - 1 : videos.length - 1))}
+    >
+      ←
+    </button>
+
+    {/* Right Arrow */}
+    <button 
+      className="nav-arrow right" 
+      onClick={() => setCurrentVideo((prev) => (prev < videos.length - 1 ? prev + 1 : 0))}
+    >
+      →
+    </button>
+  </div>
+</div>
+
 
           <div className="about-right">
             <h2 className="about-heading1">About Aaspire Design</h2>

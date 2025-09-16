@@ -3,7 +3,7 @@ import './Project.css';
 
 // Background slideshow images
 
-import bg1 from '../../assets/3d-room-interior.jpg';
+import bg1 from '../../assets/modern-empty.jpg';
 import bg2 from '../../assets/viewroomimage.jpg';
 // Import all your image assets
 import img1 from '../../assets/commercialprojects/salonproject/finalviewofsalon1withlogo.jpg';

@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Montserrat:wght@300;400;500;600&display=swap");
 
 .achievement-section {
-  height: 80vh;
+  height: 90vh;
   position: relative;
   padding: 6rem 2rem;
   overflow: hidden;
@@ -13,7 +13,7 @@
 
 .achievement-bg {
   position: absolute;
-  top: -2px;
+  top: 0;
   left: 0;
   width: 100%;
   height: calc(100% + 100px);
@@ -155,7 +155,7 @@
     height: 50vh;
     padding: 3rem 0.5rem;
   }
-
+  
   .achievement-heading {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
