@@ -53,18 +53,18 @@ export const Contact = () => {
           property="og:description" 
           content="Aaspire Design is an interior design studio in Pune. Contact us for innovative and elegant design solutions." 
         />
-        <meta property="og:image" content="https://www.aaspiredesign.com/favicon.png" />
+        <meta property="og:image" content="https://www.aaspiredesign.com/Newlogo.jpg" />
         <meta property="og:url" content="https://www.aaspiredesign.com/contact" />
         <meta property="og:type" content="website" />
 
         {/* Twitter Card */}
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Contact Us | Aaspire Design - Interior Designers in Pune" />
+        <meta name="twitter:title" content="Aaspire Design - Interior Designers in Pune" />
         <meta 
           name="twitter:description" 
           content="Reach out to Aaspire Design in Pune for residential and commercial interior projects. Let's design your dream space together." 
         />
-        <meta name="twitter:image" content="https://www.aaspiredesign.com/favicon.png" />
+        <meta name="twitter:image" content="https://www.aaspiredesign.com/Newlogo.jpg" />
       </Helmet>
 
       {/* ✅ Left Side - Contact Form */}

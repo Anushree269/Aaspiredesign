@@ -56,7 +56,7 @@ const Home = () => {
     "@type": "InteriorDesigner",
     "name": "Aaspire Design",
     "url": "https://aaspiredesign.com",
-    "logo": "https://aaspiredesign.com/static/media/Aaspirepng.png", // Update this path to your actual logo URL
+    "logo": "https://aaspiredesign.com/Newlogo.jpg", // Update this path to your actual logo URL
     "description": "Aaspire Design is a interior designer studio in Pune, creating innovative, functional, and elegant spaces for residential and commercial projects.",
     "address": {
       "@type": "PostalAddress",
@@ -213,14 +213,14 @@ const Home = () => {
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.aaspiredesign.com" />
-        <meta property="og:image" content="https://aaspiredesign.com/favicon.png" />
+        <meta property="og:image" content="https://aaspiredesign.com/Newlogo.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Aaspire Design | Interior Designers Studio in Pune" />
         <meta
           name="twitter:description"
           content="Transform your spaces with Aaspire Design, Pune premier interior designers studio."
         />
-        <meta name="twitter:image" content="https://aaspiredesign.com/favicon.png" />
+        <meta name="twitter:image" content="https://aaspiredesign.com/Newlogo.jpg" />
         
         {/* Structured Data */}
         <script type="application/ld+json">

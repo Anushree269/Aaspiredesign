@@ -47,7 +47,7 @@ const Faq = () => {
           property="og:description"
           content="Got questions about our interior design services? Explore FAQs about pricing, process, and our turnkey solutions."
         />
-        <meta property="og:image" content="https://www.aaspiredesign.com/favicon.png" />
+        <meta property="og:image" content="https://www.aaspiredesign.com/Newlogo.jpg" />
         <meta property="og:url" content="https://www.aaspiredesign.com/faq" />
         <meta property="og:type" content="website" />
 
@@ -58,7 +58,7 @@ const Faq = () => {
           name="twitter:description"
           content="Aaspire Design answers your frequently asked questions about our interior design services in Pune."
         />
-        <meta name="twitter:image" content="https://www.aaspiredesign.com/favicon.png" />
+        <meta name="twitter:image" content="https://www.aaspiredesign.com/Newlogo.jpg" />
       </Helmet>
 
       {/* ✅ Background */}
