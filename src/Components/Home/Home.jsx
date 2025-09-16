@@ -31,14 +31,12 @@ import Features from '../Features/Features';
 
 const Home = () => {
   const counterRef = useRef(null);
-  const formHeroRef = useRef();
   const formPopupRef = useRef();
   const videoRef = useRef(null);
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
   const [textVisible, setTextVisible] = useState(false);
-  const [formVisible, setFormVisible] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
   const [currentVideo, setCurrentVideo] = useState(0);
 
@@ -161,14 +159,15 @@ const Home = () => {
 
   useEffect(() => {
     setTextVisible(true);
-    setFormVisible(true);
   }, []);
 
-  useEffect(() => {
-    const timer = setTimeout(() => setShowPopup(true), 5000);
-    return () => clearTimeout(timer);
-  }, []);
+ useEffect(() => {
+  const interval = setInterval(() => {
+    setShowPopup(true);
+  }, 10000); // 10 seconds
 
+  return () => clearInterval(interval);
+}, []);
   const renderForm = (formRef, onSubmit) => (
     <form ref={formRef} onSubmit={(e) => onSubmit(e, formRef)} className="contact-form">
       <input type="text" name="user_name" placeholder="Your Name" required />
@@ -248,10 +247,6 @@ const Home = () => {
           </div>
         </div>
 
-        <div className={`inquiry-form ${formVisible ? 'active' : ''}`}>
-          <h3>Inquire Now</h3>
-          {renderForm(formHeroRef, sendEmail)}
-        </div>
       </section>
 
       {showPopup && (
