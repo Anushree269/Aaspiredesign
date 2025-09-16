@@ -504,7 +504,7 @@
 @media (min-width: 400px) and (max-width: 575px) {
   .hero-section {
     min-height: 220px;
-    height: 100vh;
+    height: 60vh;
     padding: 0.3rem 0;
   }
 
@@ -593,7 +593,7 @@
 @media (min-width: 576px) and (max-width: 767px) {
   .hero-section {
     min-height: 250px;
-    height: 100vh;
+    height: 60vh;
     padding: 0.5rem 0;
   }
 
@@ -762,8 +762,8 @@
    ======================================== */
 @media (max-height: 500px) and (orientation: landscape) {
   .hero-section {
-    min-height: 100vh;
-    height: 100vh;
+    min-height: 60vh;
+    height: 60vh;
   }
 
   .hero-logo {
