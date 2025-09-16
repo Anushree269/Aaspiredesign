@@ -48,7 +48,7 @@ export const Contact = () => {
         <link rel="canonical" href="https://www.aaspiredesign.com/contact" />
 
         {/* Open Graph (Facebook, LinkedIn) */}
-        <meta property="og:title" content="Contact Us | Aaspire Design - Interior Designers in Pune" />
+        <meta property="og:title" content="Aaspire Design - Interior Designers in Pune" />
         <meta 
           property="og:description" 
           content="Aaspire Design is an interior design studio in Pune. Contact us for innovative and elegant design solutions." 
