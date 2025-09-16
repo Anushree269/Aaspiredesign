@@ -40,7 +40,7 @@ export const Contact = () => {
     <div className="contact-container">
       {/* ✅ SEO Meta Tags */}
       <Helmet>
-        <title>Contact Us | Aaspire Design - Interior Designers in Pune</title>
+        <title> Aaspire Design - Interior Designers in Pune</title>
         <meta 
           name="description" 
           content="Get in touch with Aaspire Design - Interior Designers Studio in Pune. Reach us for residential & commercial projects. Contact via email, phone, or visit our Baner office." 
