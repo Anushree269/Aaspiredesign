@@ -136,7 +136,6 @@ const About = () => {
               key={currentVideo} // force re-render when video changes
             >
               <source src={videos[currentVideo]} type="video/mp4" />
-              Your browser does not support the video tag.
             </video>
             {/* Progress Dots */}
             <div className="video-progress">

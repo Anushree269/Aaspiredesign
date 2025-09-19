@@ -55,7 +55,6 @@ const MobileVideoPreloader = ({ children }) => {
           src={isMobile ? "/Videos/Aaspire-logo-Animation-Mobile.mp4" : "/Videos/Aaspire-logo-Animation.mp4"} 
           type="video/mp4" 
         />
-        Your browser does not support the video tag.
       </video>
       
       {/* Mobile loading indicator */}

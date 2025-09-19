@@ -307,7 +307,6 @@ const Home = () => {
       className="about-reel"
     >
       <source src={videos[currentVideo].src} type={videos[currentVideo].type} />
-      Your browser does not support the video tag.
     </video>
 
     {/* Left Arrow */}
