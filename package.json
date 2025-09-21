@@ -5,6 +5,7 @@
   "homepage": "https://github.com/Anushree269/Aaspiredesign",
   "scripts": {
     "dev": "vite",
+    "build": "vite build",
     "build:local": "vite build --mode development",
     "build:github": "cross-env DEPLOY_PLATFORM=github-pages vite build",
     "preview": "vite preview",
