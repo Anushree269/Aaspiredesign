@@ -212,14 +212,14 @@ const Home = () => {
         />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.aaspiredesign.com" />
-        <meta property="og:image" content="https://aaspiredesign.com/Newlogo.jpg" />
+        <meta property="og:image" content="https://aaspiredesign.com/Newlogo2.png" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Aaspire Design | Interior Designers Studio in Pune" />
         <meta
           name="twitter:description"
           content="Transform your spaces with Aaspire Design, Pune premier interior designers studio."
         />
-        <meta name="twitter:image" content="https://aaspiredesign.com/Newlogo.jpg" />
+        <meta name="twitter:image" content="https://aaspiredesign.com/Newlogo2.png" />
         
         {/* Structured Data */}
         <script type="application/ld+json">
