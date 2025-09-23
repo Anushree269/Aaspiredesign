@@ -196,7 +196,7 @@ const Home = () => {
   return (
     <div className="home">
       <Helmet>
-        <title>Aaspire Design | Interior Designer Studio in Pune</title>
+        <title>Aaspire Design | Best Interior Designer Studio in Baner,Pune</title>
         <meta
           name="description"
           content="Aaspire Design is a interior designer studio in Pune, creating innovative, functional, and elegant spaces for residential and commercial projects."
@@ -240,7 +240,7 @@ const Home = () => {
               <img src={Logo} alt="Aaspire Design Logo" className="hero-logo" />
               <div className="hero-tagline">
                 <h1 className={`animated ${textVisible ? 'active' : ''}`}>
-                  The Art of Extraordinary Spaces
+                  Aaspire Design - The Art of Extraordinary Spaces in Baner, Pune
                 </h1>
               </div>
             </div>
@@ -329,12 +329,12 @@ const Home = () => {
 
 
           <div className="about-right">
-            <h2 className="about-heading1">About Aaspire Design</h2>
+            <h2 className="about-heading1">Aaspire Design-Interior Designers in Baner,Pune</h2>
             <p className="about-text">
               Aaspire Design is a multidisciplinary design studio and consulting firm based in Baner, Pune,
-              offering expert services in interior design. We specialize in creating modern, customized residential
+              offering expert services in interior design. Led by Parag Shelar and Dhawani Shaghavi,We specialize in creating modern, customized residential
               and commercial spaces through turnkey solutions, smart space planning, and innovative design that reflects
-              your personality and lifestyle.
+              your personality and lifestyle in <strong>Baner,Pune</strong>.
               <br /><br />
               Our experienced team believes in understanding your needs deeply to deliver affordable, high-quality design
               solutions — on time and within budget.
