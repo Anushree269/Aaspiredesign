@@ -85,11 +85,11 @@ const About = () => {
         <title>About Aaspire Design | Premier Interior Design Studio in Pune</title>
         <meta 
           name="description" 
-          content="Learn about Aaspire Design, Pune's leading interior design studio founded in 2014. Meet our founders Dhwani Sanghavi and Parag Shelar and discover our design philosophy." 
+          content="Aaspire Design is  one of the best interior design studio in Baner, Wakad, Balewadi, Aundh, Pune. Since 2014, founders Dhwani Shaghavi and Parag Shelar have been delivering modern, personalized design solutions for commercial and residential spaces that reflect your lifestyle and personality."
         />
         <meta 
           name="keywords" 
-          content="about Aaspire Design, interior designers Pune, about us, Dhwani Sanghavi, Parag Shelar, interior design studio Pune" 
+          content="about Aaspire Design, interior designers Baner ,Pune, about us, Dhwani Sanghavi, Parag Shelar, interior design studio Baner Pune, residential interior design, commercial interior design, turnkey solutions, space planning, design philosophy" 
         />
         <meta property="og:title" content="About Aaspire Design | Premier Interior Design Studio in Pune" />
         <meta 
@@ -100,7 +100,7 @@ const About = () => {
         <meta property="og:url" content="https://www.aaspiredesign.com/about" />
         <meta property="og:image" content="https://aaspiredesign.com/static/media/dhwanisanghavi.jpg" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="About Aaspire Design | Premier Interior Design Studio in Pune" />
+        <meta name="twitter:title" content="About Aaspire Design | Premier Interior Design Studio in Baner, Pune" />
         <meta 
           name="twitter:description" 
           content="Learn about Aaspire Design, Pune's leading interior design studio founded in 2014." 
